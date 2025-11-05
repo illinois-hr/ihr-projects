@@ -3,49 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Course Catalog - Guidance on the Go</title>
+    <link rel="icon" href="https://cdn.brand.illinois.edu/favicon.ico">
+    <link rel="apple-touch-icon" href="https://cdn.brand.illinois.edu/touch-icon-40x40.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.brand.illinois.edu/touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://cdn.brand.illinois.edu/touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.brand.illinois.edu/touch-icon-180x180.png">
+    <link rel="dns-prefetch" href="//cdn.toolkit.illinois.edu">
+    <link rel="dns-prefetch" href="//cdn.disability.illinois.edu">
+    <link rel="stylesheet" href="//cdn.toolkit.illinois.edu/3/toolkit.css">
     <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="//cdn.toolkit.illinois.edu/3/toolkit.js"></script>
+    <!--<script src="//cdn.disability.illinois.edu/skipto.min.js"></script>-->
+    <title>Course Catalog - Guidance on the Go</title>
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <h1 class="logo">Guidance on the Go</h1>
-      </div>
-    </header>
-
-    <main class="main">
-      <div class="container">
-        <section class="hero">
-          <h1 class="hero-title">Course Catalog</h1>
-          <p class="hero-description">
-            Discover curated supervisor modules to help you address common workplace challenges with confidence.
-          </p>
-
-          <!--<div class="action-buttons">
-            <a href="#courses" class="btn btn-primary browse-courses-btn">Browse courses</a>
-          </div>-->
-        </section>
-
-        <section class="search-section">
-          <div class="search-container">
-            <label for="course-search" class="sr-only">Search courses: </label>
-            <input
-              type="text"
-              class="search-input"
-              placeholder="Search courses by title or description"
-              aria-label="Search courses"
-            />
-            <button class="btn btn-primary" aria-label="Filter courses">All</button>
-            <button class="btn btn-secondary" aria-label="Filter courses">PPP</button>
+      <ilw-page>
+        <ilw-header slot="header">
+            <a slot="site-name" href="https://humanresources.illinois.edu/">Illinois Human Resources</a>
+        </ilw-header>
+        <header class="header">
+          <div class="container">
+            <h1 class="logo">Guidance on the Go</h1>
           </div>
-        </section>
+        </header>
 
-        <section class="courses-section">
-          <div class="course-grid"></div>
-        </section>
-      </div>
-    </main>
-    <script src="./data.js"></script>
-    <script src="./app.js"></script>
+        <main class="main">
+          <div class="container">
+            <section class="hero">
+              <h1 class="hero-title">Course Catalog</h1>
+              <p class="hero-description">
+                Discover curated supervisor modules to help you address common workplace challenges with confidence.
+              </p>
+
+              <!--<div class="action-buttons">
+                <a href="#courses" class="btn btn-primary browse-courses-btn">Browse courses</a>
+              </div>-->
+            </section>
+
+            <section class="search-section">
+              <div class="search-container">
+                <label for="course-search" class="sr-only">Search courses: </label>
+                <input
+                  type="text"
+                  class="search-input"
+                  placeholder="Search courses by title or description"
+                  aria-label="Search courses"
+                />
+                <button class="btn btn-primary" aria-label="Filter courses">All</button>
+                <button class="btn btn-secondary" aria-label="Filter courses">PPP</button>
+              </div>
+            </section>
+
+            <section class="courses-section">
+              <div class="course-grid"></div>
+            </section>
+          </div>
+        </main>
+        <ilw-footer slot="footer">
+          
+        </ilw-footer>
+        <script src="./data.js"></script>
+        <script src="./app.js"></script>
+      </ilw-page>
   </body>
 </html>
