@@ -248,6 +248,10 @@ body {
   outline-offset: 2px;
 }
 
+li {
+  color: #13294b;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;

@@ -295,6 +295,10 @@ body {
   }
 }
 
+li {
+  color: #13294b;
+}
+
 *:focus {
   outline: 2px solid #ff5f05;
   outline-offset: 2px;
