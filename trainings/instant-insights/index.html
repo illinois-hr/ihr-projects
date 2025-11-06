@@ -3,22 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="https://cdn.brand.illinois.edu/favicon.ico">
-    <link rel="apple-touch-icon" href="https://cdn.brand.illinois.edu/touch-icon-40x40.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.brand.illinois.edu/touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="https://cdn.brand.illinois.edu/touch-icon-167x167.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.brand.illinois.edu/touch-icon-180x180.png">
-    <link rel="dns-prefetch" href="//cdn.toolkit.illinois.edu">
-    <link rel="dns-prefetch" href="//cdn.disability.illinois.edu">
-    <link rel="stylesheet" href="//cdn.toolkit.illinois.edu/3/toolkit.css">
+    <link rel="icon" href="https://cdn.brand.illinois.edu/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      href="https://cdn.brand.illinois.edu/touch-icon-40x40.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="https://cdn.brand.illinois.edu/touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="167x167"
+      href="https://cdn.brand.illinois.edu/touch-icon-167x167.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://cdn.brand.illinois.edu/touch-icon-180x180.png"
+    />
+    <link rel="dns-prefetch" href="//cdn.toolkit.illinois.edu" />
+    <link rel="dns-prefetch" href="//cdn.disability.illinois.edu" />
+    <link rel="stylesheet" href="//cdn.toolkit.illinois.edu/3/toolkit.css" />
     <link rel="stylesheet" href="./style.css" />
-    <script type="module" src="//cdn.toolkit.illinois.edu/3/toolkit.js"></script>
+    <script
+      type="module"
+      src="//cdn.toolkit.illinois.edu/3/toolkit.js"
+    ></script>
+    <script src="https://cdn.disability.illinois.edu/skipto.min.js"></script>
+    <script>
+      var SkipToConfig = {
+        settings: {
+          skipTo: {
+            displayOption: "popup",
+            colorTheme: "illinois",
+            menuBackgroundColor: "#fff",
+            headings:
+              'main h1, [role="main"] h1, main h2, [role="main"] h2, main h3, [role="main"] h3',
+          },
+        },
+      };
+    </script>
     <title>Course Catalog - Instant Insights</title>
   </head>
   <body>
     <ilw-page>
       <ilw-header slot="header">
-          <a slot="site-name" href="https://humanresources.illinois.edu/">Illinois Human Resources</a>
+        <a slot="site-name" href="https://humanresources.illinois.edu/"
+          >Illinois Human Resources</a
+        >
       </ilw-header>
       <header class="header">
         <div class="container">
@@ -31,7 +65,8 @@
           <section class="hero">
             <h1 class="hero-title">Course Catalog</h1>
             <p class="hero-description">
-              Discover curated employee modules to help you address common workplace challenges with confidence.
+              Discover curated employee modules to help you address common
+              workplace challenges with confidence.
             </p>
 
             <!--<div class="action-buttons">
@@ -39,16 +74,20 @@
             </div>-->
           </section>
 
-        <section class="search-section">
+          <section class="search-section">
             <div class="search-container">
-              <label for="course-search" class="sr-only">Search courses: </label>
+              <label for="course-search" class="sr-only"
+                >Search courses:
+              </label>
               <input
                 type="text"
                 class="search-input"
                 placeholder="Search courses by title or description"
                 aria-label="Search courses"
               />
-              <button class="btn btn-primary" aria-label="Filter courses">All</button>
+              <button class="btn btn-primary" aria-label="Filter courses">
+                All
+              </button>
             </div>
           </section>
 
@@ -58,7 +97,98 @@
         </div>
       </main>
       <ilw-footer slot="footer">
-          
+        <a slot="site-name" href="https://humanresources.illinois.edu/"
+          >Illinois Human Resources</a
+        >
+        <address slot="address">
+          <div>
+            <a href="https://maps.app.goo.gl/EkaAWXJe8aUnTcjH6"
+              >Personnel Services Building – MC 562 <br />52 E. Gregory Dr.,
+              <br />Champaign, IL 61820</a
+            >
+          </div>
+          <div>Phone: <a href="tel:2173332137">217-333-2137</a></div>
+          <div>
+            Email: <a href="mailto:ihr@illinois.edu">ihr@illinois.edu</a>
+          </div>
+        </address>
+        <nav slot="social" aria-label="Social media">
+          <ul>
+            <li>
+              <a
+                data-service="facebook"
+                href="https://www.facebook.com/illinoishumanresources"
+                >Facebook</a
+              >
+            </li>
+            <li>
+              <a data-service="x" href="https://twitter.com/IllinoisHR">X</a>
+            </li>
+            <li>
+              <a
+                data-service="linkedin"
+                href="https://www.linkedin.com/company/99140536/admin/feed/posts/"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a
+                data-service="youtube"
+                href="https://www.youtube.com/channel/UC5qjdwsDANDMPUMch3oH5ZA"
+                >YouTube</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <ilw-columns>
+          <ilw-content theme="gray">
+            <p class="ilw-heading">Resources</p>
+            <ul>
+              <li>
+                <a href="https://humanresources.illinois.edu/about/">About</a>
+              </li>
+              <li>
+                <a
+                  href="https://humanresources.illinois.edu/campus-holiday-schedule/"
+                  >Campus Holiday Schedule</a
+                >
+              </li>
+              <li>
+                <a href="https://youtu.be/k_65146S1oE">Site navigation help</a>
+              </li>
+              <li>
+                <a href="https://jobs.illinois.edu/">Jobs.illinois.edu</a>
+              </li>
+              <li><a href="https://www.hr.uillinois.edu/myinfo">MyUInfo</a></li>
+            </ul>
+          </ilw-content>
+          <ilw-content theme="gray">
+            <p class="ilw-heading">Connect</p>
+            <ul>
+              <li>
+                <a href="https://humanresources.illinois.edu/job-seekers/"
+                  >Are you a Job Seeker?</a
+                >
+              </li>
+              <li>
+                <a href="https://humanresources.illinois.edu/hr-contacts/"
+                  >Who is my unit HR Contact</a
+                >
+              </li>
+              <li>
+                <a href="https://humanresources.illinois.edu/about/contact-us/"
+                  >General HR Questions?</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://forms.office.com/Pages/ResponsePage.aspx?id=b35GRCxGok6CP3gA3lQ04-jFzRbA0DRNrWkKHhbJX_xUMU9VTEVPREZBMFFVS1Q4Q09MNTVLN0Q3SC4u"
+                  >Want to share website feedback?</a
+                >
+              </li>
+            </ul>
+          </ilw-content>
+        </ilw-columns>
       </ilw-footer>
       <script src="./data.js"></script>
       <script src="./app.js"></script>
