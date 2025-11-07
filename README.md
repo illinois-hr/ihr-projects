@@ -18,10 +18,10 @@ The IHR Hub Projects hosts multiple HR-related web projects:
 ```
 ihr-projects/
 ├── documents/              # HR documents project
-│   ├── assets/    # Template for new documents
+│   ├── assets/   
 │   ├── ccca/
 │   ├── .../
-│   └── templates/
+│   └── templates/  # Template for new documents
 │
 ├── trainings/             # Training modules project
 │   ├── guidance-on-the-go/
