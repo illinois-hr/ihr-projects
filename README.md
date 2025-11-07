@@ -12,7 +12,6 @@ The IHR Hub Projects hosts multiple HR-related web projects:
 
 **Live Site:** https://ihr-hub.illinois.edu
 
----
 
 ## Repository Structure
 
