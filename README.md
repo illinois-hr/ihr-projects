@@ -1,4 +1,4 @@
-# IHR Hub Projects - Contributor Guide
+# IHR Hub Projects
 
 Welcome to the IHR Hub Projects repository! This is home to multiple Illinois Human Resources web projects, including accessible documents, training modules, and future applications. This guide will help you get started contributing, whether you're adding a document, updating a training module, or working on a new app.
 
