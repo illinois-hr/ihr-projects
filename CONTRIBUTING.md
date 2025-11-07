@@ -124,7 +124,7 @@ If you're making big changes:
    - Once approved, merge it
 
 
-### Method 3: Git Command Line (For Developers)
+### Method 3: Git Command Line (Advanced)
 
 Full control with terminal commands.
 
