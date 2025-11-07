@@ -615,7 +615,7 @@ git commit -m "Restore deleted file"
 - ✅ Add `alt` text to all images
 - ✅ Use proper heading hierarchy (h1 → h2 → h3)
 - ✅ Ensure sufficient color contrast
-- ✅ Make links descriptive (not just "click here")
+- ✅ Make links descriptive (not just "click here" or "learn more")
 
 
 ### **Resources**
