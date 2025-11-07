@@ -4,22 +4,11 @@
 
 There are three ways to contribute. Pick what works best for you:
 
-### **Method 1: GitHub Web Interface** (No installation needed)
-- Best for: Quick edits, single file changes, beginners  
-
-### **Method 2: GitHub Desktop** (User-friendly app)
-- Best for: Regular contributors, working offline, multiple files 
-
-### **Method 3: Git Command Line** (Most powerful)
-- Best for: Developers, advanced users, automation 
-
----
-
-## Method 1: GitHub Web Interface (Easiest)
+### Method 1: GitHub Web Interface (Easiest)
 
 No installation required! Work directly in your browser.
 
-### **Adding a New File**
+#### **Adding a New File**
 
 1. **Navigate to the project folder:**
    - Go to https://github.com/illinois-hr/ihr-projects
@@ -43,7 +32,7 @@ No installation required! Work directly in your browser.
    - Wait 1-2 minutes
    - Visit: `https://ihr-hub.illinois.edu/[path-to-your-file]`
 
-### **Editing an Existing File**
+#### **Editing an Existing File**
 
 1. Navigate to the file
 2. Click the **pencil icon** (✏️) to edit
@@ -51,7 +40,7 @@ No installation required! Work directly in your browser.
 4. Scroll down and commit with a descriptive message
 5. Done! Live in 1-2 minutes.
 
-### **Uploading Multiple Files**
+#### **Uploading Multiple Files**
 
 1. Navigate to the destination folder
 2. Click **"Add file"** → **"Upload files"**
@@ -59,13 +48,12 @@ No installation required! Work directly in your browser.
 4. Add commit message
 5. Click **"Commit changes"**
 
----
 
-## Method 2: GitHub Desktop (Recommended for Most People)
+### Method 2: GitHub Desktop (Recommended for Most People)
 
 A friendly app that handles Git for you - no command line needed!
 
-### **One-Time Setup**
+#### **One-Time Setup**
 
 1. **Install GitHub Desktop:**
    - Download: https://desktop.github.com/
@@ -80,7 +68,7 @@ A friendly app that handles Git for you - no command line needed!
 
    You now have a local copy of all project files!
 
-### **Every Time You Start Working**
+#### **Every Time You Start Working**
 
 1. **Get the latest changes:**
    - Open GitHub Desktop
@@ -114,7 +102,7 @@ A friendly app that handles Git for you - no command line needed!
    - Click **"Push origin"** (top right)
    - Your changes are now live on the web in 1-2 minutes!
 
-### **Working on a Feature Branch (Advanced)**
+#### **Working on a Feature Branch (Advanced)**
 
 If you're making big changes:
 
@@ -135,13 +123,12 @@ If you're making big changes:
    - Add description and request review
    - Once approved, merge it
 
----
 
-## Method 3: Git Command Line (For Developers)
+### Method 3: Git Command Line (For Developers)
 
 Full control with terminal commands.
 
-### **One-Time Setup**
+#### **One-Time Setup**
 
 1. **Install Git:**
    - **Windows:** Download from https://git-scm.com/
@@ -161,15 +148,15 @@ Full control with terminal commands.
    cd ihr-projects
    ```
 
-### **Basic Workflow**
+#### **Basic Workflow**
 
-#### **Starting Work**
+##### **Starting Work**
 ```bash
 # Always start by getting latest changes
 git pull origin main
 ```
 
-#### **Making Changes**
+##### **Making Changes**
 ```bash
 # Check what branch you're on
 git branch
@@ -181,7 +168,7 @@ git checkout -b feature/your-feature-name
 # Add new files, modify existing ones, etc.
 ```
 
-#### **Checking Your Changes**
+##### **Checking Your Changes**
 ```bash
 # See what files you've changed
 git status
@@ -193,7 +180,7 @@ git diff
 git diff path/to/file.html
 ```
 
-#### **Committing Changes**
+##### **Committing Changes**
 ```bash
 # Stage specific files
 git add documents/policies/new-policy.html
@@ -209,7 +196,7 @@ git commit -m "Add retirement benefits policy"
 git commit -m "Add retirement benefits policy" -m "Added comprehensive guide including eligibility, enrollment process, and contribution limits."
 ```
 
-#### **Pushing Changes**
+##### **Pushing Changes**
 ```bash
 # Push to GitHub (first time on new branch)
 git push -u origin feature/your-feature-name
@@ -218,7 +205,7 @@ git push -u origin feature/your-feature-name
 git push
 ```
 
-#### **Creating a Pull Request**
+##### **Creating a Pull Request**
 ```bash
 # After pushing, go to GitHub web interface
 # You'll see a banner to create a Pull Request
@@ -226,9 +213,9 @@ git push
 gh pr create --title "Add new training module" --body "Description of changes"
 ```
 
-### **Common Git Commands**
+#### **Common Git Commands**
 
-#### **Viewing History**
+##### **Viewing History**
 ```bash
 # See commit history
 git log
@@ -240,7 +227,7 @@ git log --oneline
 git show
 ```
 
-#### **Working with Branches**
+##### **Working with Branches**
 ```bash
 # List all branches
 git branch
@@ -255,7 +242,7 @@ git checkout -b new-branch-name
 git branch -d branch-name
 ```
 
-#### **Undoing Changes**
+##### **Undoing Changes**
 ```bash
 # Discard changes to a file (before staging)
 git checkout -- path/to/file.html
@@ -270,7 +257,7 @@ git reset --soft HEAD~1
 git reset --hard HEAD~1
 ```
 
-#### **Syncing with Remote**
+##### **Syncing with Remote**
 ```bash
 # Fetch changes without merging
 git fetch origin
@@ -283,9 +270,9 @@ git fetch origin
 git reset --hard origin/main
 ```
 
-### **Advanced Workflows**
+#### **Advanced Workflows**
 
-#### **Stashing Work in Progress**
+##### **Stashing Work in Progress**
 ```bash
 # Save current work temporarily
 git stash
@@ -300,13 +287,13 @@ git stash pop
 git stash apply stash@{0}
 ```
 
-#### **Cherry-Picking Commits**
+##### **Cherry-Picking Commits**
 ```bash
 # Apply a specific commit from another branch
 git cherry-pick <commit-hash>
 ```
 
-#### **Rebasing (Advanced)**
+##### **Rebasing (Advanced)**
 ```bash
 # Rebase your branch on latest main
 git checkout feature/your-branch
@@ -316,7 +303,6 @@ git rebase main
 git rebase -i HEAD~3
 ```
 
----
 
 ## Contributing to Specific Projects
 
@@ -353,9 +339,8 @@ git rebase -i HEAD~3
 2. Set up your project structure
 3. Commit and push
 
----
 
-## 📝 Writing Good Commit Messages
+## Writing Good Commit Messages
 
 Commit messages help everyone understand what changed and why.
 
@@ -416,8 +401,6 @@ docs(readme): update contributor guide
 style(trainings): improve mobile responsive layout
 ```
 
----
-
 ## Code Review & Pull Requests
 
 For significant changes, use Pull Requests for team review.
@@ -462,7 +445,6 @@ For significant changes, use Pull Requests for team review.
 5. Submit review: Approve, Request changes, or Comment
 6. Approve when ready to merge
 
----
 
 ## HTML & Web Development Basics
 
@@ -534,7 +516,6 @@ For significant changes, use Pull Requests for team review.
 
 ```
 
----
 
 ## Pre-Commit Checklist
 
@@ -549,7 +530,6 @@ Before committing, make sure:
 - [ ] Commit message is clear and descriptive
 - [ ] You've pulled latest changes before pushing
 
----
 
 ## Troubleshooting
 
@@ -613,7 +593,6 @@ git checkout <commit-hash> -- path/to/file.html
 git commit -m "Restore deleted file"
 ```
 
----
 
 ## Security & Best Practices
 
@@ -638,7 +617,6 @@ git commit -m "Restore deleted file"
 - ✅ Ensure sufficient color contrast
 - ✅ Make links descriptive (not just "click here")
 
----
 
 ### **Resources**
 
@@ -654,15 +632,13 @@ git commit -m "Restore deleted file"
 - Illinois Web Toolkit: https://webtheme.illinois.edu/
 - University Brand Guidelines: https://brand.illinois.edu/
 
----
 
 ## 🎉 Thank You!
 
 Thanks for contributing to IHR Hub Projects! Your work helps make IHR resources more accessible and useful for the entire Illinois community.
 
----
 
-## 📋 Quick Reference
+## Quick Reference
 
 ### **First Time Setup:**
 ```bash
@@ -706,6 +682,5 @@ git commit -m "msg"     # Commit changes
 git push                # Upload to GitHub
 ```
 
----
 
 *Last updated: November 7, 2025*
