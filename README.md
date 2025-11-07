@@ -2,7 +2,7 @@
 
 Welcome to the IHR Hub Projects repository! This is home to multiple Illinois Human Resources web projects, including accessible documents, training modules, and future applications. This guide will help you get started contributing, whether you're adding a document, updating a training module, or working on a new app.
 
-## 🌐 What's in This Repository?
+## What's in This Repository?
 
 The IHR Hub Projects hosts multiple HR-related web projects:
 
@@ -14,7 +14,7 @@ The IHR Hub Projects hosts multiple HR-related web projects:
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 ihr-projects/
@@ -38,5 +38,3 @@ ihr-projects/
 ```
 
 Each project folder is self-contained with its own templates, styles, and resources.
-
----

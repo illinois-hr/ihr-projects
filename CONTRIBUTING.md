@@ -23,11 +23,11 @@ No installation required! Work directly in your browser.
 
 1. **Navigate to the project folder:**
    - Go to https://github.com/illinois-hr/ihr-projects
-   - Click into the folder where you want to add content (e.g., `documents/policies/` or `trainings/module-1/`)
+   - Click into the folder where you want to add content (e.g., `documents/ccca` or `trainings/instant-insights`)
 
 2. **Create a new file:**
    - Click **"Add file"** → **"Create new file"**
-   - Name your file (e.g., `benefits-policy.html` or `lesson-1.html`)
+   - Name your file (e.g., `benefits-policy.html`)
 
 3. **Add your content:**
    - Paste in template content or write your own
