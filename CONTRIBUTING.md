@@ -1,4 +1,4 @@
-# Contributing
+# Contributing Guide
 
 ## Getting Started: Choose Your Workflow
 
