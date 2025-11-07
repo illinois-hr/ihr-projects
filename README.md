@@ -19,15 +19,13 @@ The IHR Hub Projects hosts multiple HR-related web projects:
 ihr-projects/
 ├── documents/              # HR documents project
 │   ├── _template.html     # Template for new documents
-│   ├── policies/
-│   ├── procedures/
-│   └── handbooks/
+│   ├── ccca/
+│   ├── ler/
+│   └── hrais/
 │
 ├── trainings/             # Training modules project
-│   ├── _template.html     # Template for training pages
-│   ├── module-1/
-│   ├── module-2/
-│   └── assets/           # Shared training resources
+│   ├── guidance-on-the-go/
+│   └── instant-insights//   
 │
 ├── [future-projects]/     # New projects go here
 │
