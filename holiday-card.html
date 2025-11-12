@@ -21,39 +21,64 @@
     overflow-x:hidden;
   }
 
-  .wrap{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:32px}
-  .stage{position:relative;border:1px solid rgba(255,255,255,.08);border-radius:24px;overflow:hidden;background:radial-gradient(ellipse at top,rgba(255,255,255,.06),transparent 65%),radial-gradient(ellipse at bottom,rgba(255,255,255,.05),transparent 60%)}
-  .board{min-height:1100px;display:grid;place-items:center;padding:32px}
-
-  /* Responsive scaling wrapper */
-  .responsive-wrap{
-    width:100%;
+  .wrap{
+    position:relative;
+    z-index:1;
+    max-width:1400px;
+    margin:0 auto;
+    padding:32px;
+  }
+  .stage{
+    position:relative;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at top,rgba(255,255,255,.06),transparent 65%),
+      radial-gradient(ellipse at bottom,rgba(255,255,255,.05),transparent 60%);
+  }
+  .board{
+    min-height:900px;
     display:flex;
+    align-items:center;
     justify-content:center;
-    transform-origin:top center;
-    transform:scale(1);
+    padding:32px;
   }
 
-  @media (max-width:1100px){
-    .responsive-wrap{transform:scale(0.85);}
+  @media (max-width:600px){
+    .wrap{padding:16px}
+    .board{min-height:680px;padding:16px}
   }
-  @media (max-width:900px){
-    .responsive-wrap{transform:scale(0.7);}
-  }
-  @media (max-width:650px){
-    .responsive-wrap{transform:scale(0.55);}
-  }
-  @media (max-width:480px){
-    .responsive-wrap{transform:scale(0.45);}
+
+  /* Container that we scale with JS */
+  .scene-shell{
+    position:relative;
+    width:100%;
+    max-width:860px;
+    /* height is set via JS to match scaled content */
   }
 
   /* Snow BG */
   #bg-snow{position:fixed;inset:0;pointer-events:none;opacity:.9;z-index:0}
 
-  /* ENVELOPE */
-  .envelope-scene{position:relative;width:860px;height:540px;perspective:220px}
+  /* ENVELOPE SCENE (logical size 860x540) */
+  .envelope-scene{
+    position:absolute;
+    top:0;
+    left:50%;
+    width:860px;
+    height:540px;
+    perspective:220px;
+    transform-origin:top center;
+    transform:translateX(-50%) scale(1);
+  }
+
   .envelope{
-    position:absolute;inset:0;transform-style:preserve-3d;cursor:pointer;z-index:3;
+    position:absolute;
+    inset:0;
+    transform-style:preserve-3d;
+    cursor:pointer;
+    z-index:3;
     filter:drop-shadow(0 24px 80px rgba(0,0,0,.55));
     animation:flyIn 1.05s cubic-bezier(.22,.95,.18,1) both,sway 3.2s ease-in-out 1.05s infinite;
   }
@@ -62,10 +87,18 @@
     55%{transform:translate(7vw,-6vh) rotate(7deg) rotateY(8deg);opacity:1}
     100%{transform:translate(0,0) rotate(0)}
   }
-  @keyframes sway{0%{transform:translateX(0)}50%{transform:translateX(10px)}100%{transform:translateX(0)}}
+  @keyframes sway{
+    0%{transform:translateX(0)}
+    50%{transform:translateX(10px)}
+    100%{transform:translateX(0)}
+  }
 
   .mail-body{
-    position:absolute;left:26px;right:26px;top:26px;bottom:26px;border-radius:16px;z-index:1;overflow:hidden;
+    position:absolute;
+    left:26px;right:26px;top:26px;bottom:26px;
+    border-radius:16px;
+    z-index:1;
+    overflow:hidden;
     background:
       radial-gradient(ellipse at 30% 20%, rgba(0,0,0,.05), transparent 60%),
       repeating-linear-gradient(0deg, rgba(0,0,0,.018), rgba(0,0,0,.018) 2px, transparent 2px, transparent 4px),
@@ -77,8 +110,11 @@
   }
 
   .lid{
-    position:absolute; left:36px; right:36px; top:160px;
-    height:0; z-index:0; pointer-events:none;
+    position:absolute;
+    left:36px;right:36px;top:160px;
+    height:0;
+    z-index:0;
+    pointer-events:none;
     --lid-open-offset-x: 0px;
     --lid-open-offset-y: -260px;
     --lid-open-offset-z: 0px;
@@ -86,16 +122,17 @@
   }
   .lid::before{
     content:"";
-    position:absolute; left:0; right:0; top:0; margin:auto;
-    width:0; height:0;
+    position:absolute;
+    left:0;right:0;top:0;margin:auto;
+    width:0;height:0;
     border-left:320px solid transparent;
     border-right:320px solid transparent;
     border-bottom:125px solid #fff;
-    transform-origin: 50% 0%;
-    backface-visibility: visible;
-    transform: rotateX(180deg);
-    transition: transform .6s cubic-bezier(.22,.9,.18,1);
-    filter: drop-shadow(0 8px 0 rgba(0,0,0,.12));
+    transform-origin:50% 0%;
+    backface-visibility:visible;
+    transform:rotateX(180deg);
+    transition:transform .6s cubic-bezier(.22,.9,.18,1);
+    filter:drop-shadow(0 8px 0 rgba(0,0,0,.12));
   }
   .lid-open::before{
     transform:
@@ -105,43 +142,127 @@
       translateZ(var(--lid-open-offset-z));
   }
 
-  .face { position:absolute; left:60px; right:60px; top:62px; bottom:62px; z-index:3; color:var(--illini-navy); pointer-events:none }
+  .face{
+    position:absolute;
+    left:60px;right:60px;top:62px;bottom:62px;
+    z-index:3;
+    color:var(--illini-navy);
+    pointer-events:none;
+  }
   .from{font-size:18px;opacity:.95}
-  .to{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);font-weight:800;font-size:36px;letter-spacing:.04em;font-family:'Montserrat',sans-serif}
+  .to{
+    position:absolute;
+    left:50%;top:48%;
+    transform:translate(-50%,-50%);
+    font-weight:800;
+    font-size:36px;
+    letter-spacing:.04em;
+    font-family:'Montserrat',sans-serif;
+  }
   .stamp{
-    position:absolute;right:0;top:-10px;width:110px;height:130px;border-radius:10px;background:#fff;
-    box-shadow:inset 0 0 0 2px rgba(0,0,0,.12),0 6px 14px rgba(0,0,0,.18);display:grid;place-items:center;padding:10px}
+    position:absolute;
+    right:0;top:-10px;
+    width:110px;height:130px;
+    border-radius:10px;
+    background:#fff;
+    box-shadow:inset 0 0 0 2px rgba(0,0,0,.12),0 6px 14px rgba(0,0,0,.18);
+    display:grid;
+    place-items:center;
+    padding:10px;
+  }
   .stamp svg{width:100%;height:100%}
   .stamp .bg{fill:#0f1b35}
   .stamp .ring{fill:var(--illini-navy)}
   .stamp .flake{stroke:#ffffff;stroke-width:3;stroke-linecap:round}
 
-  /* CARD (made a tiny bit taller) */
+  .cta-text{
+    position:absolute;
+    top:-26px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:14px;
+    opacity:.95;
+  }
+
+  /* CARD */
   .scene{
-    position:absolute; top:0; left:0;
-    width:820px; height:560px; /* was 520 */
+    position:absolute;
+    top:0;left:0;
+    width:820px;
+    height:560px;
     perspective:1400px;
-    z-index:1; pointer-events:none; opacity:0;
+    z-index:1;
+    pointer-events:none;
+    opacity:0;
     transform:translateY(150px) scale(1);
   }
-  .panel3d{position:absolute;inset:0;border-radius:20px;box-shadow:0 16px 60px rgba(0,0,0,.45),0 0 0 1px rgba(0,0,0,.25);transform-style:preserve-3d;backface-visibility:hidden}
-  .inside{z-index:1;background:var(--paper);color:var(--ink);border:3px solid var(--illini-orange);cursor:pointer}
-  .cover-right{z-index:2;background:var(--illini-orange);color:#fff;border:3px solid var(--illini-orange);transform-origin:left;transition:transform .9s cubic-bezier(.22,.61,.36,1);cursor:pointer}
+  .panel3d{
+    position:absolute;
+    inset:0;
+    border-radius:20px;
+    box-shadow:0 16px 60px rgba(0,0,0,.45),0 0 0 1px rgba(0,0,0,.25);
+    transform-style:preserve-3d;
+    backface-visibility:hidden;
+  }
+  .inside{
+    z-index:1;
+    background:var(--paper);
+    color:var(--ink);
+    border:3px solid var(--illini-orange);
+    cursor:pointer;
+  }
+  .cover-right{
+    z-index:2;
+    background:var(--illini-orange);
+    color:#fff;
+    border:3px solid var(--illini-orange);
+    transform-origin:left;
+    transition:transform .9s cubic-bezier(.22,.61,.36,1);
+    cursor:pointer;
+  }
   .open .cover-right{transform:rotateY(-180deg)}
-  .cover-left{z-index:0;transform-origin:right;background:var(--illini-navy);border:3px solid var(--illini-navy);pointer-events:none}
+  .cover-left{
+    z-index:0;
+    transform-origin:right;
+    background:var(--illini-navy);
+    border:3px solid var(--illini-navy);
+    pointer-events:none;
+  }
 
-  .inside-grid{display:grid;grid-template-columns:1fr 1fr;height:100%;border-radius:20px;overflow:hidden}
-  .inside-left{padding:28px 32px;display:flex;flex-direction:column;justify-content:space-between}
+  .inside-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    height:100%;
+    border-radius:20px;
+    overflow:hidden;
+  }
+  .inside-left{
+    padding:28px 32px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
   .title{
     font-family:'Montserrat',sans-serif;
-    font-size:34px;font-weight:800;letter-spacing:.2px;color:var(--illini-orange)
+    font-size:34px;
+    font-weight:800;
+    letter-spacing:.2px;
+    color:var(--illini-orange);
   }
-  .msg{margin-top:12px;line-height:1.55;font-size:18px;white-space:pre-wrap}
+  .msg{
+    margin-top:12px;
+    line-height:1.55;
+    font-size:18px;
+    white-space:pre-wrap;
+  }
   .sig{
-    padding-top:14px;text-align:right;font-weight:700;font-size:18px;font-family:'Montserrat',sans-serif
+    padding-top:14px;
+    text-align:right;
+    font-weight:700;
+    font-size:18px;
+    font-family:'Montserrat',sans-serif;
   }
 
-  /* Keep the globe at the very top (top-right) */
   .inside-right{
     display:flex;
     justify-content:flex-end;
@@ -154,25 +275,32 @@
     height:auto;
     margin-top:0;
     border-radius:12px;
-    box-shadow:0 12px 28px rgba(0,0,0,.25)
+    box-shadow:0 12px 28px rgba(0,0,0,.25);
   }
 
-  /* Greeting on front */
   .greet{
     font-family:'Montserrat',sans-serif;
-    font-size:40px;font-weight:800;margin-top:12px;opacity:0;transform:translateY(8px)
+    font-size:40px;
+    font-weight:800;
+    margin-top:12px;
+    opacity:0;
+    transform:translateY(8px);
   }
   .greet-in{animation:gin .55s ease .15s forwards}
   @keyframes gin{to{opacity:1;transform:none}}
 
-  /* Adjust rise distance slightly to match taller card */
-  .rise-behind{ animation:riseBehind 700ms cubic-bezier(.2,.8,.2,1) forwards; opacity:1; }
+  .rise-behind{
+    animation:riseBehind 700ms cubic-bezier(.2,.8,.2,1) forwards;
+    opacity:1;
+  }
   @keyframes riseBehind{
     0%   { transform:translateY(150px) scale(1); opacity:.0 }
     20%  { opacity:1 }
     100% { transform:translateY(-340px) scale(1); }
   }
-  .settle-front{ animation:settleFront 600ms cubic-bezier(.18,.7,.2,1) forwards; }
+  .settle-front{
+    animation:settleFront 600ms cubic-bezier(.18,.7,.2,1) forwards;
+  }
   @keyframes settleFront{
     0%   { transform:translateY(-340px) }
     70%  { transform:translateY(-8px) }
@@ -181,9 +309,19 @@
 
   .on-top{ z-index:6; pointer-events:auto; opacity:1; }
 
-  /* Front cover logo styles */
-  .cover-content{display:grid;place-items:center;height:100%;text-align:center;padding:24px}
-  .ihr-logo{max-width:62%;height:auto;display:block;filter:drop-shadow(0 6px 16px rgba(0,0,0,.25))}
+  .cover-content{
+    display:grid;
+    place-items:center;
+    height:100%;
+    text-align:center;
+    padding:24px;
+  }
+  .ihr-logo{
+    max-width:62%;
+    height:auto;
+    display:block;
+    filter:drop-shadow(0 6px 16px rgba(0,0,0,.25));
+  }
   .open-hint{font-size:14px;opacity:.9;margin-top:10px}
 </style>
 </head>
@@ -193,8 +331,9 @@
 <div class="wrap">
   <div class="stage">
     <div class="board">
-      <div class="responsive-wrap">
-        <div class="envelope-scene" role="group" aria-label="Envelope and card">
+      <div class="scene-shell" id="sceneShell">
+        <div class="envelope-scene" id="envelopeScene" role="group" aria-label="Envelope and card">
+
           <!-- ENVELOPE -->
           <div class="envelope" id="envelope" aria-label="Click to Open envelope">
             <div class="mail-body"></div>
@@ -251,6 +390,7 @@ Illinois Human Resources</div>
 
             <div class="panel3d cover-left" id="coverL"></div>
           </div>
+
         </div>
       </div>
     </div>
@@ -260,18 +400,23 @@ Illinois Human Resources</div>
 <script>
 (() => {
   /* Snow BG */
-  const bg=document.getElementById('bg-snow'); const bctx=bg.getContext('2d'); let flakes=[];
+  const bg = document.getElementById('bg-snow');
+  const bctx = bg.getContext('2d');
+  let flakes = [];
+
   function resizeBg(){
-    bg.width=innerWidth; bg.height=innerHeight;
-    const n=Math.max(200,Math.round(bg.width*bg.height/10000));
-    flakes=Array.from({length:n},()=>({
-      x:Math.random()*bg.width,
-      y:Math.random()*bg.height,
-      r:Math.random()*2.2+1.2,
-      s:Math.random()*.8+.3,
-      o:Math.random()*.5+.35
-    }))
+    bg.width = innerWidth;
+    bg.height = innerHeight;
+    const n = Math.max(200, Math.round(bg.width * bg.height / 10000));
+    flakes = Array.from({length:n}, () => ({
+      x: Math.random()*bg.width,
+      y: Math.random()*bg.height,
+      r: Math.random()*2.2+1.2,
+      s: Math.random()*.8+.3,
+      o: Math.random()*.5+.35
+    }));
   }
+
   function loopBg(){
     bctx.clearRect(0,0,bg.width,bg.height);
     bctx.fillStyle='#fff';
@@ -290,20 +435,46 @@ Illinois Human Resources</div>
     bctx.globalAlpha=1;
     requestAnimationFrame(loopBg);
   }
-  addEventListener('resize',resizeBg);
+
+  /* Scale the whole scene to fit viewport */
+  const sceneShell = document.getElementById('sceneShell');
+  const envelopeScene = document.getElementById('envelopeScene');
+  const LOGICAL_W = 860;
+  const LOGICAL_H = 560; // a bit taller to allow card rise
+
+  function resizeScene(){
+    const vw = window.innerWidth;
+    const shellPadding = 32; // rough outer padding
+    const available = vw - shellPadding*2;
+    const scale = Math.min(1, available / LOGICAL_W);
+
+    envelopeScene.style.transform =
+      `translateX(-50%) scale(${scale})`;
+
+    // adjust shell height so nothing gets cut off
+    const extraRise = 220; // room for animation
+    sceneShell.style.height = (LOGICAL_H + extraRise) * scale + 'px';
+  }
+
+  window.addEventListener('resize', () => {
+    resizeBg();
+    resizeScene();
+  });
+
   resizeBg();
+  resizeScene();
   requestAnimationFrame(loopBg);
 
   /* Elements */
-  const env=document.getElementById('envelope');
-  const lid=document.getElementById('lid');
-  const note=document.getElementById('miniNote');
-  const cardScene=document.getElementById('cardScene');
-  const coverR=document.getElementById('coverR');
-  const inside=document.getElementById('inside');
-  const greet=document.getElementById('greetTitle');
+  const env = document.getElementById('envelope');
+  const lid = document.getElementById('lid');
+  const note = document.getElementById('miniNote');
+  const cardScene = document.getElementById('cardScene');
+  const coverR = document.getElementById('coverR');
+  const inside = document.getElementById('inside');
+  const greet = document.getElementById('greetTitle');
 
-  let step=0; // 0 closed, 1 lid open, 2 settled in front
+  let step = 0; // 0 closed, 1 lid open, 2 settled in front
 
   function riseFromBehind(){
     cardScene.classList.remove('on-top','settle-front');
@@ -346,6 +517,7 @@ Illinois Human Resources</div>
     if(!cardScene.classList.contains('on-top')) return;
     cardScene.classList.toggle('open');
   }
+
   coverR.addEventListener('click', toggleCard);
   inside.addEventListener('click', toggleCard);
 })();
