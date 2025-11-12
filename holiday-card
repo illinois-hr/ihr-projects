@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Illinois HR Holiday Card</title>
+<style>
+  /* Illinois brand core */
+  :root{
+    --illini-orange:#E84A27;
+    --illini-navy:#13294B;
+    --snow:#ffffff;
+    --paper:#fffaf4;
+    --ink:#0f172a;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{position:relative;background:linear-gradient(180deg,#0a1020 0%, #0b1530 60%, #0a1020 100%);color:#e6edf6;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+  .wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:28px}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  /* Snow background */
+  #bg-snow{position:fixed;inset:0;pointer-events:none;opacity:.85;z-index:0}
+
+  /* Stage */
+  .stage{position:relative;border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden;background:radial-gradient(ellipse at top,rgba(255,255,255,.06),transparent 65%),radial-gradient(ellipse at bottom,rgba(255,255,255,.05),transparent 60%)}
+  .board{position:relative;min-height:560px;display:grid;place-items:center;padding:28px}
+
+  /* ENVELOPE */
+  .envelope-scene{position:relative;width:520px;height:340px}
+  .envelope{position:absolute;inset:0;margin:auto;width:520px;height:340px;filter:drop-shadow(0 18px 50px rgba(0,0,0,.5));cursor:pointer}
+  /* body pocket */
+  .env-body{position:absolute;left:40px;right:40px;bottom:20px;top:110px;background:var(--illini-navy);border:2px solid #0c2047;border-bottom-left-radius:14px;border-bottom-right-radius:14px;overflow:hidden}
+  /* V-shaped front of pocket */
+  .env-front{position:absolute;left:40px;right:40px;bottom:20px;height:120px;}
+  .env-front:before{content:"";position:absolute;left:0;right:0;bottom:0;margin:auto;width:0;height:0;border-left:220px solid transparent;border-right:220px solid transparent;border-top:120px solid #0e2550}
+  /* lid triangle */
+  .env-lid{position:absolute;left:40px;right:40px;top:20px;height:0;transform-origin:top center}
+  .env-lid:before{content:"";position:absolute;left:0;right:0;top:0;margin:auto;width:0;height:0;border-left:220px solid transparent;border-right:220px solid transparent;border-bottom:150px solid var(--illini-orange);filter:drop-shadow(0 6px 0 rgba(0,0,0,.15))}
+  /* letter */
+  .env-letter{position:absolute;left:60px;right:60px;top:90px;height:170px;background:var(--paper);border-radius:10px;border:2px solid #f2e7d8;display:grid;place-items:center;overflow:hidden;z-index:3;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+  .env-crest{position:absolute;left:50%;transform:translateX(-50%);top:10px;background:var(--illini-orange);width:48px;height:48px;border-radius:8px;display:grid;place-items:center;color:white;font-weight:900;font-family:Georgia,serif;letter-spacing:.5px}
+  .env-text{color:#0f172a;text-align:center;padding:16px}
+  .env-text h2{margin:10px 0 6px 0;font-size:24px;color:var(--illini-navy)}
+  .env-text p{margin:0;font-size:14px;opacity:.9}
+  .mini-note{position:absolute;inset:auto 0 -22px 0;text-align:center;font-size:12px;color:#fff;opacity:.95}
+
+  /* Envelope wind-in + sway */
+  .wind-in{animation:windin .9s cubic-bezier(.22,.9,.18,1) forwards, sway 3.2s ease-in-out 1s infinite}
+  @keyframes windin{from{transform:translate(-60vw,-30vh) rotate(-18deg) scale(.9);opacity:0}to{transform:translate(0,0) rotate(0) scale(1);opacity:1}}
+  @keyframes sway{0%{transform:translateX(0) rotate(0)}50%{transform:translateX(8px) rotate(0.6deg)}100%{transform:translateX(0) rotate(0)}}to{transform:translateY(0) scale(1);opacity:1}}
+
+  /* CARD (folding) */
+  .scene{position:relative;perspective:1200px;width:520px;height:340px}
+  .panel3d{position:absolute;inset:0;border-radius:18px;box-shadow:0 14px 50px rgba(0,0,0,.45),0 0 0 1px rgba(0,0,0,.25);transform-style:preserve-3d;backface-visibility:hidden}
+  .inside{background:var(--paper);color:var(--ink);border:2px solid var(--illini-orange);cursor:pointer}
+  .cover{background:var(--illini-orange);color:#fff;border:2px solid var(--illini-orange)}
+  .cover-right{transform-origin:left;transition:transform .9s cubic-bezier(.22,.61,.36,1);cursor:pointer}
+  .open .cover-right{transform:rotateY(-180deg)}
+  .cover-left{transform-origin:right}
+  .inside-grid{display:grid;grid-template-columns:1fr 1fr;height:100%;border-radius:18px;overflow:hidden}
+  .inside-left{padding:22px 26px;display:flex;flex-direction:column;justify-content:space-between}
+  .title{font-size:24px;font-weight:800;letter-spacing:.2px;color:var(--illini-orange)}
+  .msg{margin-top:10px;line-height:1.5;white-space:pre-wrap}
+  .sig{padding-top:12px;text-align:right;font-weight:600}
+  .inside-right{position:relative;padding:16px;display:grid;place-items:center}
+
+  /* Snowglobe */
+  .globe{position:relative;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,.75) 30%, rgba(230,242,255,.6) 55%, rgba(200,220,255,.35) 75%, rgba(180,200,255,.18) 100%);box-shadow:inset 0 0 30px rgba(255,255,255,.5), inset 0 -16px 40px rgba(0,0,0,.12);overflow:hidden;border:2px solid rgba(255,255,255,.6)}
+  .globe-base{position:absolute;left:50%;transform:translateX(-50%);bottom:-32px;width:160px;height:56px;background:linear-gradient(180deg,#3a2a18,#1f140a);border-radius:16px 16px 8px 8px;box-shadow:0 8px 16px rgba(0,0,0,.35)}
+  .globe-label{position:absolute;left:50%;transform:translate(-50%,-4px);bottom:8px;color:#f1e7d6;font-size:11px;opacity:.95}
+  .globe svg{position:absolute;inset:0}
+  .flake{fill:#fff;opacity:.9}
+
+  /* CTA tiny label */
+  .cta{position:absolute;left:50%;transform:translateX(-50%);bottom:-28px;font-size:12px;opacity:.85;letter-spacing:.02em}
+
+  /* Transitions between scenes */
+  .hidden{display:none}
+  .fade-in{animation:fadein .5s ease forwards}
+  @keyframes fadein{from{opacity:0}to{opacity:1}}
+
+  /* Helper button */
+  .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .btn{appearance:none;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#e6edf6;border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:600}
+  .btn:hover{background:rgba(255,255,255,.12)}
+  /* Layering to avoid "all blue" */
+  .env-body{z-index:1}
+  .env-lid{z-index:2}
+  .env-letter{z-index:3; box-shadow:0 10px 30px rgba(0,0,0,.3)}
+  .mini-note{color:#fff}
+</style>
+</head>
+<body>
+<canvas id="bg-snow" aria-hidden></canvas>
+<div class="wrap">
+  <div class="topbar">
+    <div>
+      <h1 style="margin:0;font-size:20px">Illinois Human Resources • Holiday Card</h1>
+      <div style="opacity:.75;font-size:13px">Illinois colors. Envelope fly-in. Snowglobe with campus icons.</div>
+    </div>
+    <button class="btn" id="reset">Replay intro</button>
+  </div>
+
+  <div class="stage">
+    <div class="board">
+      <!-- ENVELOPE INTRO -->
+      <div id="intro" class="envelope-scene" role="group" aria-label="Animated envelope">
+        <div class="envelope wind-in" id="envelope">
+          <div class="env-body"></div>
+          <div class="env-front"></div>
+          <div class="env-lid" id="envLid"></div>
+          <div class="env-letter">
+            <div class="env-crest">I</div>
+            <div class="env-text">
+              <h2>Seasonal greetings</h2>
+              <p>from Illinois Human Resources</p>
+            </div>
+          </div>
+          <div class="mini-note" id="miniNote">click to open your card</div>
+        </div>
+      </div>
+
+      <!-- CARD SCENE (appears after envelope click) -->
+      <div id="cardScene" class="scene hidden" role="group" aria-label="Holiday card">
+        <!-- Inside -->
+        <div class="panel3d inside" id="inside">
+          <div class="inside-grid">
+            <div class="inside-left">
+              <div>
+                <div class="title" id="tTitle">Happy Holidays</div>
+                <div class="msg" id="tMsg">Wishing you peace, joy, and a bright new year.
+Thank you for everything you do.</div>
+              </div>
+              <div class="sig" id="tSig">Illinois Human Resources</div>
+            </div>
+            <div class="inside-right">
+              <!-- Snowglobe with silhouettes of Alma & Altgeld -->
+              <div class="globe" aria-label="Snowglobe with Alma and Altgeld silhouettes">
+                <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden>
+                  <!-- ground snow -->
+                  <ellipse cx="100" cy="165" rx="120" ry="30" fill="rgba(255,255,255,.9)" />
+                  <!-- Altgeld tower silhouette (simplified) -->
+                  <g fill="var(--illini-navy)">
+                    <rect x="128" y="82" width="26" height="58" rx="2"/>
+                    <polygon points="141,60 155,82 127,82" />
+                    <rect x="135" y="98" width="12" height="14" fill="#d9e2f1"/>
+                    <rect x="135" y="116" width="12" height="14" fill="#d9e2f1"/>
+                  </g>
+                  <!-- Alma Mater silhouette (very simplified) -->
+                  <g fill="var(--illini-orange)">
+                    <rect x="40" y="110" width="40" height="30" rx="3"/>
+                    <circle cx="60" cy="98" r="10"/>
+                    <rect x="29" y="115" width="62" height="10" />
+                  </g>
+                  <!-- flurries inside globe -->
+                  <g id="flakes"></g>
+                </svg>
+                <div class="globe-base"></div>
+                <div class="globe-label">Alma & Altgeld</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right cover -->
+        <div class="panel3d cover cover-right" id="coverR">
+          <div style="display:grid;place-items:center;height:100%;text-align:center;padding:20px">
+            <div style="width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.18)">
+              <div style="width:34px;height:34px;border-radius:50%;border:3px solid #fff;position:relative"></div>
+            </div>
+            <div style="font-size:28px;font-weight:800;margin-top:10px">Season’s Greetings</div>
+            <div class="cta">click to open</div>
+          </div>
+        </div>
+        <!-- Left cover (back) -->
+        <div class="panel3d cover cover-left" id="coverL" style="background:var(--illini-navy);border-color:var(--illini-navy)"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* Background snow */
+  const bg = document.getElementById('bg-snow');
+  const bctx = bg.getContext('2d');
+  let flakes=[];
+  function resizeBg(){ bg.width = innerWidth; bg.height = innerHeight; makeFlakes(); }
+  function makeFlakes(){ const n = Math.max(120, Math.round(bg.width*bg.height/14000)); flakes = Array.from({length:n},()=>({x:Math.random()*bg.width,y:Math.random()*bg.height,r:Math.random()*2+1,s:Math.random()*.6+.25,o:Math.random()*.5+.35})); }
+  function loopBg(){
+    bctx.clearRect(0,0,bg.width,bg.height);
+    bctx.fillStyle='#ffffff';
+    for(const f of flakes){
+      bctx.globalAlpha=f.o;
+      bctx.beginPath(); bctx.arc(f.x,f.y,f.r,0,Math.PI*2); bctx.fill();
+      f.y += f.s + 0.2; f.x += Math.sin(f.y*0.015)*0.35;
+      if(f.y>bg.height+8){ f.y=-10; f.x=Math.random()*bg.width; }
+    }
+    bctx.globalAlpha=1;
+    requestAnimationFrame(loopBg);
+  }
+  addEventListener('resize', resizeBg);
+  resizeBg();
+  requestAnimationFrame(loopBg);
+  // ensure snow is behind everything
+  bg.style.zIndex = '0'; // ensure behind content
+
+  /* Intro envelope -> card */
+  const intro = document.getElementById('intro');
+  const envelope = document.getElementById('envelope');
+  const envLid = document.getElementById('envLid');
+  const miniNote = document.getElementById('miniNote');
+  const cardScene = document.getElementById('cardScene');
+  const scene = cardScene; // for class toggles
+  const coverR = document.getElementById('coverR');
+  const inside = document.getElementById('inside');
+  const resetBtn = document.getElementById('reset');
+
+  let cardOpen=false; let phase='intro'; let envelopeOpened=false;
+
+  function showCardScene(){
+    // slide letter up out of envelope and swap to card
+    intro.classList.add('hidden');
+    cardScene.classList.remove('hidden');
+    cardScene.classList.add('fade-in');
+    cardOpen=false; scene.classList.remove('open');
+    // auto-open animation, then stop
+    setTimeout(()=>{ scene.classList.add('open'); cardOpen=true; }, 600);
+  }
+
+  function openEnvelope(){
+    // flip the lid then show CTA; click any part to continue
+    envLid.style.transition='transform .6s ease';
+    envLid.style.transform='rotateX(160deg)';
+    miniNote.style.opacity='1';
+  }
+
+  envelope.addEventListener('click',()=>{
+    if(phase==='intro'){
+      phase='card';
+      showCardScene();
+      return;
+    }
+  });
+
+  // After fly-in, open lid
+  setTimeout(openEnvelope, 900);
+
+  // Two-step interaction: 1) click to open envelope, 2) click again to show card
+  envelope.addEventListener('click',()=>{
+    if(phase==='intro' && !envelopeOpened){
+      // First click opens the flap and slides the letter up
+      envelopeOpened = true;
+      envLid.style.transition='transform .6s ease';
+      envLid.style.transform='rotateX(165deg)';
+      const letter = document.querySelector('.env-letter');
+      letter.style.transition='transform .6s ease';
+      letter.style.transform='translateY(-18px)';
+      miniNote.textContent = 'click again to open card';
+      return;
+    }
+    if(phase==='intro' && envelopeOpened){
+      phase='card';
+      // Transition to card scene, start closed
+      intro.classList.add('hidden');
+      cardScene.classList.remove('hidden');
+      cardScene.classList.add('fade-in');
+      scene.classList.remove('open');
+      cardOpen=false;
+      // Do not auto-open. User will click the cover.
+      return;
+    }
+  });
+
+  coverR.addEventListener('click',()=>{ cardOpen=true; scene.classList.add('open'); });
+  inside.addEventListener('click',()=>{ cardOpen=!cardOpen; scene.classList.toggle('open', cardOpen); });
+
+  cardOpen=false;
+      setTimeout(()=>{ scene.classList.add('open'); cardOpen=true; }, 500);
+    }, 500);
+  });
+
+  // safety fallback: if intro fails to render text for any reason, reveal card after 3s
+  setTimeout(()=>{ if(getComputedStyle(intro).display !== 'none' && intro.offsetParent !== null){ /* still visible */ return; } }, 0);
+
+  // Cover click opens card
+  function toggleCard(){ cardOpen=!cardOpen; if(cardOpen){ scene.classList.add('open'); } else { scene.classList.remove('open'); } }
+  coverR.addEventListener('click', toggleCard);
+  inside.addEventListener('click', toggleCard);
+  resetBtn.addEventListener('click',()=>{ location.reload(); });
+
+  /* Snowglobe flakes (inside globe) */
+  const flakeGroup = document.querySelector('.globe #flakes');
+  for(let i=0;i<60;i++){
+    const cx = Math.random()*200; const cy = Math.random()*200; const r = Math.random()*1.6+0.6; const d = Math.random()*5+3;
+    const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c.setAttribute('class','flake');
+    c.setAttribute('cx',cx.toFixed(1)); c.setAttribute('cy',cy.toFixed(1)); c.setAttribute('r',r.toFixed(2));
+    c.style.animation = `gfall ${d}s linear ${Math.random()*2}s infinite`;
+    flakeGroup.appendChild(c);
+  }
+  const style = document.createElement('style');
+  style.textContent = `@keyframes gfall{0%{transform:translateY(-8px)}100%{transform:translateY(18px)}}`;
+  document.head.appendChild(style);
+})();
+    // Extra guard: press Enter to jump straight to the open card if something blocks clicks
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter') {
+      intro.classList.add('hidden');
+      cardScene.classList.remove('hidden');
+      scene.classList.add('open');
+      cardOpen = true;
+    }
+  });
+})();
+</script>
+</body>
+</html>
