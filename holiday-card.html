@@ -12,15 +12,40 @@
 
 <style>
   :root{--illini-orange:#E84A27;--illini-navy:#13294B;--paper:#fffaf4;--ink:#0f172a}
-  *{box-sizing:border-box} html,body{height:100%;margin:0}
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
   body{
     background:linear-gradient(180deg,#0a1020 0%,#0b1530 60%,#0a1020 100%);
     color:#e6edf6;
     font-family:'Source Sans Pro',ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+    overflow-x:hidden;
   }
+
   .wrap{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:32px}
   .stage{position:relative;border:1px solid rgba(255,255,255,.08);border-radius:24px;overflow:hidden;background:radial-gradient(ellipse at top,rgba(255,255,255,.06),transparent 65%),radial-gradient(ellipse at bottom,rgba(255,255,255,.05),transparent 60%)}
   .board{min-height:1100px;display:grid;place-items:center;padding:32px}
+
+  /* Responsive scaling wrapper */
+  .responsive-wrap{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    transform-origin:top center;
+    transform:scale(1);
+  }
+
+  @media (max-width:1100px){
+    .responsive-wrap{transform:scale(0.85);}
+  }
+  @media (max-width:900px){
+    .responsive-wrap{transform:scale(0.7);}
+  }
+  @media (max-width:650px){
+    .responsive-wrap{transform:scale(0.55);}
+  }
+  @media (max-width:480px){
+    .responsive-wrap{transform:scale(0.45);}
+  }
 
   /* Snow BG */
   #bg-snow{position:fixed;inset:0;pointer-events:none;opacity:.9;z-index:0}
@@ -119,9 +144,9 @@
   /* Keep the globe at the very top (top-right) */
   .inside-right{
     display:flex;
-    justify-content:flex-end;  /* right side */
-    align-items:flex-start;    /* stick to the top */
-    padding:10px 16px 0 10px;  /* minimal top padding */
+    justify-content:flex-end;
+    align-items:flex-start;
+    padding:10px 16px 0 10px;
   }
   .inside-right img{
     align-self:flex-start;
@@ -145,7 +170,7 @@
   @keyframes riseBehind{
     0%   { transform:translateY(150px) scale(1); opacity:.0 }
     20%  { opacity:1 }
-    100% { transform:translateY(-340px) scale(1); } /* was -320px */
+    100% { transform:translateY(-340px) scale(1); }
   }
   .settle-front{ animation:settleFront 600ms cubic-bezier(.18,.7,.2,1) forwards; }
   @keyframes settleFront{
@@ -168,62 +193,64 @@
 <div class="wrap">
   <div class="stage">
     <div class="board">
-      <div class="envelope-scene" role="group" aria-label="Envelope and card">
-        <!-- ENVELOPE -->
-        <div class="envelope" id="envelope" aria-label="Click to Open envelope">
-          <div class="mail-body"></div>
-          <div class="lid" id="lid"></div>
-          <div class="face">
-            <div class="from">From: Illinois Human Resources</div>
-            <div class="to">To: Our Campus Community</div>
-            <div class="stamp" aria-hidden="true">
-              <svg viewBox="0 0 72 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Snowflake stamp">
-                <rect x="2" y="2" width="68" height="86" rx="6" class="ring"/>
-                <rect x="6" y="6" width="60" height="78" rx="4" class="bg"/>
-                <circle cx="36" cy="40" r="22" fill="#ffffff" opacity=".12"/>
-                <path class="flake" d="M36 22 v36 M24 34 h24 M28 28 l16 16 M44 28 l-16 16" />
-              </svg>
+      <div class="responsive-wrap">
+        <div class="envelope-scene" role="group" aria-label="Envelope and card">
+          <!-- ENVELOPE -->
+          <div class="envelope" id="envelope" aria-label="Click to Open envelope">
+            <div class="mail-body"></div>
+            <div class="lid" id="lid"></div>
+            <div class="face">
+              <div class="from">From: Illinois Human Resources</div>
+              <div class="to">To: Our Campus Community</div>
+              <div class="stamp" aria-hidden="true">
+                <svg viewBox="0 0 72 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Snowflake stamp">
+                  <rect x="2" y="2" width="68" height="86" rx="6" class="ring"/>
+                  <rect x="6" y="6" width="60" height="78" rx="4" class="bg"/>
+                  <circle cx="36" cy="40" r="22" fill="#ffffff" opacity=".12"/>
+                  <path class="flake" d="M36 22 v36 M24 34 h24 M28 28 l16 16 M44 28 l-16 16" />
+                </svg>
+              </div>
             </div>
+            <div class="cta-text" id="miniNote">Click to Open envelope</div>
           </div>
-          <div class="cta-text" id="miniNote">Click to Open envelope</div>
-        </div>
 
-        <!-- CARD -->
-        <div id="cardScene" class="scene" role="group" aria-label="Holiday card">
-          <div class="panel3d inside" id="inside">
-            <div class="inside-grid">
-              <div class="inside-left">
-                <div>
-                  <div class="title">Season’s Greetings from Illinois Human Resources.</div>
-                  <div class="msg">As the year winds down, we want to thank our campus colleagues for the work you do every day to support the University of Illinois community. Your dedication, service, and collaboration make this place stronger.
+          <!-- CARD -->
+          <div id="cardScene" class="scene" role="group" aria-label="Holiday card">
+            <div class="panel3d inside" id="inside">
+              <div class="inside-grid">
+                <div class="inside-left">
+                  <div>
+                    <div class="title">Season’s Greetings from Illinois Human Resources.</div>
+                    <div class="msg">As the year winds down, we want to thank our campus colleagues for the work you do every day to support the University of Illinois community. Your dedication, service, and collaboration make this place stronger.
 
 Wishing you a restful season, moments that recharge you, and a bright start to the new year.
 
 Thank you for all you do at Illinois.
 Illinois Human Resources</div>
+                  </div>
+                  <div class="sig">Illinois Human Resources</div>
                 </div>
-                <div class="sig">Illinois Human Resources</div>
-              </div>
-              <div class="inside-right">
-                <img id="globe" alt="Illinois snowglobe" src="https://humanresources.illinois.edu/wp-content/uploads/2025/09/SnowGlobe.png"/>
+                <div class="inside-right">
+                  <img id="globe" alt="Illinois snowglobe" src="https://humanresources.illinois.edu/wp-content/uploads/2025/09/SnowGlobe.png"/>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- FRONT COVER -->
-          <div class="panel3d cover-right" id="coverR" aria-label="Card front cover">
-            <div class="cover-content">
-              <img
-                class="ihr-logo"
-                src="https://humanresources.illinois.edu/wp-content/uploads/2025/11/IHR_Formal_Blue_RGB_Illinois-Human-Resources-Full-Color.png"
-                alt="Illinois Human Resources logo on the card cover"
-              />
-              <div class="greet" id="greetTitle">Season’s Greetings</div>
-              <div class="open-hint">click to open</div>
+            <!-- FRONT COVER -->
+            <div class="panel3d cover-right" id="coverR" aria-label="Card front cover">
+              <div class="cover-content">
+                <img
+                  class="ihr-logo"
+                  src="https://humanresources.illinois.edu/wp-content/uploads/2025/11/IHR_Formal_Blue_RGB_Illinois-Human-Resources-Full-Color.png"
+                  alt="Illinois Human Resources logo on the card cover"
+                />
+                <div class="greet" id="greetTitle">Season’s Greetings</div>
+                <div class="open-hint">click to open</div>
+              </div>
             </div>
-          </div>
 
-          <div class="panel3d cover-left" id="coverL"></div>
+            <div class="panel3d cover-left" id="coverL"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -234,9 +261,38 @@ Illinois Human Resources</div>
 (() => {
   /* Snow BG */
   const bg=document.getElementById('bg-snow'); const bctx=bg.getContext('2d'); let flakes=[];
-  function resizeBg(){ bg.width=innerWidth; bg.height=innerHeight; const n=Math.max(200,Math.round(bg.width*bg.height/10000)); flakes=Array.from({length:n},()=>({x:Math.random()*bg.width,y:Math.random()*bg.height,r:Math.random()*2.2+1.2,s:Math.random()*.8+.3,o:Math.random()*.5+.35})) }
-  function loopBg(){ bctx.clearRect(0,0,bg.width,bg.height); bctx.fillStyle='#fff'; for(const f of flakes){ bctx.globalAlpha=f.o; bctx.beginPath(); bctx.arc(f.x,f.y,f.r,0,Math.PI*2); bctx.fill(); f.y+=f.s+.28; f.x+=Math.sin(f.y*0.015)*0.5; if(f.y>bg.height+10){ f.y=-12; f.x=Math.random()*bg.width; } } bctx.globalAlpha=1; requestAnimationFrame(loopBg) }
-  addEventListener('resize',resizeBg); resizeBg(); requestAnimationFrame(loopBg);
+  function resizeBg(){
+    bg.width=innerWidth; bg.height=innerHeight;
+    const n=Math.max(200,Math.round(bg.width*bg.height/10000));
+    flakes=Array.from({length:n},()=>({
+      x:Math.random()*bg.width,
+      y:Math.random()*bg.height,
+      r:Math.random()*2.2+1.2,
+      s:Math.random()*.8+.3,
+      o:Math.random()*.5+.35
+    }))
+  }
+  function loopBg(){
+    bctx.clearRect(0,0,bg.width,bg.height);
+    bctx.fillStyle='#fff';
+    for(const f of flakes){
+      bctx.globalAlpha=f.o;
+      bctx.beginPath();
+      bctx.arc(f.x,f.y,f.r,0,Math.PI*2);
+      bctx.fill();
+      f.y+=f.s+.28;
+      f.x+=Math.sin(f.y*0.015)*0.5;
+      if(f.y>bg.height+10){
+        f.y=-12;
+        f.x=Math.random()*bg.width;
+      }
+    }
+    bctx.globalAlpha=1;
+    requestAnimationFrame(loopBg);
+  }
+  addEventListener('resize',resizeBg);
+  resizeBg();
+  requestAnimationFrame(loopBg);
 
   /* Elements */
   const env=document.getElementById('envelope');
