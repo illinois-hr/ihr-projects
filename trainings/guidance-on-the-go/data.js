@@ -62,7 +62,7 @@ const courses = [
     "durationText": "| 15 minutes",
     "link": "/trainings/guidance-on-the-go/addressing-performance-issues-formally-under-the-ppp",
     "category": ["All", "PPP"],
-    "image": "./addressing-performance-issues-formally-under-the-ppp/assets/keZPZxwx7MZ3T7hq.jpg",
+    "image": "./addressing-performance-issues-formally-under-the-app/assets/keZPZxwx7MZ3T7hq.jpg",
     "alt": "Angled view of textured stone steps, with shadows emphasizing the depth and surface details."
   },
   {
