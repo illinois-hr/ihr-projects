@@ -179,7 +179,8 @@
     top:-26px;
     left:50%;
     transform:translateX(-50%);
-    font-size:14px;
+    font-size:16px;
+    font-weight:600;
     opacity:.95;
   }
 
@@ -321,7 +322,26 @@
     display:block;
     filter:drop-shadow(0 6px 16px rgba(0,0,0,.25));
   }
-  .open-hint{font-size:14px;opacity:.9;margin-top:10px}
+  .open-hint{
+    font-size:20px;
+    font-weight:700;
+    opacity:.95;
+    margin-top:14px;
+  }
+
+  /* Focus styles for keyboard users */
+  .envelope:focus-visible,
+  .cover-right:focus-visible{
+    outline:3px solid #ffffff;
+    outline-offset:4px;
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce){
+    .envelope{
+      animation:flyIn 0.01s linear both; /* no sway */
+    }
+  }
 </style>
 </head>
 <body>
@@ -331,10 +351,18 @@
   <div class="stage">
     <div class="board">
       <div class="scene-shell" id="sceneShell">
-        <div class="envelope-scene" id="envelopeScene" role="group" aria-label="Envelope and card">
+        <div class="envelope-scene" id="envelopeScene" role="group" aria-label="Holiday envelope and card animation">
 
           <!-- ENVELOPE -->
-          <div class="envelope" id="envelope" aria-label="Click to Open envelope">
+          <div
+            class="envelope"
+            id="envelope"
+            role="button"
+            tabindex="0"
+            aria-label="Open holiday card from Illinois Human Resources"
+            aria-controls="cardScene"
+            aria-expanded="false"
+          >
             <div class="mail-body"></div>
             <div class="lid" id="lid"></div>
             <div class="face">
@@ -349,7 +377,7 @@
                 </svg>
               </div>
             </div>
-            <div class="cta-text" id="miniNote">Click to Open envelope</div>
+            <div class="cta-text" id="miniNote">Press Enter or click to open card</div>
           </div>
 
           <!-- CARD -->
@@ -358,24 +386,31 @@
               <div class="inside-grid">
                 <div class="inside-left">
                   <div>
-                    <div class="title">Season’s Greetings from Illinois Human Resources.</div>
-                    <div class="msg">As the year winds down, we want to thank our campus colleagues for the work you do every day to support the University of Illinois community. Your dedication, service, and collaboration make this place stronger.
+                    <h1 class="title">Season’s Greetings from Illinois Human Resources.</h1>
+                    <p class="msg">As the year winds down, we want to thank our campus colleagues for the work you do every day to support the University of Illinois community. Your dedication, service, and collaboration make this place stronger.
 
 Wishing you a restful season, moments that recharge you, and a bright start to the new year.
 
-Thank you for all you do at Illinois.
-Illinois Human Resources</div>
+Thank you for all you do at Illinois.</p>
                   </div>
                   <div class="sig">Illinois Human Resources</div>
                 </div>
                 <div class="inside-right">
-                  <img id="globe" alt="Illinois snowglobe" src="https://humanresources.illinois.edu/wp-content/uploads/2025/09/SnowGlobe.png"/>
+                  <img id="globe" alt="Illustration of a snow globe featuring the Illinois campus" src="https://humanresources.illinois.edu/wp-content/uploads/2025/09/SnowGlobe.png"/>
                 </div>
               </div>
             </div>
 
             <!-- FRONT COVER -->
-            <div class="panel3d cover-right" id="coverR" aria-label="Card front cover">
+            <div
+              class="panel3d cover-right"
+              id="coverR"
+              role="button"
+              tabindex="0"
+              aria-label="Open or close the holiday message"
+              aria-controls="inside"
+              aria-expanded="false"
+            >
               <div class="cover-content">
                 <img
                   class="ihr-logo"
@@ -383,7 +418,7 @@ Illinois Human Resources</div>
                   alt="Illinois Human Resources logo on the card cover"
                 />
                 <div class="greet" id="greetTitle">Season’s Greetings</div>
-                <div class="open-hint">click to open</div>
+                <div class="open-hint">Press Enter or click to open</div>
               </div>
             </div>
 
@@ -398,6 +433,9 @@ Illinois Human Resources</div>
 
 <script>
 (() => {
+  const prefersReducedMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   /* Snow BG */
   const bg = document.getElementById('bg-snow');
   const bctx = bg.getContext('2d');
@@ -406,7 +444,7 @@ Illinois Human Resources</div>
   function resizeBg(){
     bg.width = innerWidth;
     bg.height = innerHeight;
-    const n = Math.max(200, Math.round(bg.width * bg.height / 10000));
+    const n = prefersReducedMotion ? 0 : Math.max(200, Math.round(bg.width * bg.height / 10000));
     flakes = Array.from({length:n}, () => ({
       x: Math.random()*bg.width,
       y: Math.random()*bg.height,
@@ -418,6 +456,9 @@ Illinois Human Resources</div>
 
   function loopBg(){
     bctx.clearRect(0,0,bg.width,bg.height);
+    if(prefersReducedMotion){
+      return; // draw once, no animation
+    }
     bctx.fillStyle='#fff';
     for(const f of flakes){
       bctx.globalAlpha=f.o;
@@ -443,15 +484,14 @@ Illinois Human Resources</div>
 
   function resizeScene(){
     const vw = window.innerWidth;
-    const shellPadding = 32; // rough outer padding
+    const shellPadding = 32;
     const available = vw - shellPadding*2;
     const scale = Math.min(1, available / LOGICAL_W);
 
     envelopeScene.style.transform =
       `translateX(-50%) scale(${scale})`;
 
-    // adjust shell height so nothing gets cut off
-    const extraRise = 220; // room for animation
+    const extraRise = 220;
     sceneShell.style.height = (LOGICAL_H + extraRise) * scale + 'px';
   }
 
@@ -473,10 +513,28 @@ Illinois Human Resources</div>
   const inside = document.getElementById('inside');
   const greet = document.getElementById('greetTitle');
 
-  // NEW: single-click flow
+  /* Helper: activation by click or Enter/Space */
+  function isActivationEvent(e){
+    if(e.type === 'click') return true;
+    if(e.type === 'keydown' && (e.key === 'Enter' || e.key === ' ')) return true;
+    return false;
+  }
+
+  // single-click / single-activation flow
   let started = false;
 
   function riseFromBehind(){
+    if(prefersReducedMotion){
+      // Skip animation, just show card in front
+      cardScene.classList.add('on-top');
+      cardScene.style.opacity = '1';
+      cardScene.style.transform = 'translateY(0)';
+      env.style.animationPlayState='running';
+      env.setAttribute('aria-expanded','true');
+      coverR.focus();
+      return;
+    }
+
     cardScene.classList.remove('on-top','settle-front');
     cardScene.classList.add('rise-behind');
     greet.classList.add('greet-in');
@@ -486,10 +544,8 @@ Illinois Human Resources</div>
       if(e.animationName!=='riseBehind') return;
       cardScene.removeEventListener('animationend', phaseAEnd);
 
-      // bring to front
       cardScene.classList.add('on-top');
 
-      // reflow, then settle
       void cardScene.offsetWidth;
       cardScene.classList.add('settle-front');
 
@@ -497,30 +553,47 @@ Illinois Human Resources</div>
         if(ev.animationName!=='settleFront') return;
         cardScene.removeEventListener('animationend', phaseBEnd);
         env.style.animationPlayState='running';
+        env.setAttribute('aria-expanded','true');
+        coverR.focus();
       }, { once:true });
     }, { once:true });
   }
 
-  // One click: open lid, then auto-fly card
-  env.addEventListener('click', ()=>{
-    if(started) return; // ignore extra clicks
+  function handleEnvelopeActivate(e){
+    if(!isActivationEvent(e)) return;
+    e.preventDefault();
+    if(started) return;
     started = true;
 
     lid.classList.add('lid-open');
-    note.textContent='Opening…';
+    note.textContent='Opening card…';
 
-    // flap animation is .6s, give it a hair more before launching card
+    const delay = prefersReducedMotion ? 0 : 620; // match lid animation
     setTimeout(() => {
       riseFromBehind();
-    }, 620);
-  });
-
-  function toggleCard(){
-    if(!cardScene.classList.contains('on-top')) return;
-    cardScene.classList.toggle('open');
+    }, delay);
   }
+
+  env.addEventListener('click', handleEnvelopeActivate);
+  env.addEventListener('keydown', handleEnvelopeActivate);
+
+  function toggleCard(e){
+    if(!isActivationEvent(e)) return;
+    e.preventDefault();
+    if(!cardScene.classList.contains('on-top')) return;
+    const isOpen = cardScene.classList.toggle('open');
+    coverR.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
   coverR.addEventListener('click', toggleCard);
-  inside.addEventListener('click', toggleCard);
+  coverR.addEventListener('keydown', toggleCard);
+
+  // keep mouse toggle on inside, but not keyboard (to avoid duplicate focus targets)
+  inside.addEventListener('click', (e)=>{
+    if(!cardScene.classList.contains('on-top')) return;
+    const isOpen = cardScene.classList.toggle('open');
+    coverR.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
 })();
 </script>
 </body>
