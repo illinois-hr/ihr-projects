@@ -55,7 +55,6 @@
     position:relative;
     width:100%;
     max-width:860px;
-    /* height is set via JS to match scaled content */
   }
 
   /* Snow BG */
@@ -474,7 +473,8 @@ Illinois Human Resources</div>
   const inside = document.getElementById('inside');
   const greet = document.getElementById('greetTitle');
 
-  let step = 0; // 0 closed, 1 lid open, 2 settled in front
+  // NEW: single-click flow
+  let started = false;
 
   function riseFromBehind(){
     cardScene.classList.remove('on-top','settle-front');
@@ -486,8 +486,10 @@ Illinois Human Resources</div>
       if(e.animationName!=='riseBehind') return;
       cardScene.removeEventListener('animationend', phaseAEnd);
 
+      // bring to front
       cardScene.classList.add('on-top');
 
+      // reflow, then settle
       void cardScene.offsetWidth;
       cardScene.classList.add('settle-front');
 
@@ -495,29 +497,28 @@ Illinois Human Resources</div>
         if(ev.animationName!=='settleFront') return;
         cardScene.removeEventListener('animationend', phaseBEnd);
         env.style.animationPlayState='running';
-        step=2;
       }, { once:true });
     }, { once:true });
   }
 
+  // One click: open lid, then auto-fly card
   env.addEventListener('click', ()=>{
-    if(step===0){
-      lid.classList.add('lid-open');
-      note.textContent='Click to show card';
-      step=1;
-      return;
-    }
-    if(step===1){
+    if(started) return; // ignore extra clicks
+    started = true;
+
+    lid.classList.add('lid-open');
+    note.textContent='Opening…';
+
+    // flap animation is .6s, give it a hair more before launching card
+    setTimeout(() => {
       riseFromBehind();
-      return;
-    }
+    }, 620);
   });
 
   function toggleCard(){
     if(!cardScene.classList.contains('on-top')) return;
     cardScene.classList.toggle('open');
   }
-
   coverR.addEventListener('click', toggleCard);
   inside.addEventListener('click', toggleCard);
 })();
