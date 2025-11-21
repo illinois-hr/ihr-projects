@@ -6,7 +6,7 @@ const courses = [
     audience: "Employees",
     //"duration": "PT1H",
     //"durationText": "15 minutes",
-    link: "/trainings/instant-insights/setting-smart-goals/#/",
+    link: "/trainings/instant-insights/setting-smart-goals",
     category: "All",
     image: "./setting-smart-goals/assets/stock-image.jpg",
     alt: "Rectangular overhead sign with a bright yellow background and blue text that reads ‘Start / Goal,’ hanging from a dark ceiling with fluorescent lights.",

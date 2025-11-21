@@ -5,7 +5,7 @@ const courses = [
     "audience": "Supervisors",
     "duration": "PT1H",
     "durationText": "| 15 minutes",
-    "link": "/trainings/guidance-on-the-go/setting-smart-goals/#/",
+    "link": "/trainings/guidance-on-the-go/setting-smart-goals",
     "category": "All",
     "image": "./setting-smart-goals/assets/rZsHOtSX1m5Y84c5.jpg",
     "alt": "A statue of a football player in action, holding a football and wearing an old-fashioned helmet, stands in front of a building with large columns."
@@ -60,7 +60,7 @@ const courses = [
     "audience": "Supervisors",
     "duration": "PT1H",
     "durationText": "| 15 minutes",
-    "link": "/trainings/guidance-on-the-go/addressing-performance-issues-formally-under-the-ppp",
+    "link": "/trainings/guidance-on-the-go/addressing-performance-issues-formally-under-the-app",
     "category": ["All", "PPP"],
     "image": "./addressing-performance-issues-formally-under-the-app/assets/keZPZxwx7MZ3T7hq.jpg",
     "alt": "Angled view of textured stone steps, with shadows emphasizing the depth and surface details."
