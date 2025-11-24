@@ -6,6 +6,34 @@
   const bg = document.getElementById('bg-snow');
   const bctx = bg.getContext('2d');
   let flakes = [];
+  let snowPaused = false;
+  let animationId = null;
+
+  // Pause/Play button functionality
+  const pauseBtn = document.getElementById('pauseSnow');
+  const pauseIcon = document.getElementById('pauseIcon');
+  const pauseText = document.getElementById('pauseText');
+
+  pauseBtn.addEventListener('click', () => {
+    snowPaused = !snowPaused;
+    
+    if (snowPaused) {
+      pauseIcon.textContent = '▶';
+      pauseText.textContent = 'Play Snow';
+      pauseBtn.setAttribute('aria-label', 'Play falling snow animation');
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+        animationId = null;
+      }
+    } else {
+      pauseIcon.textContent = '⏸';
+      pauseText.textContent = 'Pause Snow';
+      pauseBtn.setAttribute('aria-label', 'Pause falling snow animation');
+      if (!prefersReducedMotion) {
+        loopBg();
+      }
+    }
+  });
 
   function resizeBg(){
     bg.width = innerWidth;
@@ -22,8 +50,8 @@
 
   function loopBg(){
     bctx.clearRect(0,0,bg.width,bg.height);
-    if(prefersReducedMotion){
-      return; // draw once, no animation
+    if(prefersReducedMotion || snowPaused){
+      return;
     }
     bctx.fillStyle='#fff';
     for(const f of flakes){
@@ -39,14 +67,14 @@
       }
     }
     bctx.globalAlpha=1;
-    requestAnimationFrame(loopBg);
+    animationId = requestAnimationFrame(loopBg);
   }
 
   /* Scale the whole scene to fit viewport */
   const sceneShell = document.getElementById('sceneShell');
   const envelopeScene = document.getElementById('envelopeScene');
   const LOGICAL_W = 860;
-  const LOGICAL_H = 560; // a bit taller to allow card rise
+  const LOGICAL_H = 560;
 
   function resizeScene(){
     const vw = window.innerWidth;
@@ -68,7 +96,9 @@
 
   resizeBg();
   resizeScene();
-  requestAnimationFrame(loopBg);
+  if (!prefersReducedMotion && !snowPaused) {
+    loopBg();
+  }
 
   /* Elements */
   const env = document.getElementById('envelope');
@@ -78,28 +108,42 @@
   const coverR = document.getElementById('coverR');
   const inside = document.getElementById('inside');
   const greet = document.getElementById('greetTitle');
+  const srCardContent = document.getElementById('srCardContent');
+  const cardTitle = document.getElementById('cardTitle');
+  const cardMessage = document.getElementById('cardMessage');
 
   /* Helper: activation by click or Enter/Space */
   function isActivationEvent(e){
     if(e.type === 'click') return true;
     if(e.type === 'keydown' && (e.key === 'Enter' || e.key === ' ')) {
-      e.preventDefault(); // Prevent Space from scrolling
+      e.preventDefault();
       return true;
     }
     return false;
   }
+
+  function announceToScreenReader(message) {
+    srCardContent.textContent = '';
+    setTimeout(() => {
+      srCardContent.textContent = message;
+    }, 100);
+  }
+
+  // Track card state
+  let cardIsOpen = false;
 
   // single-click / single-activation flow
   let started = false;
 
   function riseFromBehind(){
     if(prefersReducedMotion){
-      // Skip animation, just show card in front
       cardScene.classList.add('on-top');
       cardScene.style.opacity = '1';
       cardScene.style.transform = 'translateY(0)';
       env.style.animationPlayState='running';
       env.setAttribute('aria-expanded','true');
+      
+      coverR.setAttribute('aria-label', 'Holiday card is now visible. Press Enter to open and read the message inside.');
       coverR.focus();
       return;
     }
@@ -123,6 +167,8 @@
         cardScene.removeEventListener('animationend', phaseBEnd);
         env.style.animationPlayState='running';
         env.setAttribute('aria-expanded','true');
+        
+        coverR.setAttribute('aria-label', 'Holiday card is now visible. Press Enter to open and read the message inside.');
         coverR.focus();
       }, { once:true });
     }, { once:true });
@@ -136,7 +182,7 @@
     lid.classList.add('lid-open');
     note.textContent='Opening card…';
 
-    const delay = prefersReducedMotion ? 0 : 620; // match lid animation
+    const delay = prefersReducedMotion ? 0 : 620;
     setTimeout(() => {
       riseFromBehind();
     }, delay);
@@ -148,21 +194,30 @@
   function toggleCard(e){
     if(!isActivationEvent(e)) return;
     if(!cardScene.classList.contains('on-top')) return;
+    
+    const wasOpen = cardIsOpen;
+    cardIsOpen = !cardIsOpen;
+    
     const isOpen = cardScene.classList.toggle('open');
     coverR.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    
+    if (isOpen) {
+      coverR.setAttribute('aria-label', 'Card is open. Press Enter to close card.');
+      setTimeout(() => {
+        const fullMessage = `${cardTitle.textContent} ${cardMessage.textContent} Signed by Illinois Human Resources.`;
+        announceToScreenReader(fullMessage);
+        inside.focus();
+      }, 500);
+      
+    } else {
+      coverR.setAttribute('aria-label', 'Card is closed. Press Enter to open and read the message inside.');
+      announceToScreenReader('Card closed.');
+    }
   }
 
   coverR.addEventListener('click', toggleCard);
   coverR.addEventListener('keydown', toggleCard);
 
-  // Inside panel with full keyboard support
-  function toggleCardFromInside(e){
-    if(!isActivationEvent(e)) return;
-    if(!cardScene.classList.contains('on-top')) return;
-    const isOpen = cardScene.classList.toggle('open');
-    coverR.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  }
-  
-  inside.addEventListener('click', toggleCardFromInside);
-  inside.addEventListener('keydown', toggleCardFromInside);
+  inside.addEventListener('click', (e) => {
+  });
 })();
