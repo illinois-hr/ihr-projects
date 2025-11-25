@@ -266,7 +266,7 @@ body{
 
 .title {
   font-family:'Montserrat',sans-serif;
-  font-size:30px;
+  font-size:27px;
   font-weight:800;
   letter-spacing:.2px;
   color:var(--illini-orange);
@@ -275,7 +275,7 @@ body{
 .msg {
   margin-top:12px;
   line-height:1.55;
-  font-size:18px;
+  font-size:14px;
   white-space:pre-wrap;
 }
 
