@@ -29,15 +29,6 @@ body{
   padding: 32px;
 }
 
-.sig {
-  margin-top:12px; /* instead of padding-top */
-}
-
-.inside-left {
-  padding-bottom:40px;
-}
-
-
 .stage{
   position:relative;
   padding-top: 100px;
