@@ -223,13 +223,13 @@ body{
   backface-visibility:hidden;
 }
 
-.inside {
-  z-index: 1;              /* was 1 */
-  position: relative;      /* make z-index actually count */
-  background: var(--paper);
-  color: var(--ink);
+.inside{
+  z-index:1;
+  background:var(--paper);
+  color:var(--ink);
+  border:3px solid var(--illini-orange);
+  cursor:pointer;
 }
-
 
 .cover-right{
   z-index:2;
@@ -266,7 +266,7 @@ body{
 
 .title {
   font-family:'Montserrat',sans-serif;
-  font-size:27px;
+  font-size:30px;
   font-weight:800;
   letter-spacing:.2px;
   color:var(--illini-orange);
@@ -274,20 +274,16 @@ body{
 
 .msg {
   margin-top:12px;
-  margin-bottom:0;
-  line-height:1.49;
+  line-height:1.55;
+  font-size:18px;
+  white-space:pre-wrap;
 }
 
-
-.sig {
-  margin-top: 8px;     /* tiny intentional spacing */
-}
-
-.sig img {
-  width: 200px;
-  height: auto;
-  display: block;
-  margin: 0;
+.sig{
+  padding-top:14px;
+  font-weight:700;
+  font-size:14px;
+  font-family:'Montserrat',sans-serif;
 }
 
 .inside-right{
