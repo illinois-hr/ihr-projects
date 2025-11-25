@@ -261,8 +261,10 @@ body{
   padding:28px 32px;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
+  justify-content:flex-start;
+  gap:12px; /* optional but looks intentional instead of accidental */
 }
+
 
 .title {
   font-family:'Montserrat',sans-serif;
