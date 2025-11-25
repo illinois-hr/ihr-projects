@@ -13,115 +13,115 @@
 </head>
 <body>
 <canvas id="bg-snow" role="presentation" style="pointer-events: none;">
-  Decorative falling snow animation
+Decorative falling snow animation
 </canvas>
 
 <!-- Snow animation controls -->
 <div class="snow-controls" role="region" aria-label="Animation controls">
-  <button id="pauseSnow" class="pause-btn" aria-label="Pause falling snow animation">
-    <span id="pauseIcon">⏸</span> <span id="pauseText">Pause Snow</span>
-  </button>
+<button id="pauseSnow" class="pause-btn" aria-label="Pause falling snow animation">
+<span id="pauseIcon">⏸</span> <span id="pauseText">Pause Snow</span>
+</button>
 </div>
 
 <div class="wrap">
-  <div class="stage">
-    <div class="board">
-      <div class="scene-shell" id="sceneShell">
-        <div class="envelope-scene" id="envelopeScene" role="group" aria-label="Holiday envelope and card animation">
+<div class="stage">
+<div class="board">
+<div class="scene-shell" id="sceneShell">
+<div class="envelope-scene" id="envelopeScene" role="group" aria-label="Holiday envelope and card animation">
 
-          <!-- ENVELOPE -->
-          <div
-            class="envelope"
-            id="envelope"
-            role="button"
-            tabindex="0"
-            aria-label="Open holiday card from Illinois Human Resources"
-            aria-controls="cardScene"
-            aria-expanded="false"
-          >
-            <div class="mail-body"></div>
-            <div class="lid" id="lid"></div>
-            <div class="face">
-              <div class="from">From: Illinois Human Resources</div>
-              <div class="to">To: Our Campus Community</div>
-              <div class="stamp" aria-hidden="true">
-                <svg viewBox="0 0 72 90" xmlns="http://www.w3.org/2000/svg" role="img" ="Snowflake stamp">
-                  <rect x="2" y="2" width="68" height="86" rx="6" class="ring"/>
-                  <rect x="6" y="6" width="60" height="78" rx="4" class="bg"/>
-                  <circle cx="36" cy="40" r="22" fill="#ffffff" opacity=".12"/>
-                  <path class="flake" d="M36 22 v36 M24 34 h24 M28 28 l16 16 M44 28 l-16 16" />
-                </svg>
-              </div>
-            </div>
-            <div class="cta-text" id="miniNote" aria-live="polite">Press Enter or click to open card</div>
-          </div>
+<!-- ENVELOPE -->
+<div
+class="envelope"
+id="envelope"
+role="button"
+tabindex="0"
+aria-label="Open holiday card from Illinois Human Resources"
+aria-controls="cardScene"
+aria-expanded="false"
+>
+<div class="mail-body"></div>
+<div class="lid" id="lid"></div>
+<div class="face">
+<div class="from">From: Illinois Human Resources</div>
+<div class="to">To: Our Campus Community</div>
+<div class="stamp" aria-hidden="true">
+<svg viewBox="0 0 72 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Snowflake stamp">
+<rect x="2" y="2" width="68" height="86" rx="6" class="ring"/>
+<rect x="6" y="6" width="60" height="78" rx="4" class="bg"/>
+<circle cx="36" cy="40" r="22" fill="#ffffff" opacity=".12"/>
+<path class="flake" d="M36 22 v36 M24 34 h24 M28 28 l16 16 M44 28 l-16 16" />
+</svg>
+</div>
+</div>
+<div class="cta-text" id="miniNote" aria-live="polite">Press Enter or click to open card</div>
+</div>
 
- <!-- CARD -->
-          <div id="cardScene" class="scene" role="group" aria-label="Holiday card">
-            <div 
-              class="panel3d inside" 
-              id="inside"
-              role="region"
-              tabindex="-1"
-              aria-labelledby="cardTitle"
-            >
-              <div class="inside-grid">
-                <div class="inside-left">
+<!-- CARD -->
+<div id="cardScene" class="scene" role="group" aria-label="Holiday card">
+<div 
+class="panel3d inside" 
+id="inside"
+role="region"
+tabindex="-1"
+aria-labelledby="cardTitle"
+>
+<div class="inside-grid">
+<div class="inside-left">
+<div>
+<h1 class="title" id="cardTitle">Season's Greetings from Illinois Human Resources.</h1>
+<p class="msg" id="cardMessage">
+As the year winds down, we want to thank our campus colleagues for the work you do every day to support the University of Illinois community. Your dedication, service, and collaboration make this place stronger.<br><br>
+Wishing you a restful season, moments that recharge you, and a bright start to the new year.<br><br>
+Thank you for all you do at Illinois.
+<br><br>
+<strong>Shari Mickey-Boggs</strong><br>
+Senior Associate Chancellor for Human Resources<br>
+                    </p>
+                    </div>
                   <div>
-                    <h1 class="title" id="cardTitle">Season's Greetings from Illinois Human Resources.</h1>
-                    <p class="msg" id="cardMessage">
-  As the year winds down, we want to thank our campus colleagues for the work you do every day to support the University of Illinois community. Your dedication, service, and collaboration make this place stronger.<br><br>
-  Wishing you a restful season, moments that recharge you, and a bright start to the new year.<br><br>
-  Thank you for all you do at Illinois.<br><br>
-
-  <strong>Shari Mickey-Boggs</strong><br>
-  Senior Associate Chancellor for Human Resources
-</p>
-
-<div class="sig">
-  <img src="https://humanresources.illinois.edu/wp-content/uploads/2025/11/Shari-Sig.png"
-       alt="Shari Mickey-Boggs signature">
+<img src="https://humanresources.illinois.edu/wp-content/uploads/2025/11/Shari-Sig.png"
+alt="Shari Mickey-Boggs signature"
+style="width:200px;height:auto;display:block;margin:0;">
 </div>
 
 
+</div>
+<div class="inside-right">
+<img id="globe" alt="Decorative snow globe illustration featuring Illinois campus landmarks" src="https://humanresources.illinois.edu/wp-content/uploads/2025/09/SnowGlobe.png"/>
+</div>
+</div>
+</div>
 
-                </div>
-                <div class="inside-right">
-                  <img id="globe" alt="Decorative snow globe illustration featuring Illinois campus landmarks" src="https://humanresources.illinois.edu/wp-content/uploads/2025/09/SnowGlobe.png"/>
-                </div>
-              </div>
-            </div>
-            
-            <div class="sr-only" aria-live="assertive" aria-atomic="true" id="srCardContent"></div>
+<div class="sr-only" aria-live="assertive" aria-atomic="true" id="srCardContent"></div>
 
-            <!-- FRONT COVER -->
-            <div
-              class="panel3d cover-right"
-              id="coverR"
-              role="button"
-              tabindex="0"
-              aria-label="Holiday card cover. Press Enter to open card and read message."
-              aria-controls="inside"
-              aria-expanded="false"
-            >
-              <div class="cover-content">
-                <img
-                  class="ihr-logo"
-                  src="https://humanresources.illinois.edu/wp-content/uploads/2025/11/IHR_Formal_Blue_RGB_Illinois-Human-Resources-Full-Color.png"
-                  alt="Illinois Human Resources logo on the card cover"
-                />
-                <div class="greet" id="greetTitle">Season's Greetings</div>
-                <div class="open-hint">Press Enter or click to open</div>
-              </div>
-            </div>
+<!-- FRONT COVER -->
+<div
+class="panel3d cover-right"
+id="coverR"
+role="button"
+tabindex="0"
+aria-label="Holiday card cover. Press Enter to open card and read message."
+aria-controls="inside"
+aria-expanded="false"
+>
+<div class="cover-content">
+<img
+class="ihr-logo"
+src="https://humanresources.illinois.edu/wp-content/uploads/2025/11/IHR_Formal_Blue_RGB_Illinois-Human-Resources-Full-Color.png"
+alt="Illinois Human Resources logo on the card cover"
+/>
+<div class="greet" id="greetTitle">Season's Greetings</div>
+<div class="open-hint">Press Enter or click to open</div>
+</div>
+</div>
 
-            <div class="panel3d cover-left" id="coverL"></div>
-          </div>
+<div class="panel3d cover-left" id="coverL"></div>
+</div>
 
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <!-- JavaScript -->
