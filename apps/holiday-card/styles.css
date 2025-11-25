@@ -224,7 +224,7 @@ body{
 }
 
 .inside {
-  z-index: 4;              /* was 1 */
+  z-index: 1;              /* was 1 */
   position: relative;      /* make z-index actually count */
   background: var(--paper);
   color: var(--ink);
