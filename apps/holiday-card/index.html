@@ -45,7 +45,7 @@
               <div class="from">From: Illinois Human Resources</div>
               <div class="to">To: Our Campus Community</div>
               <div class="stamp" aria-hidden="true">
-                <svg viewBox="0 0 72 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Snowflake stamp">
+                <svg viewBox="0 0 72 90" xmlns="http://www.w3.org/2000/svg" role="img" ="Snowflake stamp">
                   <rect x="2" y="2" width="68" height="86" rx="6" class="ring"/>
                   <rect x="6" y="6" width="60" height="78" rx="4" class="bg"/>
                   <circle cx="36" cy="40" r="22" fill="#ffffff" opacity=".12"/>
@@ -56,15 +56,26 @@
             <div class="cta-text" id="miniNote" aria-live="polite">Press Enter or click to open card</div>
           </div>
 
-          <!-- CARD -->
-          <div id="cardScene" class="scene" role="group" aria-label="Holiday card">
-            <div 
-              class="panel3d inside" 
-              id="inside"
-              role="region"
-              tabindex="-1"
-              aria-labelledby="cardTitle"
-            >
+         <!-- CARD -->
+<div id="cardScene" class="scene" role="group" aria-label="Holiday card">
+
+  <!-- ORIGINAL INSIDE -->
+  <div 
+    class="panel3d inside" 
+    id="inside"
+  >
+    <div class="inside-grid">
+      ... all your content ...
+    </div>
+  </div>
+
+  <!-- NEW BACK FACE COPY -->
+  <div class="panel3d inside back-face" aria-hidden="true">
+    <div class="inside-grid">
+      ... same content copied here ...
+    </div>
+  </div>
+
               <div class="inside-grid">
                 <div class="inside-left">
                   <div>
