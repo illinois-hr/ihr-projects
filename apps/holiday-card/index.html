@@ -56,26 +56,15 @@
             <div class="cta-text" id="miniNote" aria-live="polite">Press Enter or click to open card</div>
           </div>
 
-         <!-- CARD -->
-<div id="cardScene" class="scene" role="group" aria-label="Holiday card">
-
-  <!-- ORIGINAL INSIDE -->
-  <div 
-    class="panel3d inside" 
-    id="inside"
-  >
-    <div class="inside-grid">
-      ... all your content ...
-    </div>
-  </div>
-
-  <!-- NEW BACK FACE COPY -->
-  <div class="panel3d inside back-face" aria-hidden="true">
-    <div class="inside-grid">
-      ... same content copied here ...
-    </div>
-  </div>
-
+ <!-- CARD -->
+          <div id="cardScene" class="scene" role="group" aria-label="Holiday card">
+            <div 
+              class="panel3d inside" 
+              id="inside"
+              role="region"
+              tabindex="-1"
+              aria-labelledby="cardTitle"
+            >
               <div class="inside-grid">
                 <div class="inside-left">
                   <div>
