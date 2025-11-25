@@ -280,10 +280,8 @@ body{
 }
 
 .sig{
-  padding-top:14px;
-  font-weight:700;
-  font-size:14px;
-  font-family:'Montserrat',sans-serif;
+  width: 100px;
+  height: 40px;
 }
 
 .inside-right{
