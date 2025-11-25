@@ -223,13 +223,13 @@ body{
   backface-visibility:hidden;
 }
 
-.inside{
-  z-index:1;
-  background:var(--paper);
-  color:var(--ink);
-  border:3px solid var(--illini-orange);
-  cursor:pointer;
+.inside {
+  z-index: 4;              /* was 1 */
+  position: relative;      /* make z-index actually count */
+  background: var(--paper);
+  color: var(--ink);
 }
+
 
 .cover-right{
   z-index:2;
