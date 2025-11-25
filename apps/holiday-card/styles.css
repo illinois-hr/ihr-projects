@@ -261,8 +261,9 @@ overflow:hidden;
 padding:28px 32px;
 display:flex;
 flex-direction:column;
-justify-content:flex-start;
-gap:12px; /* optional but looks intentional instead of accidental */
+  justify-content:space-between;
+  justify-content:flex-start;
+  gap:12px; /* optional but looks intentional instead of accidental */
 }
 
 
@@ -275,8 +276,7 @@ color:var(--illini-orange);
 }
 
 .msg {
-  margin-top:5px;
-  margin-top:1px;
+margin-top:5px;
 line-height:1.30;
 font-size:16px;
 white-space:pre-wrap;
