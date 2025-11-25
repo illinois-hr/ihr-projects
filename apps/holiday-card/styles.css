@@ -279,9 +279,15 @@ body{
 }
 
 
-.sig{
-  width: 100px;
-  height: 40px;
+.sig {
+  margin-top: 8px;     /* tiny intentional spacing */
+}
+
+.sig img {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 0;
 }
 
 .inside-right{
