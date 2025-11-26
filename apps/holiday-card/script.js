@@ -129,6 +129,7 @@
    *  Helpers
    * ============================= */
   function isActivationEvent(e) {
+    if (!e) return true;
     if (e.type === 'click') return true;
     if (e.type === 'keydown' && (e.key === 'Enter' || e.key === ' ')) {
       e.preventDefault();
@@ -152,8 +153,9 @@
    * ============================= */
   function openCard() {
     if (cardIsOpen) return;
-    if (!cardScene.classList.contains('on-top')) return;
 
+    // Make sure the card is interactable
+    cardScene.classList.add('on-top');
     cardIsOpen = true;
     cardScene.classList.add('open');
     coverR.setAttribute('aria-expanded', 'true');
@@ -179,6 +181,7 @@
     announceToScreenReader('Card closed.');
   }
 
+  // Keep toggle for keyboard users if they want to close/reopen
   function toggleCard(e) {
     if (!isActivationEvent(e)) return;
     if (!cardScene.classList.contains('on-top')) return;
@@ -194,10 +197,51 @@
   coverR.addEventListener('keydown', toggleCard);
 
   /* =============================
-   *  Card rise and auto-open
+   *  Card rise and timed auto-open
    * ============================= */
-  function showCardFrontReduced() {
-    // No motion: just place card on top and let user open manually
+
+  function showCardFrontAnimatedWithTimeouts() {
+    // Reset state
+    cardScene.classList.remove('on-top', 'settle-front', 'open');
+    cardScene.classList.add('rise-behind');
+    greet.classList.add('greet-in');
+    env.style.animationPlayState = 'paused';
+
+    // Timing that matches your CSS:
+    // rise-behind: 700ms
+    // settle-front: 600ms
+    const riseDuration = 700;
+    const settleDuration = 600;
+    const frontHold = 3000; // show front for 3 seconds
+
+    // After rise-behind finishes
+    setTimeout(() => {
+      cardScene.classList.add('on-top');
+
+      // Trigger settle-front
+      cardScene.classList.add('settle-front');
+
+      // After settle-front finishes
+      setTimeout(() => {
+        env.style.animationPlayState = 'running';
+        env.setAttribute('aria-expanded', 'true');
+
+        coverR.setAttribute(
+          'aria-label',
+          'Holiday card is now visible. The inside message will open shortly.'
+        );
+        coverR.focus();
+
+        // Wait 3 seconds with front visible, then open inside
+        setTimeout(() => {
+          openCard();
+        }, frontHold);
+      }, settleDuration);
+    }, riseDuration);
+  }
+
+  function showCardFrontReducedWithTimeout() {
+    // Reduced motion: no fancy rise, just place card and then auto open
     cardScene.classList.add('on-top');
     cardScene.style.opacity = '1';
     cardScene.style.transform = 'translateY(0)';
@@ -206,58 +250,14 @@
 
     coverR.setAttribute(
       'aria-label',
-      'Holiday card is now visible. Press Enter to open and read the message inside.'
+      'Holiday card is now visible. The inside message will open shortly.'
     );
     coverR.focus();
-  }
 
-  function showCardFrontAnimated() {
-    cardScene.classList.remove('on-top', 'settle-front', 'open');
-    cardScene.classList.add('rise-behind');
-    greet.classList.add('greet-in');
-    env.style.animationPlayState = 'paused';
-
-    // Phase A: rise from behind
-    cardScene.addEventListener(
-      'animationend',
-      function onRiseEnd(e) {
-        if (e.animationName !== 'riseBehind') return;
-        cardScene.removeEventListener('animationend', onRiseEnd);
-
-        cardScene.classList.add('on-top');
-
-        // Force reflow so the next animation triggers
-        void cardScene.offsetWidth;
-        cardScene.classList.add('settle-front');
-
-        // Phase B: settle at the front
-        cardScene.addEventListener(
-          'animationend',
-          function onSettleEnd(ev) {
-            if (ev.animationName !== 'settleFront') return;
-            cardScene.removeEventListener('animationend', onSettleEnd);
-
-            env.style.animationPlayState = 'running';
-            env.setAttribute('aria-expanded', 'true');
-
-            coverR.setAttribute(
-              'aria-label',
-              'Holiday card is now visible. Press Enter to open and read the message inside.'
-            );
-            coverR.focus();
-
-            // Auto open inner message after 1.5s if motion is allowed
-            if (!prefersReducedMotion) {
-              setTimeout(() => {
-                openCard();
-              }, 1500);
-            }
-          },
-          { once: true }
-        );
-      },
-      { once: true }
-    );
+    // Still honor the 3 second hold before opening
+    setTimeout(() => {
+      openCard();
+    }, 3000);
   }
 
   /* =============================
@@ -275,9 +275,9 @@
 
     setTimeout(() => {
       if (prefersReducedMotion) {
-        showCardFrontReduced();
+        showCardFrontReducedWithTimeout();
       } else {
-        showCardFrontAnimated();
+        showCardFrontAnimatedWithTimeouts();
       }
     }, delay);
   }
@@ -285,6 +285,5 @@
   env.addEventListener('click', handleEnvelopeActivate);
   env.addEventListener('keydown', handleEnvelopeActivate);
 
-  // No click logic needed on "inside" but keep hook if needed later
   inside.addEventListener('click', () => {});
 })();
