@@ -212,7 +212,7 @@
     // settle-front: 600ms
     const riseDuration = 700;
     const settleDuration = 600;
-    const frontHold = 3000; // show front for 3 seconds
+    const frontHold = 2000; // show front for 3 seconds
 
     // After rise-behind finishes
     setTimeout(() => {
