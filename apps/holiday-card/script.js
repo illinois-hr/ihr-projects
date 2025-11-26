@@ -154,10 +154,8 @@
   function openCard() {
     if (cardIsOpen) return;
 
-    // Make sure the card is interactable
-    cardScene.classList.add('on-top');
     cardIsOpen = true;
-    cardScene.classList.add('open');
+    cardScene.classList.add('on-top', 'open');
     coverR.setAttribute('aria-expanded', 'true');
     coverR.setAttribute('aria-label', 'Card is open. Press Enter to close card.');
 
@@ -181,20 +179,15 @@
     announceToScreenReader('Card closed.');
   }
 
-  // Keep toggle for keyboard users if they want to close/reopen
-  function toggleCard(e) {
+  // Cover only closes the card; it will NOT be used as a second opener
+  function handleCoverActivate(e) {
     if (!isActivationEvent(e)) return;
-    if (!cardScene.classList.contains('on-top')) return;
-
-    if (cardIsOpen) {
-      closeCard();
-    } else {
-      openCard();
-    }
+    if (!cardIsOpen) return; // ignore clicks when only the front is showing
+    closeCard();
   }
 
-  coverR.addEventListener('click', toggleCard);
-  coverR.addEventListener('keydown', toggleCard);
+  coverR.addEventListener('click', handleCoverActivate);
+  coverR.addEventListener('keydown', handleCoverActivate);
 
   /* =============================
    *  Card rise and timed auto-open
@@ -207,18 +200,14 @@
     greet.classList.add('greet-in');
     env.style.animationPlayState = 'paused';
 
-    // Timing that matches your CSS:
-    // rise-behind: 700ms
-    // settle-front: 600ms
-    const riseDuration = 700;
-    const settleDuration = 600;
-    const frontHold = 2000; // show front for 3 seconds
+    // Match your CSS timings
+    const riseDuration = 700;   // .rise-behind animation
+    const settleDuration = 600; // .settle-front animation
+    const frontHold = 2000;     // show front for 2 seconds
 
     // After rise-behind finishes
     setTimeout(() => {
       cardScene.classList.add('on-top');
-
-      // Trigger settle-front
       cardScene.classList.add('settle-front');
 
       // After settle-front finishes
@@ -232,7 +221,7 @@
         );
         coverR.focus();
 
-        // Wait 3 seconds with front visible, then open inside
+        // Wait 2 seconds with front visible, then open inside
         setTimeout(() => {
           openCard();
         }, frontHold);
@@ -241,7 +230,7 @@
   }
 
   function showCardFrontReducedWithTimeout() {
-    // Reduced motion: no fancy rise, just place card and then auto open
+    // Reduced motion: no big moves, just show and then open
     cardScene.classList.add('on-top');
     cardScene.style.opacity = '1';
     cardScene.style.transform = 'translateY(0)';
@@ -254,7 +243,6 @@
     );
     coverR.focus();
 
-    // Still honor the 3 second hold before opening
     setTimeout(() => {
       openCard();
     }, 2000);
