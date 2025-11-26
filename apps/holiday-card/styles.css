@@ -204,7 +204,7 @@ width:820px;
 height:560px;
 perspective:1400px;
 z-index:1;
-pointer-events:none;
+pointer-events:auto;
 opacity:0;
 transform:translateY(150px) scale(1);
 }
