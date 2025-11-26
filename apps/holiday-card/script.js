@@ -203,7 +203,7 @@
     // Match your CSS timings
     const riseDuration = 700;   // .rise-behind animation
     const settleDuration = 600; // .settle-front animation
-    const frontHold = 1000; // show front for 1.5 seconds
+    const frontHold = 800; // show front for 1.5 seconds
 
 
     // After rise-behind finishes
@@ -246,7 +246,7 @@
 
     setTimeout(() => {
   openCard();
-}, 1000);
+}, 800);
 
   }
 
