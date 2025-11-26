@@ -257,7 +257,7 @@
     // Still honor the 3 second hold before opening
     setTimeout(() => {
       openCard();
-    }, 3000);
+    }, 2000);
   }
 
   /* =============================
