@@ -16,7 +16,7 @@ const courses = [
     "audience": "Employees",
     "duration": "PT1H",
     "durationText": "| 10 minutes",
-    "link": "/trainings/guidance-on-the-go/the-fmla-for-employees",
+    "link": "/trainings/instant-insights/the-fmla-for-employees",
     "category": "All",
     "image": "./the-fmla-for-employees/assets/stock-image.jpg",
     "alt": "A person outdoors holding one child on their shoulders while another is held by their side."
