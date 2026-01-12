@@ -2,7 +2,6 @@ body {
   font-family: Georgia, "Times New Roman", serif;
   background: #fff;
   color: #13294b;
-  line-height: 1.6;
 }
 
 main {
@@ -13,7 +12,9 @@ main {
 p,
 li {
   font-size: 18px;
+  line-height: 2.1em;
 }
+
 
 ul {
   margin: 1rem 0 1rem 1.5rem;
