@@ -22,7 +22,8 @@ function renderCourses(filteredCourses) {
         <p class="course-description">${course.description}</p>
         <div class="course-meta">
           <div class="meta-item">
-            <span>Audience: ${course.audience}</span> | <time>15 minutes</time>
+            <span>Audience: ${course.audience}</span></time>
+            <time datetime="${course.duration}">${course.durationText}</time>
           </div>
         </div>
         <a href="${course.link}" class="course-btn">View details</a>

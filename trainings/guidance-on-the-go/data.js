@@ -75,5 +75,16 @@ const courses = [
     "category": ["All", "PPP"],
     "image": "./ppp-documentation/assets/WUSM7_ypu4L_C-iy.jpg",
     "alt": "A pair of hands typing on a laptop keyboard, which is placed on a light-colored wooden surface."
+  },
+  {
+    "title": "Module: The FMLA for Supervisors",
+    "description": "Detailed information about the FMLA for Superviors",
+    "audience": "Supervisors",
+    "duration": "PT1H",
+    "durationText": "| 10 minutes",
+    "link": "/trainings/guidance-on-the-go/the-fmla-for-supervisors",
+    "category": "All",
+    "image": "./the-fmla-for-supervisors/assets/stock-image.jpg",
+    "alt": "A person outdoors holding one child on their shoulders while another is held by their side."
   }
 ]
