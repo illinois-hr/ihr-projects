@@ -16,6 +16,7 @@ h4,
 h5,
 h6 {
   font-family: "Montserrat", sans-serif;
+  margin-top: 0.6em;
 }
 
 main {
@@ -28,6 +29,7 @@ li,
 a {
   font-family: "Source Sans 3", sans-serif;
   font-size: 18px;
+  margin-top: 0.5em;
 }
 
 p,
