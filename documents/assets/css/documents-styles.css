@@ -1,7 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Georgia, "Times New Roman", serif;
   background: #fff;
   color: #13294b;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
 }
 
 main {
@@ -10,14 +24,27 @@ main {
 }
 
 p,
-li {
+li,
+a {
+  font-family: "Source Sans 3", sans-serif;
   font-size: 18px;
+}
+
+p,
+li {
   line-height: 2.1em;
 }
 
+section {
+  margin-top: 1.8em;
+}
 
-ul {
-  margin: 1rem 0 1rem 1.5rem;
+hr {
+  width: 80%;
+  height: 2px;
+  border-width: 0;
+  color: #13294b;
+  background-color: #13294b;
 }
 
 footer {
