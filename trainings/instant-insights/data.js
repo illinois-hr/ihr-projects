@@ -8,7 +8,7 @@ const courses = [
     "link": "/trainings/instant-insights/setting-smart-goals",
     "category": "All",
     "image": "./setting-smart-goals/assets/rZsHOtSX1m5Y84c5.jpg",
-    "alt": "A statue of a football player in action, holding a football and wearing an old-fashioned helmet, stands in front of a building with large columns.",
+    "alt": "Statue of a football player holding a ball in front of a columned building.",
   },
   {
     "title": "Module: The FMLA for Employees",
@@ -20,5 +20,16 @@ const courses = [
     "category": "All",
     "image": "./the-fmla-for-employees/assets/stock-image.jpg",
     "alt": "A person outdoors holding one child on their shoulders while another is held by their side."
+  },
+  {
+    "title": "Writing an Effective Employee Self-Review",
+    "description": "Overview of the employee self‑review process",
+    "audience": "Employees",
+    "duration": "PT1H",
+    "durationText": "| 10 minutes",
+    "link": "/trainings/instant-insights/writing-an-effective-employee-self-review",
+    "category": "All",
+    "image": "./writing-an-effective-employee-self-review/assets/stock-image.jpg",
+    "alt": "Person with curly hair sitting at a computer in an office."
   }
 ];
