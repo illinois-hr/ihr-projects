@@ -1,6 +1,6 @@
 const courses = [
   {
-    "title": "Module: Setting S.M.A.R.T. Goals for Supervisors",
+    "title": "Setting S.M.A.R.T. Goals for Supervisors",
     "description": "Interactive lessons that explains the value of clear goal-setting.",
     "audience": "Supervisors",
     "duration": "PT1H",
@@ -11,7 +11,7 @@ const courses = [
     "alt": "A statue of a football player in action, holding a football and wearing an old-fashioned helmet, stands in front of a building with large columns."
   },
   {
-    "title": "Module: Who Should I Contact?",
+    "title": "Who Should I Contact?",
     "description": "Quick guide to key HR topics and campus contacts.",
     "audience": "Supervisors",
     "duration": "PT1H",
@@ -22,7 +22,7 @@ const courses = [
     "alt": "A close-up view of a decorative column topped with an ornate light fixture. The word 'Class' is engraved on the column, and lush green trees are visible in the background."
   },
   {
-    "title": "Module: What Is the FLSA?",
+    "title": "What Is the FLSA?",
     "description": "Essential FLSA guidance for Illinois supervisors, with interactive compliance tips.",
     "audience": "Supervisors",
     "duration": "PT1H",
@@ -33,7 +33,7 @@ const courses = [
     "alt": "An architectural structure featuring four tall columns supporting an entablature with the inscription 'LEARNING & LABOR."
   },
   {
-    "title": "Module: Introduction to the PPP and Informal Positive Steps",
+    "title": "Introduction to the PPP and Informal Positive Steps",
     "description": "Overview of the Performance Partnership Program and its informal positive steps.",
     "audience": "Supervisors",
     "duration": "PT1H",
@@ -44,7 +44,7 @@ const courses = [
     "alt": "A close-up of a statue featuring two hands clasping each other, symbolizing unity or support."
   },
   {
-    "title": "Module: Addressing Performance Issues Informally Under the PPP",
+    "title": "Addressing Performance Issues Informally Under the PPP",
     "description": "Informal PPP steps for addressing performance issues.",
     "audience": "Supervisors",
     "duration": "PT1H",
@@ -55,7 +55,7 @@ const courses = [
     "alt": "Two individuals seated at a table, engaged in conversation or study, with books and papers spread out; their faces are not visible."
   },
   {
-    "title": "Module: Addressing Performance Issues Formally Under the PPP",
+    "title": "Addressing Performance Issues Formally Under the PPP",
     "description": "Formal PPP steps for progressive discipline and compliance.",
     "audience": "Supervisors",
     "duration": "PT1H",
@@ -66,7 +66,7 @@ const courses = [
     "alt": "Angled view of textured stone steps, with shadows emphasizing the depth and surface details."
   },
   {
-    "title": "Module: PPP Documentation",
+    "title": "PPP Documentation",
     "description": "PPP documentation essentials for informal and formal steps.",
     "audience": "Supervisors",
     "duration": "PT1H",
@@ -77,7 +77,7 @@ const courses = [
     "alt": "A pair of hands typing on a laptop keyboard, which is placed on a light-colored wooden surface."
   },
   {
-    "title": "Module: The FMLA for Supervisors",
+    "title": "The FMLA for Supervisors",
     "description": "Detailed information about the FMLA for Superviors",
     "audience": "Supervisors",
     "duration": "PT1H",

@@ -26,7 +26,7 @@ function renderCourses(filteredCourses) {
             <time datetime="${course.duration}">${course.durationText}</time>
           </div>
         </div>
-        <a href="${course.link}" class="course-btn">View details</a>
+        <a href="${course.link}" aria-label="View details for ${course.title}" class="course-btn">View details</a>
       </div>
     `;
 

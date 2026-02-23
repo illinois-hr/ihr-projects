@@ -1,6 +1,6 @@
 const courses = [
   {
-    "title": "Module: Setting S.M.A.R.T. Goals for Employees",
+    "title": "Setting S.M.A.R.T. Goals for Employees",
     "description": "Interactive lessons that explains the value of clear goal-setting.",
     "audience": "Employees",
     "duration": "PT1H",
@@ -11,7 +11,7 @@ const courses = [
     "alt": "Statue of a football player holding a ball in front of a columned building.",
   },
   {
-    "title": "Module: The FMLA for Employees",
+    "title": "The FMLA for Employees",
     "description": "Detailed information about the FMLA for Employees",
     "audience": "Employees",
     "duration": "PT1H",
