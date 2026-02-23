@@ -26,7 +26,7 @@ const courses = [
     "description": "Overview of the employee self‑review process",
     "audience": "Employees",
     "duration": "PT1H",
-    "durationText": "| 10 minutes",
+    "durationText": "",
     "link": "/trainings/instant-insights/writing-an-effective-employee-self-review",
     "category": "All",
     "image": "./writing-an-effective-employee-self-review/assets/stock-image.jpg",
