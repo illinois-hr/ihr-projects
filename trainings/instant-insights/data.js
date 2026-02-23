@@ -12,7 +12,7 @@ const courses = [
   },
   {
     "title": "The FMLA for Employees",
-    "description": "Detailed information about the FMLA for Employees",
+    "description": "Detailed information about the FMLA for Employees.",
     "audience": "Employees",
     "duration": "PT1H",
     "durationText": "| 10 minutes",
@@ -23,7 +23,7 @@ const courses = [
   },
   {
     "title": "Writing an Effective Employee Self-Review",
-    "description": "Overview of the employee self‑review process",
+    "description": "Overview of the employee self‑review process.",
     "audience": "Employees",
     "duration": "PT1H",
     "durationText": "",
