@@ -19,7 +19,7 @@ const courses = [
     "link": "/trainings/instant-insights/the-fmla-for-employees",
     "category": "All",
     "image": "./the-fmla-for-employees/assets/x4WS82QHC5-GUxoe.jpg",
-    "alt": "A person outdoors holding one child on their shoulders while another is held by their side."
+    "alt": "Statue of Alma putting on a lab coat and a stethoscope."
   },
   {
     "title": "Writing an Effective Employee Self-Review",
@@ -30,6 +30,6 @@ const courses = [
     "link": "/trainings/instant-insights/writing-an-effective-employee-self-review",
     "category": "All",
     "image": "./writing-an-effective-employee-self-review/assets/FZRerAhYhGsg-Fcm.jpg",
-    "alt": "Person with curly hair sitting at a computer in an office."
+    "alt": "A close-up of someone writing on a page using a ballpoint pen."
   }
 ];

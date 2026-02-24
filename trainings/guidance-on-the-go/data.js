@@ -85,6 +85,6 @@ const courses = [
     "link": "/trainings/guidance-on-the-go/the-fmla-for-supervisors",
     "category": "All",
     "image": "./the-fmla-for-supervisors/assets/x4WS82QHC5-GUxoe.jpg",
-    "alt": "A person outdoors holding one child on their shoulders while another is held by their side."
+    "alt": "Statue of Alma putting on a lab coat and a stethoscope."
   }
 ]
