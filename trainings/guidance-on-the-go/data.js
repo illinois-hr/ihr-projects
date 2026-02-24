@@ -84,7 +84,7 @@ const courses = [
     "durationText": "| 10 minutes",
     "link": "/trainings/guidance-on-the-go/the-fmla-for-supervisors",
     "category": "All",
-    "image": "./the-fmla-for-supervisors/assets/stock-image.jpg",
+    "image": "./the-fmla-for-supervisors/assets/x4WS82QHC5-GUxoe.jpg",
     "alt": "A person outdoors holding one child on their shoulders while another is held by their side."
   }
 ]

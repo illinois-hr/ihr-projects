@@ -4,7 +4,7 @@ const courses = [
     "description": "Interactive lessons that explains the value of clear goal-setting.",
     "audience": "Employees",
     "duration": "PT1H",
-    "durationText": "",
+    "durationText": "| 15 minutes",
     "link": "/trainings/instant-insights/setting-smart-goals",
     "category": "All",
     "image": "./setting-smart-goals/assets/rZsHOtSX1m5Y84c5.jpg",
@@ -18,7 +18,7 @@ const courses = [
     "durationText": "| 10 minutes",
     "link": "/trainings/instant-insights/the-fmla-for-employees",
     "category": "All",
-    "image": "./the-fmla-for-employees/assets/stock-image.jpg",
+    "image": "./the-fmla-for-employees/assets/x4WS82QHC5-GUxoe.jpg",
     "alt": "A person outdoors holding one child on their shoulders while another is held by their side."
   },
   {
@@ -26,10 +26,10 @@ const courses = [
     "description": "Overview of the employee self‑review process.",
     "audience": "Employees",
     "duration": "PT1H",
-    "durationText": "",
+    "durationText": "| 20 minutes",
     "link": "/trainings/instant-insights/writing-an-effective-employee-self-review",
     "category": "All",
-    "image": "./writing-an-effective-employee-self-review/assets/stock-image.jpg",
+    "image": "./writing-an-effective-employee-self-review/assets/FZRerAhYhGsg-Fcm.jpg",
     "alt": "Person with curly hair sitting at a computer in an office."
   }
 ];
