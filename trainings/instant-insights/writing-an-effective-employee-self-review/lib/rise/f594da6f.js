@@ -1,4 +1,4 @@
-"use strict";(globalThis.wpRiseJsonp=globalThis.wpRiseJsonp||[]).push([["defaultVendors-node_modules_pnpm_chartjs-plugin-datalabels_2_2_0_chart_js_4_5_1_node_modules_-d80483"],{67786(_e,A,w){w.r(A),w.d(A,{default:()=>he});var v=w(26376),g=w(30467);/*!
+"use strict";(globalThis.wpRiseJsonp=globalThis.wpRiseJsonp||[]).push([["defaultVendors-node_modules_pnpm_chartjs-plugin-datalabels_2_2_0_chart_js_4_5_1_node_modules_-d80483"],{264(_e,A,w){w.r(A),w.d(A,{default:()=>he});var v=w(13007),g=w(30467);/*!
  * chartjs-plugin-datalabels v2.2.0
  * https://chartjs-plugin-datalabels.netlify.app
  * (c) 2017-2022 chartjs-plugin-datalabels contributors
