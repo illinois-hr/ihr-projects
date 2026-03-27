@@ -78,7 +78,7 @@ const courses = [
   },
   {
     "title": "The FMLA for Supervisors",
-    "description": "Detailed information about the FMLA for Superviors",
+    "description": "Detailed information about the FMLA for Superviors.",
     "audience": "Supervisors",
     "duration": "PT1H",
     "durationText": "| 10 minutes",
@@ -86,5 +86,16 @@ const courses = [
     "category": "All",
     "image": "./the-fmla-for-supervisors/assets/x4WS82QHC5-GUxoe.jpg",
     "alt": "Statue of Alma putting on a lab coat and a stethoscope."
+  },
+  {
+    "title": "Conducting an Effective Performance Review",
+    "description": "Build confidence in annual performance reviews.",
+    "audience": "Supervisors",
+    "duration": "PT1H",
+    "durationText": "| 25 minutes",
+    "link": "/trainings/guidance-on-the-go/conducting-an-effective-performance-review",
+    "category": "All",
+    "image": "./conducting-an-effective-performance-review/assets/stock-image.jpg",
+    "alt": "A person gestures while talking to another person across a table in a bright indoor space with large windows."
   }
 ]
