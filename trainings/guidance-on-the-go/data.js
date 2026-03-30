@@ -89,7 +89,7 @@ const courses = [
   },
   {
     "title": "Conducting an Effective Performance Review",
-    "description": "Build confidence in annual performance reviews.",
+    "description": "Plan and deliver annual performance reviews that support employee growth with confidence",
     "audience": "Supervisors",
     "duration": "PT1H",
     "durationText": "| 25 minutes",
