@@ -2,7 +2,20 @@ const courseGrid = document.querySelector(".course-grid");
 const searchInput = document.querySelector(".search-input");
 const filterButtons = document.querySelectorAll(".search-container button");
 
-//Function to Render the Courses from data.js
+// Get category from URL
+function getCategoryFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("category") || "All";
+}
+
+// Update URL without reloading
+function updateURL(category) {
+  const url = new URL(window.location);
+  url.searchParams.set("category", category);
+  window.history.pushState({}, "", url);
+}
+
+// Function to Render the Courses from data.js
 function renderCourses(filteredCourses) {
   courseGrid.innerHTML = "";
 
@@ -34,9 +47,21 @@ function renderCourses(filteredCourses) {
   });
 }
 
-renderCourses(courses);
+// Apply filter logic in one place
+function applyFilter(category) {
+  let filtered =
+    category === "All"
+      ? courses
+      : courses.filter(course => course.category.includes(category));
 
-//Search Functionality
+  renderCourses(filtered);
+}
+
+// Initial load to apply filter from URL
+const initialCategory = getCategoryFromURL();
+applyFilter(initialCategory);
+
+// Search Functionality
 searchInput.addEventListener("input", e => {
   const query = e.target.value.toLowerCase();
 
@@ -53,11 +78,7 @@ filterButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     const category = btn.textContent.trim();
 
-    let filtered =
-      category === "All"
-        ? courses
-        : courses.filter(course => course.category.includes(category));
-
-    renderCourses(filtered);
+    updateURL(category);     // sync URL
+    applyFilter(category);   // apply filter
   });
 });
