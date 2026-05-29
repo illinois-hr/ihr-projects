@@ -24,8 +24,8 @@ categories.forEach((cat) => {
 
   btn.className = "filter-btn";
   btn.textContent = cat;
-
-  btn.setAttribute("aria-pressed", cat === "All");
+  btn.type = "button";
+  btn.setAttribute("aria-pressed", cat === "All" ? "true" : "false");
 
   btn.onclick = () => {
     activeCategory = cat;
@@ -33,9 +33,9 @@ categories.forEach((cat) => {
 
     document
       .querySelectorAll(".filter-btn")
-      .forEach((b) => b.setAttribute("aria-pressed", false));
+      .forEach((b) => b.setAttribute("aria-pressed", "false"));
 
-    btn.setAttribute("aria-pressed", true);
+    btn.setAttribute("aria-pressed", "true");
 
     render();
   };
@@ -86,8 +86,6 @@ function render() {
     li.className = "card";
 
     li.innerHTML = `
-
-
 <h3>${recipe.title}</h3>
 
 <p class="card-meta">
@@ -153,7 +151,6 @@ function openModal(recipe) {
     .join("");
 
   modalContent.innerHTML = `
-
 <h2 id="modal-title">${recipe.title}</h2>
 
 <p><strong>Servings:</strong> ${recipe.servings}</p>
@@ -177,7 +174,6 @@ ${nutritionRows}
 <ol>
 ${recipe.instructions.map((i) => `<li>${i}</li>`).join("")}
 </ol>
-
 `;
 
   overlay.hidden = false;
