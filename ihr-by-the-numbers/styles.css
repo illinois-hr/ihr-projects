@@ -274,7 +274,7 @@ a {
   background: var(--blue);
   position: relative;
   overflow: hidden;
-  min-height: 60vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   padding-block: 5rem;
