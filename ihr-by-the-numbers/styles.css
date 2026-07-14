@@ -675,6 +675,67 @@ a {
   white-space: nowrap;
 }
 
+/* Matrix Teams */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.matrix-note {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  color: var(--blue);
+  line-height: 1.75;
+}
+
+.matrix-table {
+  width: 100%;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.matrix-caption {
+  font-size: 1.2rem;
+  color: var(--blue);
+  caption-side: top;
+  text-align: center;
+}
+
+.matrix-table thead th {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-weight: 700;
+  color: var(--white);
+  background: var(--blue);
+  padding: 1rem 2rem;
+}
+
+.matrix-table thead th:first-child {
+  text-align: left;
+}
+
+.matrix-table tbody th {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--blue);
+  background: var(--white);
+  padding: 1rem 1.25rem;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.matrix-table tbody td {
+  padding: 1rem 1.25rem;
+  background: var(--white);
+  color: var(--gray-700);
+}
+
+.matrix-actual {
+  color: var(--blue);
+}
+
+
 /* Time To Fill */
 .ttf-heading {
   padding: 2rem 0;
