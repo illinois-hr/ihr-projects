@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IHR Navigation Prototype</title>
+
+<style>
+  :root {
+    --illini-blue: #13294B;
+    --illini-orange: #FF5F05;
+    --white: #FFFFFF;
+    --light-gray: #F5F5F5;
+    --border: #D9D9D9;
+    --text: #13294B;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* TOP-LEVEL NAVIGATION */
+  .navigation {
+    width: 100%;
+    background: var(--illini-blue);
+    border-bottom: 5px solid var(--illini-orange);
+  }
+
+  .nav-list {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-item {
+    position: relative;
+    flex: 1;
+    border-right: 1px solid rgba(255,255,255,.2);
+  }
+
+  .nav-item:first-child {
+    border-left: 1px solid rgba(255,255,255,.2);
+  }
+
+  .nav-button {
+    width: 100%;
+    min-height: 66px;
+    padding: 12px 9px;
+    border: 0;
+    background: var(--illini-blue);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .nav-button:hover,
+  .nav-button:focus,
+  .nav-item.active .nav-button {
+    background: var(--illini-orange);
+    color: var(--illini-blue);
+  }
+
+  /* SECOND-LEVEL NAVIGATION */
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    min-width: 250px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--illini-orange);
+    box-shadow: 0 8px 20px rgba(0,0,0,.16);
+    z-index: 100;
+  }
+
+  .nav-item.active .dropdown {
+    display: block;
+  }
+
+  .hub {
+    display: block;
+    padding: 13px 16px;
+    background: var(--light-gray);
+    color: var(--illini-blue);
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hub:hover,
+  .hub:focus {
+    background: #E8E8E8;
+    color: var(--illini-orange);
+  }
+
+  .second-level {
+    list-style: none;
+    margin: 0;
+    padding: 6px 0;
+  }
+
+  .second-level li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .second-level a {
+    display: block;
+    padding: 9px 16px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.35;
+    border-bottom: 1px solid #EEEEEE;
+  }
+
+  .second-level a:hover,
+  .second-level a:focus {
+    background: var(--light-gray);
+    color: var(--illini-orange);
+    text-decoration: underline;
+  }
+
+  /* THIRD-LEVEL ITEMS */
+  .nested a {
+    padding-left: 34px;
+    font-size: 13px;
+    color: #555;
+    background: #FAFAFA;
+  }
+
+  /* MOBILE */
+  .mobile-toggle {
+    display: none;
+    width: 100%;
+    padding: 15px 20px;
+    border: 0;
+    background: var(--illini-blue);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1100px) {
+    .nav-button {
+      font-size: 12px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .mobile-toggle {
+      display: block;
+    }
+
+    .nav-list {
+      display: none;
+    }
+
+    .nav-list.mobile-open {
+      display: block;
+    }
+
+    .nav-item {
+      border: 0;
+      border-bottom: 1px solid rgba(255,255,255,.2);
+    }
+
+    .nav-button {
+      min-height: auto;
+      padding: 15px 20px;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .dropdown {
+      position: static;
+      width: 100%;
+      min-width: 0;
+      border-left: 0;
+      border-right: 0;
+      box-shadow: none;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<nav class="navigation" aria-label="Illinois Human Resources primary navigation">
+
+  <button class="mobile-toggle" type="button" aria-expanded="false">
+    Menu ☰
+  </button>
+
+  <ul class="nav-list">
+
+    <!-- 1. JOB SEEKERS -->
+    <li class="nav-item">
+      <button class="nav-button" type="button">Job Seekers</button>
+
+      <div class="dropdown">
+        <a href="#" class="hub">Job Seekers Hub →</a>
+        <ul class="second-level">
+          <li><a href="#">Find Jobs</a></li>
+          <li><a href="#">Why Work at Illinois</a></li>
+          <li><a href="#">How to Apply</a></li>
+          <li><a href="#">Accepted an Offer</a></li>
+          <li><a href="#">Executive Searches</a></li>
+          <li><a href="#">Extra Help &amp; Temporary Jobs</a></li>
+          <li><a href="#">Recruiting &amp; Career Connections</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- 2. BENEFITS & WELL-BEING -->
+    <li class="nav-item">
+      <button class="nav-button" type="button">Benefits &amp; Well-Being</button>
+
+      <div class="dropdown">
+        <a href="#" class="hub">Benefits &amp; Well-Being Hub →</a>
+        <ul class="second-level">
+          <li><a href="#">Benefits</a></li>
+          <li><a href="#">Retirement</a></li>
+          <li><a href="#">Leave &amp; Time Off</a></li>
+          <li><a href="#">Tuition Waivers</a></li>
+          <li><a href="#">Counseling &amp; Mental Health</a></li>
+          <li><a href="#">Crisis &amp; Emergency Support</a></li>
+          <li><a href="#">Employee Well-Being</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- 3. EMPLOYEES & WORKPLACE -->
+    <li class="nav-item">
+      <button class="nav-button" type="button">Employees &amp; Workplace</button>
+
+      <div class="dropdown">
+        <a href="#" class="hub">Employees &amp; Workplace Hub →</a>
+        <ul class="second-level">
+          <li><a href="#">New Employees</a></li>
+          <li class="nested"><a href="#">Onboarding</a></li>
+          <li class="nested"><a href="#">Orientation</a></li>
+          <li><a href="#">Performance Management</a></li>
+          <li><a href="#">Workplace Flexibility Guidelines</a></li>
+          <li><a href="#">Employee Relations</a></li>
+          <li><a href="#">Workplace Concerns</a></li>
+          <li><a href="#">Get Involved (Engagement Opportunities)</a></li>
+          <li><a href="#">Awards &amp; Recognition Programs</a></li>
+          <li><a href="#">Value &amp; Culture at Illinois</a></li>
+          <li><a href="#">Leaving Illinois</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- 4. LEARNING & DEVELOPMENT -->
+    <li class="nav-item">
+      <button class="nav-button" type="button">Learning &amp; Development</button>
+
+      <div class="dropdown">
+        <a href="#" class="hub">Learning &amp; Development Hub →</a>
+        <ul class="second-level">
+          <li><a href="#">Employee Development</a></li>
+          <li><a href="#">Supervisor Development</a></li>
+          <li><a href="#">Leadership Development</a></li>
+          <li><a href="#">Organizational Development</a></li>
+          <li><a href="#">AI Professional Development</a></li>
+          <li><a href="#">Continuous Learning Resources</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- 5. HIRING & MANAGING EMPLOYEES -->
+    <li class="nav-item">
+      <button class="nav-button" type="button">Hiring &amp; Managing Employees</button>
+
+      <div class="dropdown">
+        <a href="#" class="hub">Hiring &amp; Managing Employees Hub →</a>
+        <ul class="second-level">
+          <li><a href="#">Hire an Employee</a></li>
+          <li><a href="#">Who is my Unit Support? (Matrix Teams)</a></li>
+          <li><a href="#">Employment Checks &amp; Appointments</a></li>
+          <li><a href="#">Extra Help &amp; Temporary Staffing</a></li>
+          <li><a href="#">Job Classification &amp; Reclassification</a></li>
+          <li><a href="#">Promotions &amp; Position Changes</a></li>
+          <li><a href="#">New Supervisor Resources</a></li>
+          <li><a href="#">Manage Employee Performance</a></li>
+          <li><a href="#">Support an Employee's Leave</a></li>
+          <li><a href="#">Address a Workplace Concern</a></li>
+          <li><a href="#">Separate or Offboard an Employee</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- 6. PAY & TIME -->
+    <li class="nav-item">
+      <button class="nav-button" type="button">Pay &amp; Time</button>
+
+      <div class="dropdown">
+        <a href="#" class="hub">Pay &amp; Time Hub →</a>
+        <ul class="second-level">
+          <li><a href="#">Pay Overview</a></li>
+          <li><a href="#">Pay Grades &amp; Salary Ranges</a></li>
+          <li><a href="#">Salary Plans</a></li>
+          <li><a href="#">Time Reporting</a></li>
+          <li><a href="#">Total Compensation Calculator</a></li>
+          <li><a href="#">FLSA</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- 7. POLICIES & TOOLS -->
+    <li class="nav-item">
+      <button class="nav-button" type="button">Policies &amp; Tools</button>
+
+      <div class="dropdown">
+        <a href="#" class="hub">Policies &amp; Tools Hub →</a>
+        <ul class="second-level">
+          <li><a href="#">Policies A-Z</a></li>
+          <li><a href="#">Labor &amp; Union Agreements</a></li>
+          <li><a href="#">HR Forms</a></li>
+          <li><a href="#">HR Systems &amp; Applications</a></li>
+          <li><a href="#">Job Aids</a></li>
+          <li><a href="#">HR Document Library</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- 8. ABOUT -->
+    <li class="nav-item">
+      <button class="nav-button" type="button">About</button>
+
+      <div class="dropdown">
+        <a href="#" class="hub">About Hub →</a>
+        <ul class="second-level">
+          <li><a href="#">About IHR</a></li>
+          <li><a href="#">Units &amp; Functional Areas</a></li>
+          <li><a href="#">Meet Our Staff / Directory</a></li>
+          <li><a href="#">Organizational Structure</a></li>
+          <li><a href="#">IHR by the Numbers</a></li>
+          <li><a href="#">Contact IHR</a></li>
+          <li><a href="#">HR Contacts Across Campus / Departmental HR Contacts</a></li>
+        </ul>
+      </div>
+    </li>
+
+  </ul>
+</nav>
+
+<script>
+  const navItems = document.querySelectorAll(".nav-item");
+  const mobileToggle = document.querySelector(".mobile-toggle");
+  const navList = document.querySelector(".nav-list");
+
+  navItems.forEach(item => {
+    const button = item.querySelector(".nav-button");
+
+    button.addEventListener("click", event => {
+      event.stopPropagation();
+
+      const isActive = item.classList.contains("active");
+
+      navItems.forEach(other => other.classList.remove("active"));
+
+      if (!isActive) {
+        item.classList.add("active");
+      }
+    });
+  });
+
+  document.addEventListener("click", () => {
+    navItems.forEach(item => item.classList.remove("active"));
+  });
+
+  mobileToggle.addEventListener("click", () => {
+    const isOpen = navList.classList.toggle("mobile-open");
+    mobileToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      navItems.forEach(item => item.classList.remove("active"));
+    }
+  });
+</script>
+
+</body>
+</html>
