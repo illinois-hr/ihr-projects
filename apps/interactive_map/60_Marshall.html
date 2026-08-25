@@ -130,18 +130,50 @@ h1{
 .hotspot.earth{background:var(--earth)}
 .hotspot.orange{background:var(--orange)}
 
+.legend-dock{
+  position:fixed;
+  left:18px;
+  bottom:18px;
+  z-index:30;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:8px;
+}
+.legend-toggle{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  min-height:42px;
+  padding:9px 13px;
+  border:1px solid rgba(216,222,232,.95);
+  border-radius:999px;
+  background:rgba(255,255,255,.96);
+  color:var(--il-blue);
+  box-shadow:0 8px 24px rgba(19,41,75,.16);
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  backdrop-filter:blur(8px);
+}
+.legend-toggle:hover,.legend-toggle:focus-visible{background:#fff;transform:translateY(-1px);outline:none;box-shadow:0 10px 26px rgba(19,41,75,.2)}
+.legend-toggle svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.legend-toggle[aria-expanded="true"]{background:var(--il-blue);color:#fff;border-color:var(--il-blue)}
 .legend{
-  position:absolute;
-  left:18px;bottom:18px;
-  display:flex;flex-wrap:wrap;gap:7px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
   padding:10px 12px;
-  background:rgba(255,255,255,.94);
+  background:rgba(255,255,255,.96);
   border:1px solid #dce2ea;
   border-radius:12px;
-  box-shadow:0 8px 24px rgba(19,41,75,.12);
-  max-width:min(760px,calc(100% - 36px));
-  z-index:8;
+  box-shadow:0 10px 28px rgba(19,41,75,.18);
+  max-width:min(760px,calc(100vw - 36px));
+  max-height:min(42vh,420px);
+  overflow:auto;
+  animation:legendIn .18s ease both;
 }
+.legend[hidden]{display:none}
 .legend-item{
   display:flex;align-items:center;gap:7px;
   font-size:12px;font-weight:700;color:#3c4b61;
@@ -164,6 +196,7 @@ h1{
 .legend-group.amenity .legend-icon{background:var(--orange)}
 .legend-group.access .legend-icon{background:var(--harvest);color:var(--il-blue)}
 .legend-group.support .legend-icon{background:var(--berry)}
+@keyframes legendIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 .dot{width:11px;height:11px;border-radius:50%}
 .info{
   margin-top:16px;
@@ -207,7 +240,6 @@ h1{
   .page{padding:18px 12px 32px}
   .header{align-items:flex-start;flex-direction:column}
   .map-viewport{max-height:calc(100vh - 120px)}
-  .legend{position:sticky;bottom:8px;left:8px;margin:8px;max-width:calc(100% - 16px)}
 }
 
 /* ===============================================================
@@ -283,7 +315,9 @@ body.intro-active{overflow:hidden}
   .controls{gap:5px}
   .control-btn{padding:8px 10px;font-size:13px;min-width:42px;min-height:40px}
   .map-viewport{max-height:none;min-height:calc(100svh - 105px);height:calc(100svh - 105px)}
-  .legend{position:sticky;bottom:8px;left:8px;margin:8px;max-width:calc(100% - 16px);padding:9px;gap:5px;max-height:35svh;overflow:auto}
+  .legend-dock{left:12px;bottom:12px;max-width:calc(100vw - 24px)}
+  .legend{max-width:calc(100vw - 24px);max-height:42svh;padding:9px;gap:5px}
+  .legend-toggle{min-height:40px;padding:8px 12px;font-size:12px}
   .legend-title{font-size:11px}
   .legend-group{font-size:11px;padding:4px 6px}
   .legend-icon{width:24px;height:24px;flex-basis:24px}
@@ -477,19 +511,25 @@ body.intro-active{overflow:hidden}
 
       </div>
 
-      <div class="legend" aria-label="Map legend">
-        <div class="legend-title">Map Legend</div>
-        <div class="legend-group office legend-item"><span class="legend-icon"><svg><use href="#icon-building"></use></svg></span>Office / team</div>
-        <div class="legend-group meeting legend-item"><span class="legend-icon"><svg><use href="#icon-meeting"></use></svg></span>Meeting / collaboration</div>
-        <div class="legend-group training legend-item"><span class="legend-icon"><svg><use href="#icon-training"></use></svg></span>Training / learning</div>
-        <div class="legend-group service legend-item"><span class="legend-icon"><svg><use href="#icon-headset"></use></svg></span>Service / support</div>
-        <div class="legend-group office legend-item"><span class="legend-icon"><svg><use href="#icon-huddle"></use></svg></span>Huddle space</div>
-        <div class="legend-group training legend-item"><span class="legend-icon"><svg><use href="#icon-wellness"></use></svg></span>Wellness</div>
-        <div class="legend-group amenity legend-item"><span class="legend-icon"><svg><use href="#icon-coffee"></use></svg></span>Breakroom</div>
-        <div class="legend-group support legend-item"><span class="legend-icon"><svg><use href="#icon-mic"></use></svg></span>Media / studio</div>
-        <div class="legend-group support legend-item"><span class="legend-icon"><svg><use href="#icon-box"></use></svg></span>Storage</div>
-        <div class="legend-group amenity legend-item"><span class="legend-icon"><svg><use href="#icon-restroom"></use></svg></span>Restroom</div>
-        <div class="legend-group access legend-item"><span class="legend-icon"><svg><use href="#icon-door"></use></svg></span>Entrance</div>
+      <div class="legend-dock" id="legendDock">
+        <button class="legend-toggle" id="legendToggle" type="button" aria-expanded="false" aria-controls="mapLegend">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"></path><circle cx="8" cy="5" r="2"></circle><circle cx="15" cy="12" r="2"></circle><circle cx="10" cy="19" r="2"></circle></svg>
+          <span>Legend</span>
+        </button>
+        <div class="legend" id="mapLegend" aria-label="Map legend" hidden>
+          <div class="legend-title">Map Legend</div>
+          <div class="legend-group office legend-item"><span class="legend-icon"><svg><use href="#icon-building"></use></svg></span>Office / team</div>
+          <div class="legend-group meeting legend-item"><span class="legend-icon"><svg><use href="#icon-meeting"></use></svg></span>Meeting / collaboration</div>
+          <div class="legend-group training legend-item"><span class="legend-icon"><svg><use href="#icon-training"></use></svg></span>Training / learning</div>
+          <div class="legend-group service legend-item"><span class="legend-icon"><svg><use href="#icon-headset"></use></svg></span>Service / support</div>
+          <div class="legend-group office legend-item"><span class="legend-icon"><svg><use href="#icon-huddle"></use></svg></span>Huddle space</div>
+          <div class="legend-group training legend-item"><span class="legend-icon"><svg><use href="#icon-wellness"></use></svg></span>Wellness</div>
+          <div class="legend-group amenity legend-item"><span class="legend-icon"><svg><use href="#icon-coffee"></use></svg></span>Breakroom</div>
+          <div class="legend-group support legend-item"><span class="legend-icon"><svg><use href="#icon-mic"></use></svg></span>Media / studio</div>
+          <div class="legend-group support legend-item"><span class="legend-icon"><svg><use href="#icon-box"></use></svg></span>Storage</div>
+          <div class="legend-group amenity legend-item"><span class="legend-icon"><svg><use href="#icon-restroom"></use></svg></span>Restroom</div>
+          <div class="legend-group access legend-item"><span class="legend-icon"><svg><use href="#icon-door"></use></svg></span>Entrance</div>
+        </div>
       </div>
     </div>
   </main>
@@ -759,6 +799,15 @@ document.getElementById("zoomReset").onclick=()=>{
   viewport.scrollTo({left:0,top:0,behavior:"smooth"});
 };
 
+/* Collapsible legend. It stays docked to the bottom-left of the screen. */
+const legendToggle=document.getElementById("legendToggle");
+const mapLegend=document.getElementById("mapLegend");
+legendToggle.addEventListener("click",()=>{
+  const willOpen=mapLegend.hidden;
+  mapLegend.hidden=!willOpen;
+  legendToggle.setAttribute("aria-expanded",String(willOpen));
+});
+
 /* Keyboard-friendly hotspot selection. */
 document.querySelectorAll(".hotspot").forEach(button=>{
   button.addEventListener("click",()=>{
@@ -785,7 +834,7 @@ let didDrag=false;
 
 viewport.addEventListener("pointerdown",e=>{
   if(e.pointerType!=="mouse" || e.button!==0)return;
-  if(e.target.closest(".hotspot,.control-btn,.legend,.modal-backdrop"))return;
+  if(e.target.closest(".hotspot,.control-btn,.legend-dock,.modal-backdrop"))return;
   isDragging=true;
   didDrag=false;
   dragStartX=e.clientX;
