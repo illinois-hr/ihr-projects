@@ -89,6 +89,7 @@ h1{
   position:relative;
   width:100%;
   min-width:0;
+  flex:0 0 auto;
 }
 .map-image{
   display:block;
@@ -316,7 +317,7 @@ body.intro-active{overflow:hidden}
   .controls{gap:5px;margin-left:auto}
   .control-btn{padding:8px 10px;font-size:13px;min-width:42px;min-height:40px;background:rgba(255,255,255,.94);}
   .map-shell{border:0;border-radius:0;box-shadow:none;min-height:100svh;height:100svh;}
-  .map-viewport{max-height:none;min-height:100svh;height:100svh;border-radius:0;overflow:auto;}
+  .map-viewport{max-height:none;min-height:100svh;height:100svh;border-radius:0;overflow:auto;display:flex;align-items:center;justify-content:flex-start;}
   .legend-dock{left:12px;bottom:76px;max-width:calc(100vw - 24px)}
   .legend{max-width:calc(100vw - 24px);max-height:42svh;padding:9px;gap:5px}
   .legend-toggle{min-height:40px;padding:8px 12px;font-size:12px}
