@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -41,10 +41,18 @@
       };
     </script>
 
-    <!-- REPLACE THIS -->
     <title>Community Resource List</title>
 
     <style>
+       .intro-text {
+         font-size: 20px;
+         margin-bottom: 30px;
+       }
+
+       #resource-categories-heading {
+         margin-bottom: 30px;
+       }
+
       .resources-list {
         display: flex;
         flex-wrap: wrap;
@@ -62,7 +70,9 @@
         font-weight: bold;
         color: #13294b;
         background-color: #fff;
-        transition: background-color 0.3s, color 0.3s;
+        transition:
+          background-color 0.3s,
+          color 0.3s;
       }
 
       .resources-list a:hover {
@@ -74,6 +84,7 @@
         .resources-list {
           justify-content: flex-start;
         }
+
         .resources-list a {
           font-size: 14px;
           padding: 8px 14px;
@@ -81,6 +92,7 @@
       }
     </style>
   </head>
+
   <body>
     <ilw-page>
       <!-- HEADER - Same for all documents -->
@@ -91,1722 +103,1091 @@
       </ilw-header>
 
       <!-- REPLACE EVERYTHING BELOW THIS LINE -->
+
       <main>
-        <h1>Community Resources List</h1>
+        <h1 id="page-top">Community Resources List</h1>
+        <p class="intro-text">
+          Community organizations can help with employment, recovery, food,
+          shelter, counseling, health care, and other needs. Contact the
+          organization for current availability, eligibility, and appointment
+          requirements. For help finding local services, call 211 or visit
+          <a href="https://www.unitedwaychampaign.org/211"
+            >United Way of Champaign County’s 211 resource page</a
+          >.
+        </p>
 
-        <section id="resources-list" class="resources-list" aria-label="Resources List">
-          <a href="#employment-heading">Employment Resources</a>
-          <a href="#substance-heading">Drug and Alcohol Resources</a>
-          <a href="#emergency-heading">Emergency Resources</a>
-          <a href="#emotional-heading">Emotional Resources</a>
-          <a href="#financial-heading">Financial Resources</a>
-          <a href="#healthcare-heading">Health Care Resources</a>
-          <a href="#housing-heading">Housing Resources</a>
-          <a href="#legal-heading">Legal Services</a>
-          <a href="#lgbt-heading">LGBT Resources</a>
-          <a href="#senior-heading">Senior Resources</a>
-          <a href="#support-group-heading">Support Group Information</a>
-          <a href="#veteran-heading">Veteran Resources</a>
-        </section>
+        <h2 id="resource-categories-heading">Browse Resources by Category</h2>
 
-        <section aria-labelledby="employment-heading">
-          <h2 id="employment-heading">Employment Resources</h2>
+        <ilw-accordion aria-labelledby="resource-categories-heading">
 
-          <section aria-labelledby="ides-heading">
-            <h3 id="ides-heading">
-              Illinois Department of Employment Security
-            </h3>
-
-            <address>
-              <p>
-                1307 N. Mattis Ave<br />
-                Champaign, IL 61821
-              </p>
-
-              <p>
-                Phone:
-                <a href="tel:+12175580401">(217) 558-0401</a>
-              </p>
+          <ilw-accordion-panel>
+            <h3 slot="summary">Drug and Alcohol Resources</h3>
+            <section>
+              <h4>Al-Anon Family Groups</h4>
               <p>
                 Website:
-                <a href="https://ides.illinois.gov/">
-                  Illinois Department of Employment Security
-                </a>
+                <a href="https://al-anon.org/">Al-Anon Family Groups</a>
               </p>
-            </address>
-
-            <p>
-              Local office processes unemployment benefits and their free public
-              employment service provides job referrals and placements. Online
-              career services and listings of Illinois job fairs and special
-              events. Illinois Skills Match (ISM) database matches job seekers
-              and employers, no fee to register. Specific services for veterans
-              are also available:
-              <a href="https://ides.illinois.gov/jobs-workforce/veterans.html">
-                Veterans employment services </a
-              >.
-            </p>
-          </section>
-
-          <section aria-labelledby="job-board-heading">
-            <h3 id="job-board-heading">Illinois Job Board</h3>
-            <p>
-              Illinois Human Resources (IHR) provides a streamlined approach to
-              applying for positions at the University of Illinois
-              Urbana-Champaign.
-            </p>
-            <p>
-              <a href="https://jobs.illinois.edu/">
-                Visit the Illinois Job Board
-              </a>
-            </p>
-          </section>
-
-          <section aria-labelledby="onet-heading">
-            <h3 id="onet-heading">O*NET Resource Center</h3>
-            <p>
-              Website:
-              <a href="http://www.onetcenter.org">
-                O*NET Resource Center website
-              </a>
-            </p>
-            <p>
-              An online resource site that contains assessment tools and an
-              occupation database to assist those who are choosing or changing
-              careers.
-            </p>
-          </section>
-
-          <section aria-labelledby="parkland-heading">
-            <h3 id="parkland-heading">Parkland Career Center</h3>
-
-            <address>
               <p>
-                2400 W. Bradley, Room A175<br />
-                Champaign, IL 61821
+                Offers mutual support for people affected by someone else’s
+                drinking. Use the website to find in-person, online, or
+                telephone meetings and information about Alateen.
               </p>
-              <p>Phone: <a href="tel:+12173512219">(217) 351-2219</a></p>
+            </section>
+            <section>
+              <h4>Alcoholics Anonymous — East Central Illinois</h4>
               <p>
-                Website:
+                24-hour AA hotline: (217) 373-4200<br />Website:
+                <a href="https://aa-eci.org/"
+                  >Alcoholics Anonymous — East Central Illinois District 12</a
+                >
+              </p>
+              <p>
+                Provides peer support for people who want to stop drinking. The
+                website lists current local meetings and events.
+              </p>
+            </section>
+            <section>
+              <h4>Canaan Development Foundation Men’s S.A.F.E. House</h4>
+              <p>
+                Phone: (217) 344-7233<br />Website:
                 <a
-                  href="https://www.parkland.edu/Main/About-Parkland/Department-Office-Directory/CounselingServices/Career-Services"
-                >
-                  Parkland Career Services
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Career services are available to Parkland students and district
-              residents. Career counselors can assist with tasks such as job
-              searches, career decisions, and resume and cover letter reviews.
-              Call or email
-              <a href="mailto:careercenter@parkland.edu"
-                >careercenter@parkland.edu</a
-              >
-              to set up an appointment .
-            </p>
-          </section>
-
-          <section aria-labelledby="ui-career-heading">
-            <h3 id="ui-career-heading">University of Illinois Career Center</h3>
-
-            <address>
-              <p>
-                715 S. Wright Street<br />
-                Champaign, IL 61820
-              </p>
-              <p>Phone: <a href="tel:+12173330820">(217) 333-0820</a></p>
-              <p>
-                Website:
-                <a href="http://www.careercenter.illinois.edu/">
-                  University of Illinois Career Center
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Career services (career counseling and advising, resume and cover
-              letter reviews, mock interviews, workshops, job fairs) available
-              only to current U of I students and alumni. However, tools and
-              resources are available on their website for anyone’s use.
-            </p>
-            <ul style="margin-left: 2em">
-              <li>
-                To find job and internship databases, select “Job/Internship”
-                from the homepage menu, then “Job and Internship Databases,”
-                followed by “Meta-Job Sites.”
-              </li>
-              <li>
-                Sample cover letters and resumes are available on the website.
-              </li>
-              <li>
-                Interview preparation tips and strategies are provided online.
-              </li>
-            </ul>
-          </section>
-
-          <section aria-labelledby="work4il-heading">
-            <h3 id="work4il-heading">Work 4 Illinois — Champaign Office</h3>
-
-            <address>
-              <p>
-                State Regional Office Building<br />
-                2125 South First Street<br />
-                Champaign, IL 61820
-              </p>
-              <p>Phone: <a href="tel:+12172783435">(217) 278-3435</a></p>
-              <p>
-                Website:
-                <a href="http://work.illinois.gov/carsrvcs.htm">
-                  Work 4 Illinois career services
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Career counseling services available for individuals seeking State
-              of Illinois employment. Call to schedule an appointment.
-            </p>
-          </section>
-          <p style="font-size: 2em;"><a href="#resources-list">Back to Top</a></p>
-        </section>
-
-        <section aria-labelledby="substance-heading">
-          <h2 id="substance-heading">Drug and Alcohol Resources</h2>
-
-          <section aria-labelledby="alanon-heading">
-            <h3 id="alanon-heading">Al-Anon Family Group</h3>
-            <p>
-              This is a mutual support group that is comprised of members who
-              share the same problem and support each other voluntarily as they
-              work through the recovery process of living with someone who is
-              chemically dependent.
-            </p>
-            <p>
-              Website:
-              <a href="http://www.al-anon.org/al-anon-in-illinois">
-                Al-Anon Illinois
-              </a>
-            </p>
-          </section>
-
-          <section aria-labelledby="aa-heading">
-            <h3 id="aa-heading">Alcoholics Anonymous (AA)</h3>
-            <address>
-              <p>Phone: <a href="tel:+12173734200">(217) 373-4200</a></p>
-              <p>
-                Email:
-                <a href="mailto:aa-ecior@aa-eci.org">aa-ecior@aa-eci.org</a>
-              </p>
-              <p>
-                Website:
-                <a href="http://www.aa-eci.org/">
-                  Alcoholics Anonymous Eastern Central Illinois
-                </a>
-              </p>
-            </address>
-            <p>Call or email for local AA meetings and events in your area.</p>
-          </section>
-
-          <section aria-labelledby="canaan-heading">
-            <h3 id="canaan-heading">
-              Canaan Development Foundation S.A.F.E. (Substance Abuse Free
-              Environment) House
-            </h3>
-            <address>
-              <p>
-                404 W. Main Street<br />
-                Urbana, IL 61801
-              </p>
-              <p>Crisis phone: <a href="tel:+12173447233">(217) 344-7233</a></p>
-              <p>
-                Email:
-                <a href="mailto:cbc@canaanurbana.org">cbc@canaanurbana.org</a>
-                (general information)
-              </p>
-              <p>
-                Website:
-                <a href="https://www.canaansafehouse.org/">
-                  Canaan SAFE House
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Separate 12-month live-in Men’s SAFE House and Women’s SAFE House
-              programs that incorporate a structured daily regimen of GED and/or
-              adult education, devotion, group therapy, personal counseling,
-              volunteer work projects, evening community-wide personal
-              enrichment courses, and weekly workship services.
-            </p>
-          </section>
-          <section aria-labelledby="carle-heading">
-            <h3 id="carle-heading">Carle Addiction Recovery Center</h3>
-            <address>
-              <p>
-                204 West University Avenue<br />
-                Urbana, IL 61821
-              </p>
-              <p>Phone: <a href="tel:+12173836039">(217) 383-6039</a></p>
-              <p>
-                Website:
-                <a href="https://carle.org/Services/Addiction-Recovery">
-                  Carle Addiction Recovery Center
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Services provided include assessment and treatment development,
-              intensive outpatient substance abuse treatment services,
-              medication management, group therapy, adolescent treatment, family
-              support programs, and referrals to outside providers for
-              long-term/inpatient care.
-            </p>
-          </section>
-          <section aria-labelledby="narcotics-heading">
-            <h3 id="narcotics-heading">Narcotics Anonymous (NA)</h3>
-            <address>
-              <p>Phone: <a href="tel:+18005390475">(800) 539-0475</a></p>
-              <p>
-                Email:
-                <a href="mailto:mailto:request@centralillinoisna.org"
-                  >request@centralillinoisna.org</a
+                  href="https://www.treatmentcentersdirectory.com/Illinois/Urbana/canaan-development-foundation-mens-safe-house"
+                  >Canaan Men’s SAFE House directory listing</a
                 >
               </p>
               <p>
-                Website:
-                <a href="https://illinoisna.org/"> Narcotics Anonymous (NA) </a>
+                Contact the program directly about residential substance use
+                recovery support, admission requirements, and its current
+                location.
               </p>
-            </address>
-
-            <p>Call or email for local NA meetings and events in your area.</p>
-          </section>
-          <section aria-labelledby="pavilion-heading">
-            <h3 id="pavilion-heading">
-              The Pavilion New Choice Center for Addiction Recovery
-            </h3>
-
-            <address>
+            </section>
+            <section>
+              <h4>Carle Addiction Recovery Center</h4>
               <p>
-                809 West Church Street<br />
-                Champaign, IL 61820
-              </p>
-              <p>Phone: <a href="tel:+12173731700">(217) 373-1700</a></p>
-              <p>
-                Website:
-                <a href="http://www.pavilionhospital.com/">
-                  Pavilion Hospital
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Alcohol and drug treatment services available. Services include
-              residential treatment, medical detoxification, day programs, dual
-              diagnosis treatment, and outpatient services such as individual
-              counseling, family counseling, and continuing care support. Free,
-              confidential assessments are provided 24 hours/day, 7 days/week.
-            </p>
-          </section>
-          <section aria-labelledby="rosecrance-heading">
-            <h3 id="rosecrance-heading">Rosecrance</h3>
-
-            <p>
-              Website:
-              <a href="https://rosecrance.org/"> Rosecrance</a>
-            </p>
-
-            <ul style="margin-left: 2em">
-              <li>
-                <strong>Rosecrance on Moreland (Champaign)</strong><br />
-                <a href="https://rosecrance.org/locations/rosecrance-moreland/">
-                  Moreland location details </a
-                ><br />
-                New clients: <a href="tel:+18663308729">(866) 330-8729</a><br />
-                Existing clients: <a href="tel:+12173567576">(217) 356-7576</a>
-              </li>
-
-              <li>
-                <strong>Rosecrance Urbana</strong><br />
-                <a href="https://rosecrance.org/">
-                  Urbana services information </a
-                ><br />
-                Phone: <a href="tel:+12173284500">(217) 328-4500</a>
-              </li>
-
-              <li>
-                <strong>Rosecrance Danville</strong><br />
-                <a href="https://rosecrance.org/locations/rosecrance-danville/">
-                  Danville location details </a
-                ><br />
-                Phone: <a href="tel:+12174450000">(217) 445-0000</a>
-              </li>
-            </ul>
-          </section>
-          <p style="font-size: 2em;"><a href="#resources-list">Back to Top</a></p>
-        </section>
-
-        <section aria-labelledby="emergency-heading">
-          <h2 id="emergency-heading">Emergency Resources</h2>
-
-          <section aria-labelledby="austins-heading">
-            <h3 id="austins-heading">
-              C-U at Home Austin’s Place — Emergency Shelter for Single Women
-            </h3>
-
-            <address>
-              <p>
-                First United Methodist Church<br />
-                504 N. Market Street<br />
-                Champaign, IL 61820
-              </p>
-              <p>Phone: <a href="tel:+12173569078">(217) 356-9078</a></p>
-              <p>
-                Website:
-                <a href="https://www.cuathome.us/austins-place-womens-shelter/">
-                  Austin’s Place shelter
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Provides overnight shelter for homeless single women in Champaign
-              County from December 31 – March 31 only.
-            </p>
-          </section>
-
-          <section aria-labelledby="urbana-housing-heading">
-            <h3 id="urbana-housing-heading">
-              City of Urbana — Transitional Housing Program for Homeless
-              Families
-            </h3>
-
-            <address>
-              <p>
-                400 South Vine Street<br />
-                Urbana, IL 61801
-              </p>
-              <p>Phone: <a href="tel:+12173840200">(217) 384-0200</a></p>
-              <p>
-                Website:
-                <a href="http://urbanaillinois.us/terms/transitional-housing">
-                  Transitional housing program information
-                </a>
-              </p>
-            </address>
-
-            <p>
-              This program is by application only and available to homeless
-              families with dependent children who have been residents of
-              Champaign County for at least three months. Applications are
-              available only when there are vacancies.
-            </p>
-          </section>
-
-          <section aria-labelledby="courage-heading">
-            <h3 id="courage-heading">Courage Connection</h3>
-
-            <address>
-              <p>
-                508 East Church Street<br />
-                Champaign, IL 61820
+                Phone: (217) 383-6039<br />Website:
+                <a href="https://carle.org/services/addiction-recovery"
+                  >Carle Addiction Recovery</a
+                >
               </p>
               <p>
-                Main office: <a href="tel:+12173527151">(217) 352-7151</a><br />
-                24-hour hotline:
-                <a href="tel:+12173844390">(217) 384-4390</a> or
-                <a href="tel:+18773844390">(877) 384-4390</a>
+                Offers addiction counseling, medication-assisted treatment,
+                individual and group services, family education, intensive
+                outpatient treatment, and continuing care. Call to confirm the
+                appropriate service location and arrange care.
+              </p>
+            </section>
+            <section>
+              <h4>Narcotics Anonymous — Primary Purpose Area</h4>
+              <p>
+                Helpline: (800) 539-0475<br />Website:
+                <a href="https://illinoisna.org/"
+                  >Illinois Region Narcotics Anonymous</a
+                >
               </p>
               <p>
-                Website:
-                <a href="http://courageconnection.org/">
-                  Courage Connection website
-                </a>
+                Offers peer support for recovery from drug addiction. The
+                regional website provides the Primary Purpose Area meeting list
+                for the Champaign-Urbana area.
               </p>
-            </address>
-
-            <p>
-              Provides emergency shelter services for individuals and families
-              experiencing homelessness or who are victims of domestic violence.
-              Individuals can either call the 24-hour hotline to speak with a
-              counselor about options or show up at the Courage Connection
-              office. Legal advocacy and individual counseling services are also
-              offered.
-            </p>
-          </section>
-
-          <section aria-labelledby="nursery-heading">
-            <h3 id="nursery-heading">Crisis Nursery</h3>
-
-            <address>
+            </section>
+            <section>
+              <h4>The Pavilion New Choice Center for Addiction Recovery</h4>
               <p>
-                1309 West Hill Street<br />
-                Urbana, IL 61801
-              </p>
-              <p>
-                Main office: <a href="tel:+12173372731">(217) 337-2731</a><br />
-                Crisis line: <a href="tel:+12173372730">(217) 337-2730</a>
-              </p>
-              <p>
-                Website:
-                <a href="http://www.crisisnursery.net/"> Crisis Nursery </a>
-              </p>
-            </address>
-
-            <p>
-              Provides emergency child care services for children ages zero to
-              five years old whose families are experiencing a crisis situation.
-              Emergency childcare services are available 24 hours a day, 7 days
-              a week. It is strongly recommended to call in advance to see if
-              space is available for your child; however, walk-ins are also
-              accepted. Crisis nursery also offers parent-child interaction
-              groups, perinatal depression support services, home visits, and
-              respite care.
-            </p>
-          </section>
-
-          <section aria-labelledby="emmanuel-heading">
-            <h3 id="emmanuel-heading">Emmanuel Episcopal Church</h3>
-
-            <address>
-              <p>
-                208 West University Avenue<br />
-                Champaign, IL 61820
-              </p>
-              <p>Phone: <a href="tel:+12173529827">(217) 352-9827</a></p>
-              <p>
+                809 W. Church Street, Champaign, IL 61820<br />Phone: (217)
+                373-1700<br />Assessments: (800) 373-1700<br />Website:
                 <a
-                  href="https://www.emmanuelmemorialepiscopal.org/ministry-opportunities.html"
+                  href="https://pavilionhospital.com/treatment-and-services/adults/addiction-recovery/"
+                  >New Choice Center for Addiction Recovery</a
                 >
-                  Church ministry opportunities
-                </a>
               </p>
               <p>
+                Offers a hospital-based addiction recovery program with medical
+                detoxification, residential treatment, individualized treatment
+                planning, and treatment for co-occurring conditions. No-cost,
+                confidential assessments are available 24 hours a day, seven
+                days a week.
+              </p>
+            </section>
+            <section>
+              <h4>Rosecrance — Substance Use Treatment</h4>
+              <p>
+                Website: <a href="https://www.rosecrance.org/">Rosecrance</a>
+              </p>
+              <p><strong>
+                Rosecrance on Moreland — Champaign</strong><br />2302 Moreland Boulevard,
+                Champaign, IL 61822<br />Phone: (217) 239-5209<br />Website:
+                <a
+                  href="https://www.rosecrance.org/locations/rosecrance-moreland/"
+                  >Rosecrance on Moreland</a
+                >
+              </p>
+              <p>
+                Provides residential substance use treatment, recovery living,
+                mental health services, and crisis services. The campus operates
+                24 hours a day, seven days a week.
+              </p>
+              <p>
+                <strong>Rosecrance Danville</strong><br />923 N. Vermilion Street, Suite A,
+                Danville, IL 61832<br />Phone: (217) 239-5208<br />Website:
+                <a
+                  href="https://www.rosecrance.org/locations/rosecrance-danville/"
+                  >Rosecrance Danville</a
+                >
+              </p>
+              <p>
+                Offers outpatient substance use treatment, including individual
+                and group therapy, intensive outpatient treatment, screenings,
+                and family support.
+              </p>
+              <p>
+                Rosecrance Walnut and Rosecrance Therapies Urbana are listed
+                under Emotional Resources below.
+              </p>
+            </section>
+          </ilw-accordion-panel>
+          
+          <ilw-accordion-panel>
+            <h3 slot="summary">Emergency Resources</h3>
+            <section>
+              <h4>C-U at Home Mid-Barrier Shelter for Men and Women</h4>
+              <p>
+                1207 S. Mattis Avenue, Champaign, IL 61821<br />Phone: (217)
+                819-4569<br />Website:
+                <a href="https://www.cuathome.us/about">C-U at Home</a>
+              </p>
+              <p>
+                Provides 24/7 shelter with case management for men and women. By
+                application and acceptance into the program only.
+              </p>
+            </section>
+            <section>
+              <h4>STRIDES Shelter</h4>
+              <p>
+                Strides is a low-barrier shelter and resource center serving
+                adults (men and women) experiencing homelessness. Strides does
+                not require sobriety, abstinence, or a criminal background check
+                for individuals to receive services. Residents will be received
+                from 8 a.m.- 7 p.m., 7 days a week.
+              </p>
+              <p>
+                Phone: 217-403-6150<br />Address: 70 E. Washington, Champaign,
+                IL 61820
+              </p>
+              <p>
+                Website:
+                <a href="https://cctownship.com/strides-shelter/">Strides</a>
+              </p>
+            </section>
+            <section>
+              <h4>Courage Connection</h4>
+              <p>
+                Office: (217) 352-7151<br />24-hour domestic violence hotline:
+                (217) 384-4390 or (877) 384-4390<br />Website:
+                <a
+                  href="https://courageconnection.org/get-help/shelter-services/"
+                  >Courage Connection Shelter Services</a
+                >
+              </p>
+              <p>
+                Provides free, confidential shelter and support for individuals
+                and families fleeing domestic violence. Services include
+                counseling, safety planning, case management, housing
+                assistance, and advocacy. Call the hotline to discuss services
+                and shelter options.
+              </p>
+            </section>
+            <section>
+              <h4>Crisis Nursery</h4>
+              <p>
+                1309 W. Hill Street, Urbana, IL 61801<br />Office: (217)
+                337-2731<br />24-hour crisis line: (217) 337-2730<br />Website:
+                <a href="https://crisisnursery.net/">Crisis Nursery</a>
+              </p>
+              <p>
+                Provides free emergency care for children from birth to age six
+                and support for families in crisis. Emergency care is available
+                24 hours a day, year-round. Call to discuss your family’s needs
+                and care availability.
+              </p>
+            </section>
+            <section>
+              <h4>Emmanuel Memorial Episcopal Church — Sack Lunch Ministry</h4>
+              <p>
+                102 N. State Street, Champaign, IL 61820<br />Phone: (217)
+                352-9827<br />Website:
                 <a
                   href="https://www.emmanuelmemorialepiscopal.org/sack-lunch-ministry.html"
+                  >Sack Lunch Ministry</a
                 >
-                  Sack lunch ministry
-                </a>
               </p>
               <p>
+                Distributes sack lunches from the church office door on weekdays
+                at 9 a.m., while supplies last. Approximately two dozen lunches
+                are available each weekday.
+              </p>
+            </section>
+            <section>
+              <h4>Empty Tomb</h4>
+              <p>
+                Phone: (217) 356-2262<br />Website:
+                <a href="https://emptytomb.org/about-us/"
+                  >Empty Tomb — Local Services</a
+                >
+              </p>
+              <p>
+                Coordinates local assistance such as free clothing, donated
+                furniture, groceries delivered by participating congregations,
+                and other help through volunteers. Call to discuss current
+                needs, available assistance, and where to go for services.
+              </p>
+            </section>
+            <section>
+              <h4>
+                Family Service of Champaign County — Information and Referrals
+              </h4>
+              <p>
+                405 S. State Street, Champaign, IL 61820<br />Phone: (217)
+                352-0099<br />Email: info@familyservicecc.org<br />Website:
+                <a href="https://www.famservcc.org/"
+                  >Family Service of Champaign County</a
+                >
+              </p>
+              <p>
+                Provides counseling, support-group information, and referrals to
+                community resources. For general community resource assistance
+                at any time, call 211.
+              </p>
+            </section>
+            <section>
+              <h4>Restoration Urban Ministries</h4>
+              <p>
+                Phone: (217) 233-8440<br />Email:
+                info@restorationurbanministries.org<br />Website:
+                <a href="https://www.restorationurbanministries.org/"
+                  >Restoration Urban Ministries</a
+                >
+              </p>
+              <p>
+                The food pantry is open Monday, Tuesday, Thursday, and Friday
+                from 10 a.m. to 1 p.m.; a food bag may be requested every two
+                weeks. The clothing room is open on those days from 10 a.m. to 3
+                p.m. Also offers a faith-based transitional housing program.
+                Contact the organization to confirm the service location and
+                program admission requirements.
+              </p>
+            </section>
+            <section>
+              <h4>Salt &amp; Light Ministries</h4>
+              <p>
+                Urbana: 1819 S. Philo Road, Urbana, IL 61802<br />Champaign:
+                1512 W. Anthony Drive, Champaign, IL 61821<br />Phone: (217)
+                355-5654<br />Website:
+                <a href="https://saltandlightministry.org/"
+                  >Salt &amp; Light Ministries</a
+                >
+              </p>
+              <p>
+                Provides access to basic resources, supportive services,
+                education, and vocational training through its ministry and
+                store programs. The Urbana location includes grocery and thrift
+                shopping. The Champaign location currently accepts drop-off
+                donations only. Contact the ministry about assistance programs
+                and participation requirements.
+              </p>
+            </section>
+            <section>
+              <h4>Salvation Army of Champaign County — Social Services</h4>
+              <p>
+                2212 N. Market Street, Champaign, IL 61822<br />Social Services
+                Center: (217) 373-7825<br />Website:
                 <a
-                  href="https://www.emmanuelmemorialepiscopal.org/grocery-deliveries.html"
-                >
-                  Grocery delivery program
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Sack lunches given out to adults, homeless, and low income. 9 a.m.
-              Monday through Friday until lunches are gone. Only two dozen
-              lunches available per day.
-            </p>
-          </section>
-          <section aria-labelledby="empty-tomb-heading">
-            <h3 id="empty-tomb-heading">Empty Tomb</h3>
-
-            <address>
-              <p>
-                301 North Fourth Street<br />
-                Champaign, IL 61820
-              </p>
-              <p>Phone: <a href="tel:+12173562262">(217) 356-2262</a></p>
-              <p>
-                Website:
-                <a href="http://www.emptytomb.org/"> Empty Tomb services </a>
-              </p>
-            </address>
-
-            <p>
-              Free food provided by local church congregations, free donated
-              furniture delivered by volunteers, free clothing on site, limited
-              cash assistance funds for emergencies, and health and home
-              maintenance services for those who qualify.
-            </p>
-          </section>
-          <section aria-labelledby="firstcall-heading">
-            <h3 id="firstcall-heading">First Call for Help</h3>
-
-            <address>
-              <p>
-                Family Service of Champaign County<br />
-                405 South State Street<br />
-                Champaign, IL 61820
-              </p>
-              <p>Phone: <a href="tel:+12173520099">(217) 352-0099</a></p>
-              <p>
-                Email:
-                <a href="mailto:info@familyservicecc.org">
-                  info@familyservicecc.org
-                </a>
-              </p>
-              <p>
-                Website:
-                <a href="http://www.famservcc.org/">
-                  Family Service of Champaign County
-                </a>
-              </p>
-            </address>
-
-            <p>
-              A free information and referral service that provides callers with
-              assistance in locating community resources and services throughout
-              Champaign County.
-            </p>
-          </section>
-
-          <section aria-labelledby="restoration-heading">
-            <h3 id="restoration-heading">Restoration Urban Ministries</h3>
-
-            <address>
-              <p>
-                1213 Parkland Court<br />
-                Champaign, IL 61821-1825
-              </p>
-              <p>Phone: <a href="tel:+12173552662">(217) 355-2662</a></p>
-              <p>
-                Website:
-                <a href="https://www.restorationurbanministries.org/">
-                  Restoration Urban Ministries
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Operates a food pantry from 10 a.m. – 1 p.m. on Mondays, Tuesdays,
-              Thursdays, and Fridays. They also have a clothing pantry on those
-              days from 10 a.m. – 3 p.m. Walk-ins are welcome. Call to see if
-              space is available for emergency housing.
-            </p>
-          </section>
-
-          <section aria-labelledby="saltlight-heading">
-            <h3 id="saltlight-heading">Salt &amp; Light Ministry</h3>
-
-            <address>
-              <p>
-                1512 West Anthony Drive, Champaign, IL 61821<br />
-                1819 South Philo Road, Urbana, IL 61802
-              </p>
-              <p>Phone: <a href="tel:+12173555654">(217) 355-5654</a></p>
-              <p>
-                Email:
-                <a href="mailto:info@saltandlightministry.org">
-                  info@saltandlightministry.org
-                </a>
-              </p>
-              <p>
-                Website:
-                <a href="http://www.saltandlightministry.org/">
-                  Salt &amp; Light Ministry
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Operates a free food pantry on Wednesdays from 1 – 5 p.m. as well
-              as a free clothing and furniture closet on Mondays from 1 – 5 p.m.
-              Also provides free financial counseling by appointment to address
-              budget concerns.
-            </p>
-          </section>
-
-          <section aria-labelledby="salvation-heading">
-            <h3 id="salvation-heading">Salvation Army</h3>
-
-            <address>
-              <p>
-                2212 North Market Street<br />
-                Champaign, IL 61820
-              </p>
-              <p>Phone: <a href="tel:+12173737832">(217) 373-7832</a></p>
-              <p>
-                <a href="https://centralusa.salvationarmy.org/champaign/">
-                  Salvation Army Champaign services
-                </a>
-              </p>
-              <p>
-                <a href="https://www.facebook.com/CUSalvationarmy/">
-                  Salvation Army Champaign Facebook page
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Operates an emergency men’s shelter to provide temporary and
-              transitional housing for homeless men ages 18 years and older on a
-              nightly basis (picture ID required). Evening and breakfast meals
-              are available. Scheduled evening intake begins at 7 p.m. Other
-              household assistance (clothing, utility) is available through
-              their social services program. Please call their social services
-              department for more information.
-            </p>
-          </section>
-          <section aria-labelledby="mens-shelter-heading">
-            <h3 id="mens-shelter-heading">C-U Men’s Shelter</h3>
-
-            <address>
-              <p>
-                70 E. Washington Street<br />
-                Champaign, IL 61820
-              </p>
-              <p>Phone: <a href="tel:+12178194569">(217) 819-4569</a></p>
-              <p>
-                Website:
-                <a href="https://www.cuathome.us/c-u-mens-shelter/">
-                  C-U Men’s Shelter
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Soup kitchen serves hot meals twice a day from 12 – 12:30 p.m. and
-              6 – 6:30 p.m. Showers are also available during these times.
-              Anyone is welcome, no documentation required. Transitional housing
-              also available for up to one year for men 18 years of age and
-              older. Call or stop by office for more information.
-            </p>
-          </section>
-
-          <section aria-labelledby="vineyard-heading">
-            <h3 id="vineyard-heading">Vineyard Food Ministry</h3>
-
-            <address>
-              <p>
-                Hope Center<br />
-                1802 N. Lincoln Avenue<br />
-                Urbana, IL 61801
-              </p>
-              <p>Phone: <a href="tel:+12176075654">(217) 607-5654</a></p>
-              <p>
-                Email:
-                <a href="mailto:marti.pearson@tvc.us">marti.pearson@tvc.us</a>
-              </p>
-              <p>
-                Website:
-                <a href="https://tvc.us/vineyard-care">
-                  Vineyard Food Ministry
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Food pantry is open to walk-ins on Wednesdays from 10 a.m. – 12
-              p.m. Individuals will receive one bag of food as well as two items
-              of their choice. This service may be utilized once per month.
-            </p>
-          </section>
-
-          <section aria-labelledby="wesley-heading">
-            <h3 id="wesley-heading">Wesley Evening Food Pantry</h3>
-
-            <address>
-              <p>
-                1203 West Green Street<br />
-                Urbana, IL 61801
-              </p>
-              <p>Phone: <a href="tel:+12177297418">(217) 729-7418</a></p>
-              <p>
-                Email:
-                <a href="mailto:info@wesleypantry.org">info@wesleypantry.org</a>
-              </p>
-              <p>
-                Website:
-                <a href="http://www.wesleypantry.org/">
-                  Wesley Evening Food Pantry
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Food pantry operates the third Thursday of every month from 3:30 –
-              7:30 p.m. Doors open at 3:30 p.m., registration begins at 4 p.m.,
-              and distribution begins at 5 p.m. Distribution is based on a
-              lottery system, so no need to arrive before 3:30 p.m. Walk-ins are
-              welcome, and no documentation is required.
-            </p>
-          </section>
-          <p style="font-size: 2em;"><a href="#resources-list">Back to Top</a></p>
-        </section>
-
-        <section aria-labelledby="emotional-heading">
-          <h2 id="emotional-heading">Emotional Resources</h2>
-
-          <section aria-labelledby="cyfs-heading">
-            <h3 id="cyfs-heading">Center for Youth and Family Services</h3>
-            <address>
-              <p>
-                1315A Curt Drive<br />
-                Champaign, IL 61821-1168
-              </p>
-              <p>Phone: <a href="tel:+12173525179">(217) 352-5179</a></p>
-              <p>
-                Website:
-                <a href="http://www.cyfsolutions.org/">
-                  Center for Youth and Family Services
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Provides counseling services on a sliding fee scale for
-              individuals, couples, and families. This agency, formerly known as
-              Catholic Charities, also has a variety of other services to assist
-              with adoption, crisis situations, family preservation and foster
-              care, pregnancy planning and education, and programs for seniors.
-            </p>
-          </section>
-          <section aria-labelledby="walnut-heading">
-            <h3 id="walnut-heading">Rosecrance on Walnut Street</h3>
-
-            <p>
-              <a
-                href="https://rosecrance.org/locations/rosecrance-walnut-street/"
-              >
-                Rosecrance Walnut Street location information
-              </a>
-            </p>
-            <p>Phone: <a href="tel:+12173988080">(217) 398-8080</a></p>
-          </section>
-
-          <section aria-labelledby="fsaws-heading">
-            <h3 id="fsaws-heading">
-              Faculty and Staff Assistance &amp; Well-Being Services
-            </h3>
-
-            <address>
-              <p>
-                Main office: <a href="tel:+12172445312">(217) 244-5312</a><br />
-                24-hour crisis line:
-                <a href="tel:+12172447739">(217) 244-7739</a>
-              </p>
-              <p>
-                Email:
-                <a href="mailto:fsas@illinois.edu">fsas@illinois.edu</a>
-              </p>
-              <p>
-                Website:
-                <a href="https://humanresources.illinois.edu/FSAWS/index.html">
-                  Faculty and Staff Assistance
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Provides free, confidential, short-term counseling for UI
-              employees and members of their household as well as retirees and
-              members of their household. FSAWS staff is also able to provide
-              clients with referrals to mental health providers in the
-              community. Additional services include assessments, family and
-              couples counseling, supervisory consults and trainings for
-              supervisors, and outreach to campus units.
-            </p>
-          </section>
-
-          <section aria-labelledby="fscc-heading">
-            <h3 id="fscc-heading">Family Service of Champaign County</h3>
-
-            <address>
-              <p>
-                405 South State Street<br />
-                Champaign, IL 61820
-              </p>
-              <p>Phone: <a href="tel:+12173520099">(217) 352-0099</a></p>
-              <p>
-                Email:
-                <a href="mailto:info@familyservicecc.org"
-                  >info@familyservicecc.org</a
+                  href="https://www.salvationarmyusa.org/il/champaign/n-prospect-avenue-corps/"
+                  >Salvation Army — Champaign</a
                 >
               </p>
               <p>
-                Website:
-                <a href="http://www.famservcc.org/">
-                  Family Service of Champaign County
-                </a>
+                Offers food and basic-needs assistance, case management, and
+                housing-related services. Call the Social Services Center to
+                discuss current assistance, eligibility, and referral options
+                before visiting.
               </p>
-            </address>
-
-            <p>
-              Provides individual, couples, and family counseling services on a
-              sliding fee scale. Family Service also has a variety of other
-              services such as programs for divorcing parents, grandparents
-              raising grandchildren, families taking care of senior family
-              members, homecare and outreach services for individuals 60 and
-              older, meals on wheels, and information and referral services for
-              access to other community resources.
-            </p>
-          </section>
-
-          <section aria-labelledby="iwc-heading">
-            <h3 id="iwc-heading">International Women’s Connection</h3>
-
-            <address>
+            </section>
+            <section>
+              <h4>Vineyard Food Ministry — Hope Center</h4>
               <p>
-                Twin City Bible Church<br />
-                806 West Michigan Avenue<br />
-                Urbana, IL 61801
-              </p>
-              <p>Phone: <a href="tel:+12173440641">(217) 344-0641</a></p>
-              <p>
-                Website:
-                <a href="https://iwc-tcbc.weebly.com/">
-                  International Women’s Connection
-                </a>
-              </p>
-            </address>
-
-            <p>
-              The IWC is an informal gathering of American and international
-              women from around the world. Meetings take place on Wednesday
-              mornings from 9 – 11 a.m. during the school year in the TCBC
-              Fellowship Hall. The schedule includes a one hour conversational
-              English class, a half hour coffee time, followed by an hour of
-              programs that could include anything from cooking classes to
-              introductory Bible discussions and even an annual free garage
-              sale. IWC was established in 1987 as a place where international
-              women could form friendships and share and learn from one another.
-              Any woman is welcome to attend!
-            </p>
-          </section>
-          <section aria-labelledby="pavillion-heading">
-            <h3 id="pavillion-heading">
-              The Pavilion Behavioral Health System
-            </h3>
-
-            <address>
-              <p>
-                809 W. Church Street<br />
-                Champaign, IL 61820
-              </p>
-              <p>
-                Phone: <a href="tel:+12173731700">(217) 373-1700</a><br />
-                Toll Free:
-                <a href="tel:+18003731700">(800) 373-1700</a>
-              </p>
-              <p>
-                Website:
-                <a href="http://www.pavilionhospital.com/">
-                  The Pavilion Behavioral Health System
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Mental health programs for adults, youth, and their families. Both
-              inpatient and outpatient services available. The Pavilion also
-              offers group therapy and support groups. Free, confidential
-              assessments 24 hours/day, 7 days/week.
-            </p>
-          </section>
-          <section aria-labelledby="pavillion-heading">
-            <h3 id="pavillion-heading">
-              Rape Advocacy Counseling & Education Services (RACES)
-            </h3>
-
-            <address>
-              <p>
-                145A Lincoln Square<br />
-                Urbana, IL 61801-3442
-              </p>
-              <p>
-                Main Office: <a href="tel:+12173446298">(217) 344-6298</a><br />
-                24-hour crisis line:
-                <a href="tel:+12173844444">(217) 384-4444</a>
-              </p>
-              <p>
-                Email:
-                <a href="mailto:info@cu-races.org">info@cu-races.org</a>
-              </p>
-              <p>
-                Website:
-                <a href="http://www.cu-races.org/">
-                  Rape Advocacy Counseling & Education Services (RACES)
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Provides counseling services for sexual assault survivors and
-              their significant others or loved ones. RACES also has legal and
-              medical advocates to assist with legal proceedings and
-              accompanying survivors to the hospital if they wish. All services
-              are free.
-            </p>
-          </section>
-          <p style="font-size: 2em;"><a href="#resources-list">Back to Top</a></p>
-        </section>
-
-        <section aria-labelledby="financial-heading">
-          <h2 id="financial-heading">Financial Resources</h2>
-
-          <section aria-labelledby="consumer-credit-heading">
-            <h3 id="consumer-credit-heading">
-              Consumer Credit of the Quad Cities
-            </h3>
-            <address>
-              <p>Toll Free: <a href="tel:+18008388830">(800) 838-8830</a></p>
-              <p>
-                Website:
-                <a href="http://www.toomuchdebt.com/">
-                  Consumer Credit of the Quad Cities
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Provides free budget counseling and free debt management analysis.
-              Certified credit counselors will review your financial situation
-              and suggest options to help you resolve your debt. Financial
-              counseling services are provided over the phone.
-            </p>
-          </section>
-          <section aria-labelledby="navicore-heading">
-            <h3 id="navicore-heading">Navicore Solutions</h3>
-            <address>
-              <p>Toll Free: <a href="tel:+18009924557">(800) 99-BILLS</a></p>
-              <p>
-                Website:
-                <a href="https://navicoresolutions.org/">
-                  Navicore Solutions
-                </a>
-              </p>
-            </address>
-            <p>
-              Provides a variety of financial services including budgeting,
-              financial education, debt management plans, housing counseling,
-              bankruptcy counseling, and a credit report review service.
-              Financial counseling services are provided over the phone.
-            </p>
-          </section>
-
-          <section aria-labelledby="salt-light-heading">
-            <h3 id="salt-light-heading">Salt & Light</h3>
-
-            <address>
-              <p>
-                1512 West Anthony Drive <br />
-                Champaign, IL 61821
-              </p>
-              <p>Phone: <a href="tel:+12172445312">(217) 355-5654</a></p>
-              <p>
-                Email:
-                <a href="mailto:info@saltandlightministry.org"
-                  >info@saltandlightministry.org</a
+                Food pickup: 1802 N. Lincoln Avenue, Urbana, IL 61801<br />Drive-through
+                line begins at 1500 N. Lincoln Avenue, Urbana, IL 61801<br />Phone:
+                (217) 607-5654<br />Website:
+                <a href="https://tvc.us/vineyard-care"
+                  >Vineyard Care and Hope Center Food Pantry</a
                 >
               </p>
               <p>
-                Website:
-                <a href="http://www.saltandlightministry.org/">
-                  Salt & Light
-                </a>
+                The drive-through food pantry operates Wednesdays from 10 a.m.
+                to noon and 5 to 6 p.m. Vehicles line up at 1500 N. Lincoln
+                Avenue and are directed to the pickup location. A Little Free
+                Food Pantry in front of the Hope Center is accessible 24/7.
               </p>
-            </address>
-
-            <p>
-              Provides free financial counseling services to individuals and
-              families to address budget concerns, paying off debt, and other
-              financial issues. Contact their office to set up an appointment or
-              for further information.
-            </p>
-          </section>
-          <section aria-labelledby="credit-union-heading">
-            <h3 id="credit-union-heading">
-              University of Illinois Employees Credit Union
-            </h3>
-
-            <address>
+            </section>
+            <section>
+              <h4>Wesley Food Pantry</h4>
               <p>
-                2201 South 1st Street <br />
-                Champaign, IL 61820-7402
-              </p>
-              <p>Phone: <a href="tel:+12172787700">(217) 278-7700</a>a></p>
-              <p>
-                Email:
-                <a href="mailto:info@uiecu.org">info@uiecu.org</a>
+                1203 W. Green Street, Urbana, IL 61801<br />Phone: (217)
+                729-7418<br />Website:
+                <a href="https://wesleypantry.org/hours--locations.html"
+                  >Wesley Food Pantry Hours and Locations</a
+                >
               </p>
               <p>
-                <a href="http://www.balancepro.net/partners/uiecu/index.html">
-                  Balance Pro
-                </a>
+                The Wesley Evening Food Pantry is open to the public every
+                Thursday from 5 to 7 p.m.
               </p>
               <p>
-                Website:
-                <a href="https://www.uoficreditunion.org/">
-                  University of Illinois Employees Credit Union
-                </a>
+                The Parkland College location, 2400 W. Bradley Avenue, M-Wing,
+                Room M138, Champaign, is open Wednesdays from 1 to 3 p.m. and
+                the first and third Saturdays from 10 a.m. to noon. Enter
+                through the M-1 parking lot exterior doors.
               </p>
-            </address>
+            </section>
+          </ilw-accordion-panel>
 
-            <p>
-              UIECU’s website identifies relevant programs and services for
-              assisting customers in tough financial times. See their BALANCE
-              program for resources on money management counseling, debt
-              management, credit report review, housing counseling, identity
-              theft solutions, and financial education.
-            </p>
-          </section>
-          <section aria-labelledby="illi-extension-heading">
-            <h3 id="illi-extension-heading">
-              University of Illinois Extension
-            </h3>
-
-            <p>
-              Website:
-              <a href="http://www.toughtimes.illinois.edu/">
-                University of Illinois Extension
-              </a>
-            </p>
-
-            <p>
-              UI Extension’s website on “Getting Through Tough Financial Times”
-              has information readily accessible on the following topics:
-              managing finances, controlling spending, dealing with foreclosure,
-              and using credit wisely. Select “other web resources” for
-              information on choosing a financial professional, financial
-              security, credit card smarts, thrifty living, and retirement.
-            </p>
-          </section>
-          <p style="font-size: 2em;"><a href="#resources-list">Back to Top</a></p>
-        </section>
-
-        <section aria-labelledby="healthcare-heading">
-          <h2 id="healthcare-heading">Health Care Resources</h2>
-
-          <section aria-labelledby="allkids-heading">
-            <h3 id="allkids-heading">All Kids Health Insurance</h3>
-
-            <address>
-              <p>P.O. Box 19122 <br />Springfield, IL 62794-9122</p>
+          <ilw-accordion-panel>
+            <h3 slot="summary">Emotional Resources</h3>
+            <section>
+              <h4>The Center for Youth and Family Solutions</h4>
               <p>
-                All Kids Hotline: <a href="tel:+18664687543">(866) 468-7543</a
-                ><br />
-                TTY Only: <a href="tel:+18772041012">(877) 204-1012</a>
+                1315A Curt Drive, Champaign, IL 61821<br />Phone: (217)
+                352-5179<br />Website:
+                <a
+                  href="https://www.cyfsolutions.org/services/behavioral-health/"
+                  >CYFS Behavioral Health Services</a
+                >
               </p>
               <p>
-                Website:
-                <a href="http://www.illinois.gov/hfs/MedicalPrograms/AllKids">
-                  All Kids Health Insurance
-                </a>
+                Provides affordable counseling and behavioral health services
+                for individuals and families. Other agency programs include
+                foster care, adoption, family support, and youth services.
+                Contact the Champaign office about local services, appointments,
+                and payment options.
               </p>
-            </address>
-
-            <p>
-              State health insurance plan that provides health care coverage to
-              children through age 18 and pregnant women. The easiest way to
-              apply is using the Internet. You can fill in and submit an
-              <a href="https://abe.illinois.gov/abe/access/">ABE</a>
-              Application online. You can also download and print a copy of the
-              <a
-                href="http://www.illinois.gov/hfs/MedicalPrograms/AllKids/Pages/application.aspx"
-                >application</a
-              >
-              from the website. There are All Kids Application Agents all over
-              Illinois that can help you apply. To find an application agent
-              near you, visit the
-              <a
-                href="http://www.illinois.gov/hfs/MedicalPrograms/AllKids/akaa/Pages/default.aspx"
-                >All Kids Application Agents website</a
-              >
-              or call in. All Kids Health Insurance can also send you an
-              application in the mail. Just call<a href="tel:18662555437"
-                >1-866-All-Kids</a
-              >. If you use a TTY, call
-              <a href="tel:1-877-204-1012">1-877-204-1012</a>. The hotline has
-              translation services available. Eligibility is based on family
-              size and income. In Champaign County, the following agencies
-              distribute and assist with filling out All Kids applications:
-              Illinois Department of Human Services, Developmental Services
-              Center, Frances Nelson Community Health Center. Planned Parenthood
-              enrolls pregnant women and their children. C-U Public Health
-              District enrolls pregnant women and their children.
-            </p>
-          </section>
-
-          <section aria-labelledby="cancer-heading">
-            <h3 id="cancer-heading">American Cancer Society</h3>
-
-            <p>Phone: <a href="tel:+12173569076">(217) 356-9076</a></p>
-            <p>
-              <a href="https://www.cancer.org/">
-                American Cancer Society website
-              </a>
-            </p>
-
-            <p>
-              A Patient Support Coordinator is available for assistance with
-              resources, including financial assistance to families who are
-              battling cancer. There is a wig boutique for women. All services
-              are free.
-            </p>
-          </section>
-
-          <section aria-labelledby="ccchc-heading">
-            <h3 id="ccchc-heading">Champaign County Christian Health Center</h3>
-
-            <address>
+            </section>
+            <section>
+              <h4>Rosecrance Walnut</h4>
               <p>
-                507 S. 2nd Street, Unit 1-A<br />
-                Champaign, IL 61820
+                801 N. Walnut Street, Champaign, IL 61820<br />Phone: (217)
+                239-5210<br />Website:
+                <a
+                  href="https://www.rosecrance.org/locations/rosecrance-walnut/"
+                  >Rosecrance Walnut</a
+                >
               </p>
               <p>
-                To schedule an Appointment:
-                <a href="tel:+12174025683">(217) 402-5683</a><br />
-                Main office: <a href="tel:+12173982914">(217) 398-2914</a>
+                Offers outpatient mental health and substance use treatment for
+                teens, adults, and families, including therapy, intensive
+                outpatient services, psychiatric services, medication
+                management, screenings, and family support.
+              </p>
+            </section>
+            <section>
+              <h4>Rosecrance Therapies — Urbana</h4>
+              <p>
+                700 S. Gregory Street, Suite A, Urbana, IL 61801<br />Phone:
+                (217) 531-4796<br />Website:
+                <a
+                  href="https://www.rosecrance.org/locations/rosecrance-therapies-ascend-urbana/"
+                  >Rosecrance Therapies — Urbana</a
+                >
               </p>
               <p>
-                Email:
-                <a href="mailto:ccchc2003care@gmail.com">
-                  ccchc2003care@gmail.com
-                </a>
+                Offers outpatient behavioral health care, including individual
+                and group therapy, psychiatric services, medication management,
+                family support, and treatment for eating disorders. Call about
+                appointments and services.
+              </p>
+            </section>
+            <section>
+              <h4>Faculty/Staff Assistance and Well-Being Services</h4>
+              <p>
+                1011 W. Springfield Avenue, Urbana, IL 61801<br />Counseling and
+                appointments: (217) 244-5312<br />Crisis line: (217) 244-7739<br />Email:
+                fsas@illinois.edu<br />Website:
+                <a
+                  href="https://humanresources.illinois.edu/about/culture-learning-engagement/faculty-staff-assistance-and-well-being-services/"
+                  >Faculty/Staff Assistance and Well-Being Services</a
+                >
               </p>
               <p>
-                Website:
-                <a href="https://www.ccchc2003.org/">
-                  Christian Health Center
-                </a>
+                Provides free, confidential assessments, brief counseling, and
+                referrals for university faculty, staff, retirees, and their
+                household members. Also supports supervisors and departments
+                with work-group consultation and assistance. Well-being programs
+                and emergency funding information are available through the
+                website.
               </p>
-            </address>
-
-            <p>
-              Clinic Hours: Tuesday 5:30 – 9 p.m. and first Wednesday of the
-              month 6 – 8 p.m.
-            </p>
-
-            <p>
-              A non-profit corporation formed by healthcare professionals and
-              social workers to provide free healthcare and social services to
-              uninsured families. Services include general medical care, school
-              physicals, basic psychiatric healthcare, medication management,
-              screening for common diseases, health education, and healthcare
-              advocacy. To make an appointment, call
-              <a href="tel:+12177666666">(217) 766-6666</a>, or leave a detailed
-              message including your contact information after business hours.
-            </p>
-          </section>
-          <section aria-labelledby="cuphd-heading">
-            <h3 id="cuphd-heading">Champaign-Urbana Public Health District</h3>
-
-            <address>
+            </section>
+            <section>
+              <h4>Family Service of Champaign County — Counseling</h4>
               <p>
-                201 West Kenyon Rd<br />
-                Champaign, IL 61820
-              </p>
-              <p>Main office: <a href="tel:+12173527961">(217) 392-7961</a></p>
-              <p>
-                Website:
-                <a href="http://www.c-uphd.org/">
-                  Champaign-Urbana Public Health District
-                </a>
-              </p>
-            </address>
-
-            <p>
-              Offers a full spectrum of disease prevention programs, health
-              screening, and referrals. Services include dental care for
-              children; testing for HIV, tuberculosis, and sexually transmitted
-              diseases; screenings for lead poisoning, high blood sugar and
-              cholesterol levels; school physicals; immunizations and
-              vaccinations; food, sewage, and other environmental inspections;
-              communicable disease surveillance; health education; smoking
-              cessation; emergency preparedness; health visits to homebound
-              adults; Medicaid applications and medical screenings; services and
-              education to pregnant women, new mothers, and families.
-            </p>
-          </section>
-          <section aria-labelledby="promise-heading">
-            <h3 id="promise-heading">Promise Healthcare - Francis Nelson</h3>
-
-            <address>
-              <p>
-                819 Bloomington Road<br />
-                Champaign, IL 61820
+                405 S. State Street, Champaign, IL 61820<br />Phone: (217)
+                352-0099<br />Email: info@familyservicecc.org<br />Website:
+                <a href="https://www.famservcc.org/counseling"
+                  >Family Service Counseling</a
+                >
               </p>
               <p>
-                Receptionist will answer:
-                <a href="tel:+12173561558">(217) 356-1558</a><br />
-                After Hours: <a href="tel:+12173834993">(217) 383-4993</a>
+                Provides individual, couples, and family counseling by
+                appointment. Most health insurance and Medicaid plans are
+                accepted. A sliding fee scale based on income and family size is
+                available for Champaign County residents.
               </p>
-            </address>
-
-            <p>
-              Provides primary medical services, prenatal program,
-              immunizations, health education, Smile Healthy Dental, and social
-              services to medically under-served and uninsured adults and
-              children of Champaign County. Priority is given to pregnant women,
-              infants, children, adults, and children with chronic health
-              conditions (diabetes, hypertension, asthma, heart disease, etc.).
-              Patients must complete the intake process to establish care. A
-              sliding-fee scale is offered to clients without insurance with
-              verification of financial status. Spanish-speaking staff is
-              available to assist patients.
-            </p>
-          </section>
-          <section aria-labelledby="mesothelioma-heading">
-            <h3 id="mesothelioma-heading">Mesothelioma Guide</h3>
-
-            <p>
-              Website:
-              <a href="https://www.mesotheliomaguide.com/">
-                Mesothelioma Guide
-              </a>
-            </p>
-
-            <p>
-              Is an advocacy organization dedicated to helping patients
-              diagnosed with asbestos illnesses. We want to bring mesothelioma
-              awareness to as many people as we can as it is often a
-              misdiagnosed cancer. Mesothelioma is a rare cancer and very few
-              treat it. We specialize in connecting patients with doctors and
-              treatment options that are best suited for them. Our services and
-              resources are 100% free to patients and family members.
-            </p>
-          </section>
-          <section aria-labelledby="ofpr-heading">
-            <h3 id="ofpr-heading">
-              Office of Financial and Professional Regulation
-            </h3>
-
-            <address>
+            </section>
+            <section>
+              <h4>International Women’s Connection</h4>
               <p>
-                Illinois Division of Insurance<br />
-                320 West Washington Street<br />
-                Springfield, IL 62767
+                Twin City Bible Church, Lincoln and Michigan Avenues, Urbana<br />Website:
+                <a href="https://iwc-tcbc.weebly.com/"
+                  >International Women’s Connection</a
+                >
               </p>
               <p>
-                Toll Free:
-                <a href="tel:+18884734858">(888) 473-4858</a>
+                A friendship group welcoming women from all countries, faiths,
+                and English-language levels. Wednesday gatherings during the
+                school year include English practice, refreshments, and cultural
+                programs from 9 to 11:30 a.m. Check the website for the current
+                calendar and mailing list.
               </p>
+            </section>
+            <section>
+              <h4>The Pavilion Behavioral Health System</h4>
+              <p>
+                809 W. Church Street, Champaign, IL 61820<br />Phone: (217)
+                373-1700<br />Assessments: (800) 373-1700<br />Website:
+                <a href="https://pavilionhospital.com/"
+                  >The Pavilion Behavioral Health System</a
+                >
+              </p>
+              <p>
+                Contact the hospital about behavioral health treatment options
+                for adults and youth. No-cost, confidential assessments are
+                available 24 hours a day, seven days a week.
+              </p>
+            </section>
+            <section>
+              <h4>
+                Rape Advocacy, Counseling, &amp; Education Services — RACES
+              </h4>
+              <p>
+                301 S. Vine Street, Suite 103, Urbana, IL 61801<br />Office:
+                (217) 344-6298<br />24-hour crisis hotline: (217) 384-4444<br />Email:
+                info@cu-races.org<br />Website:
+                <a href="https://www.cu-races.org/">RACES</a>
+              </p>
+              <p>
+                Provides free, confidential support, counseling, medical and
+                legal-system advocacy, and referrals for survivors of sexual
+                violence and their loved ones. Services are available without
+                making a police report.
+              </p>
+            </section>
+          </ilw-accordion-panel>
+
+          <ilw-accordion-panel>
+            <h3 slot="summary">Employment Resources</h3>
+            <section>
+              <h4>Illinois Department of Employment Security</h4>
+              <p>
+                1307 N. Mattis Avenue, Champaign, IL 61821<br />Appointment
+                scheduling: (217) 558-0401<br />Website:
+                <a href="https://ides.illinois.gov/"
+                  >Illinois Department of Employment Security</a
+                >
+              </p>
+              <p>
+                Offers unemployment insurance assistance and employment
+                resources. Job seekers can use IllinoisJobLink.com to search for
+                jobs and access employment services. Walk-ins are accepted;
+                scheduling an appointment can reduce wait times.
+                <a
+                  href="https://ides.illinois.gov/about/locations/in-person-appointments.html"
+                  >Office appointments</a
+                >
+                and
+                <a href="https://ides.illinois.gov/jobs-workforce/veterans.html"
+                  >veteran employment services</a
+                >
+                are available online.
+              </p>
+            </section>
+            <section>
+              <h4>Illinois Job Board</h4>
               <p>
                 Website:
-                <a href="http://www.idfpr.com/About/About.asp">
-                  Office of Financial and Professional Regulation
-                </a>
+                <a href="https://jobs.illinois.edu/">Illinois Job Board</a>
               </p>
-            </address>
-
-            <p>
-              Explains rights to health care consumers, answers questions about
-              health insurance, helps consumers understand coverage provisions
-              of specific health care plans, and assists with problems or
-              complaints.
-            </p>
-          </section>
-          <section aria-labelledby="ccchc-heading">
-            <h3 id="ccchc-heading">
-              State of Illinois Health & Wellness—Illinois Healthcare Portal
-            </h3>
-
-            <p>
-              Website:
-              <a href="http://www.illinois.gov/hfs/MedicalClients/health">
-                State of Illinois Health & Wellness—Illinois Healthcare Portal
-              </a>
-            </p>
-
-            <p>
-              The Healthcare Portal can help parents sign up their children for
-              our affordable health insurance program (All Kids), help seniors
-              sign up for one of our affordable prescription drug programs, and
-              help women find free breast and cervical cancer screenings. Also
-              provides links to other affordable health insurance programs and
-              comprehensive programs for individuals living in the State of
-              Illinois.
-            </p>
-          </section>
-          <section aria-labelledby="ccchc-heading">
-            <h3 id="ccchc-heading">Walmart’s $4 Prescriptions Program</h3>
-
-            <p>
-              Website:
-              <a href="http://www.walmart.com/cp/1078664">
-                Walmart’s $4 Prescriptions Program
-              </a>
-            </p>
-
-            <p>
-              Walmart offers a 30-day supply of certain generic drugs at
-              commonly prescribed dosages for $4 as well as a 90-day supply of
-              certain generic drugs for $9. See their website for more
-              information, including a complete list of the medications covered.
-            </p>
-          </section>
-          <p style="font-size: 2em;"><a href="#resources-list">Back to Top</a></p>
-        </section>
-
-        <section aria-labelledby="housing-heading">
-          <h2 id="housing-heading">Housing Resources</h2>
-
-          <section aria-labelledby="rpc-heading">
-            <h3 id="rpc-heading">
-              Champaign County Regional Planning Commission
-            </h3>
-
-            <address>
               <p>
-                1776 East Washington Street<br />
-                Urbana, IL 61803
+                Find employment opportunities at the University of Illinois
+                Urbana-Champaign.
               </p>
-              <p>Phone: <a href="tel:+12173283313">(217) 328-3313</a></p>
+            </section>
+            <section>
+              <h4>O*NET Resource Center</h4>
               <p>
                 Website:
-                <a href="http://www.ccrpc.org/">
-                  Champaign County Regional Planning Commission
-                </a>
-              </p>
-            </address>
-
-            <ul style="margin-left: 2em">
-              <li>
-                The Emergency Rent Assistance Program provides rent assistance
-                to homeless or near-homeless households who have steady income
-                to pay future rent but are unable to pay first month’s rent or
-                past-due rent. Contact Dawn Rear at
-                <a href="tel:+12173841226">(217) 384-1226</a> for more
-                information or a program application.
-              </li>
-              <li>
-                The Community Action Program provides grants and loans for
-                housing rehabilitation in rural areas of Champaign County,
-                housing counseling to low-income households, and help for
-                homeless or near homeless persons with first month rental
-                payments. The program may also help with past due rent.
-              </li>
-              <li>
-                The Low-Income Home Energy Assistance Program (LIHEAP) provides
-                winter heating assistance (from Sept. 1st – May 31st), and
-                assists with up to 150% of the Federal poverty guideline with
-                payment towards gas and electric bills. Please call the RPC
-                office in the Brookens building in Urbana to schedule
-                appointments Monday – Friday 8 a.m. &#8211; 4 p.m. Clients may
-                also be seen at the Salvation Army and the Community Center in
-                Rantoul.
-              </li>
-              <li>
-                The Tenant-Based Rent Assistance Program is a program that
-                improves household self-sufficiency for low-income or homeless
-                households over a two-year period. Preference is given to
-                applicants living or working in the City of Champaign or who are
-                near homeless and/or living with a relative or a friend.
-                Household median income must be near or less than $27,400 for a
-                single person or $39,100 for a family of four. Participants work
-                with case managers to develop and implement goals that may
-                include budget and credit management, completing educational
-                classes, and improving employment. Contact Nicole Martin at
-                <a href="tel:2173283313">(217) 328-3313</a> for more information
-                on this program.
-              </li>
-            </ul>
-          </section>
-          <section aria-labelledby="tenant-union-heading">
-            <h3 id="tenant-union-heading">Champaign-Urbana Tenant Union</h3>
-
-            <address>
-              <p>44 E Main Street, Suite 208<br />Champaign, IL 61820</p>
-              <p>Phone: <a href="tel:+12173526220">(217) 352-6220</a><br /></p>
-              <p>
-                Website:
-                <a href="http://cutenantunion.org/">
-                  Champaign-Urbana Tenant Union
-                </a>
-              </p>
-            </address>
-            <p>
-              The Tenant Union provides free services including lease review,
-              landlord complaint records, assistance locating housing, and help
-              with landlord problems.
-            </p>
-          </section>
-          <section aria-labelledby="ccbsd-heading">
-            <h3 id="ccbsd-heading">
-              City of Champaign Neighborhood Services Department
-            </h3>
-
-            <address>
-              <p>102 North Neil Street<br />Champaign, IL 61820</p>
-              <p>Phone: <a href="tel:+12174037070">(217) 403-7070</a><br /></p>
-              <p>
-                Email:
-                <a href="mailto:neighborhoodservices@champaignil.gov">
-                  neighborhoodservices@champaignil.gov
-                </a>
+                <a href="https://www.onetcenter.org/">O*NET Resource Center</a>
               </p>
               <p>
-                Website:
-                <a href="https://champaignil.gov/neighborhood-services/">
-                  City of Champaign Neighborhood Services Department
-                </a>
+                Provides occupational information and career exploration tools
+                for people choosing or changing careers.
               </p>
-            </address>
-            <p>
-              Develops and manages programs to address neighborhood needs,
-              including rental and home ownership programs in the city, and has
-              income restriction eligibility requirements.
-            </p>
-          </section>
-          <section aria-labelledby="ifpn-heading">
-            <h3 id="ifpn-heading">Illinois Foreclosure Prevention Network</h3>
-
-            <p>
-              Website:
-              <a href="https://www.ihda.org/my-community/foreclosure-programs/">
-                Illinois Foreclosure Prevention Network
-              </a>
-            </p>
-            <p>
-              This website provides helpful facts and information on how to cope
-              with foreclosures. The site also includes a link that provides a
-              comprehensive listing of HUD approved counseling agencies
-              throughout the state of Illinois.
-            </p>
-          </section>
-          <section aria-labelledby="ihda-heading">
-            <h3 id="ihda-heading">
-              Illinois Housing Development Authority (IHDA)
-            </h3>
-
-            <p>
-              Website:
-              <a href="https://www.ihda.org/">
-                Illinois Housing Development Authority (IHDA)
-              </a>
-            </p>
-            <p>
-              Mortgage assistance program for Illinois residents who are
-              unemployed or underemployed but are working to regain sufficient
-              income to keep their home.
-            </p>
-          </section>
-          <section aria-labelledby="navicore-heading">
-            <h3 id="navicore-heading">Navicore Solutions</h3>
-            <address>
-              <p>Phone: <a href="tel:+12174037070">(217) 403-7070</a><br /></p>
+            </section>
+            <section>
+              <h4>Parkland Career Services</h4>
               <p>
-                Website:
-                <a href="https://navicoresolutions.org/">
-                  Navicore Solutions
-                </a>
+                2400 W. Bradley Avenue, Room U267, Champaign, IL 61821<br />Phone:
+                (217) 351-2219<br />Email: careerservices@parkland.edu<br />Website:
+                <a
+                  href="https://www.parkland.edu/Main/About-Parkland/Department-Office-Directory/Counseling-Services/Career-Services"
+                  >Parkland Career Services</a
+                >
               </p>
-            </address>
-            <p>
-              This non-profit agency provides assistance with the following
-              services: home equity conversion mortgage counseling, homebuyer
-              education programs, loss mitigation, money debt management,
-              mortgage delinquency and default resolution counseling,
-              post-purchase counseling, predatory lending, pre-purchase
-              counseling, and renter’s assistance.
-            </p>
-          </section>
-          <p style="font-size: 2em;"><a href="#resources-list">Back to Top</a></p>
-        </section>
-
-        <section aria-labelledby="legal-heading">
-          <h2 id="legal-heading">Legal Services</h2>
-
-          <section aria-labelledby="ilao-heading">
-            <h3 id="ilao-heading">Illinois Legal Aid Online</h3>
-
-            <p>
-              <a href="https://www.illinoislegalaid.org/">
-                Illinois Legal Aid Online
-              </a>
-            </p>
-            <p>
-              Provides free referrals to free and low-cost legal aid offices, as
-              well as forms and instructions for representing yourself.
-            </p>
-          </section>
-          <section aria-labelledby="lllaf-heading">
-            <h3 id="lllaf-heading">
-              Land of Lincoln Legal Assistance Foundation
-            </h3>
-
-            <address>
               <p>
-                302 N First Street<br />
-                Champaign, IL 61832
+                Serves Parkland students, alumni, and community members.
+                Assistance includes career exploration, job searches, resume and
+                cover letter reviews, interview preparation, and internship
+                support. Schedule an appointment through the website;
+                appointments are available in person or online.
               </p>
-              <p>Phone: <a href="tel:+12173561351">(217) 356-1351</a></p>
+            </section>
+            <section>
+              <h4>University of Illinois Career Center</h4>
               <p>
-                Website:
-                <a href="http://www.lollaf.org/">
-                  Land of Lincoln Legal Assistance Foundation
-                </a>
+                715 S. Wright Street, Champaign, IL 61820<br />Phone: (217)
+                333-0820<br />Email: careercenter@illinois.edu<br />Website:
+                <a href="https://www.careercenter.illinois.edu/"
+                  >The Career Center</a
+                >
               </p>
-            </address>
-            <p>
-              Provides free civil legal services to low-income persons and
-              senior citizens. This office serves the counties of Champaign,
-              Clark, Coles, Crawford, Cumberland, DeWitt, Douglas, Edgar,
-              Effingham, Ford, Jasper, Moultrie, Piatt, and Vermilion.
-            </p>
-          </section>
-          <p style="font-size: 2em;"><a href="#resources-list">Back to Top</a></p>
-        </section>
-
-        <section aria-labelledby="lgbt-heading">
-          <h2 id="lgbt-heading">LGBT Resources</h2>
-
-          <section aria-labelledby="up-heading">
-            <h3 id="up-heading">
-              UP (Uniting Pride) Center of Champaign County
-            </h3>
-
-            <address>
               <p>
-                202 South Broadway Avenue, Suite 102<br />
-                Urbana, IL 61832
+                Offers career coaching, application reviews, interview
+                preparation, and career exploration resources. Career coaching
+                appointments are available to students enrolled in on-campus
+                degree programs and alumni for one year after graduation. Alumni
+                pursuing health professions remain eligible beyond that year.
+                See
+                <a
+                  href="https://www.careercenter.illinois.edu/services/careercoaching"
+                  >career coaching eligibility</a
+                >
+                for details. Public handouts and other online resources are also
+                available.
               </p>
-              <p>Phone: <a href="tel:+12175504248">(217) 550-4248</a></p>
+            </section>
+            <section>
+              <h4>State of Illinois Career Counseling — Champaign</h4>
               <p>
-                <a href="http://www.unitingpride.org/">
-                  UP (Uniting Pride) Center of Champaign County
-                </a>
+                State Regional Office Building, 2125 S. First Street, Champaign,
+                IL 61820<br />Champaign office: (217) 278-3435<br />Career
+                counseling inquiries: (217) 782-7100<br />Email:
+                CMS.CounselingByEmail@Illinois.gov<br />Website:
+                <a href="https://careers.illinois.gov/carsrvcs.html"
+                  >State of Illinois Career Counseling Services</a
+                >
               </p>
-            </address>
-            <p>
-              A multi-service agency for youth and adults that provides support
-              and resources for the LBGT community.
-            </p>
-          </section>
+              <p>
+                Provides assistance identifying State of Illinois positions that
+                fit an applicant’s education, experience, and interests. Virtual
+                and email counseling are available by request.
+              </p>
+            </section>
+          </ilw-accordion-panel>
 
-          <section aria-labelledby="up-heading">
-            <h3 id="up-heading">Office Inclusion & Intercultural Relations</h3>
-
-            <p>
-              Website:
-              <a
-                href="https://oiir.illinois.edu/lgbt-resource-center/resources/community-resources"
-              >
-                Office Inclusion & Intercultural Relations
-              </a>
-            </p>
-          </section>
-          <p style="font-size: 2em;"><a href="#resources-list">Back to Top</a></p>
-        </section>
-
-        <section aria-labelledby="senior-heading">
-          <h2 id="senior-heading">Senior Resources</h2>
-
-          <section aria-labelledby="ccrpc-heading">
-            <h3 id="ccrpc-heading">
-              Champaign County Regional Planning Commission
-            </h3>
-
-            <address>
-              <p>Phone: <a href="tel:+12178194097">(217) 819-4097</a></p>
+          <ilw-accordion-panel>
+            <h3 slot="summary">Financial Resources</h3>
+            <section>
+              <h4>Consumer Credit of the Quad Cities</h4>
+              <p>
+                Phone: (800) 838-8830<br />Website:
+                <a href="https://www.toomuchdebt.com/"
+                  >Consumer Credit of the Quad Cities</a
+                >
+              </p>
+              <p>
+                Provides confidential budget counseling and debt analysis.
+                Contact the organization about counseling and debt management
+                options.
+              </p>
+            </section>
+            <section>
+              <h4>Navicore Solutions</h4>
+              <p>
+                Phone: (800) 992-4557<br />Website:
+                <a href="https://navicoresolutions.org/">Navicore Solutions</a>
+              </p>
+              <p>
+                Offers credit and debt counseling, debt management plans,
+                housing and foreclosure counseling, student loan assistance, and
+                bankruptcy counseling or education. Ask about any fees and the
+                requirements for the service you need.
+              </p>
+            </section>
+            <section>
+              <h4>Salt &amp; Light Ministries — Support and Education</h4>
+              <p>
+                1819 S. Philo Road, Urbana, IL 61802<br />Phone: (217)
+                355-5654<br />Website:
+                <a href="https://saltandlightministry.org/"
+                  >Salt &amp; Light Ministries</a
+                >
+              </p>
+              <p>
+                Contact the ministry about current supportive services,
+                educational opportunities, and participation in assistance
+                programs.
+              </p>
+            </section>
+            <section>
+              <h4>U of I Community Credit Union</h4>
+              <p>
+                2201 S. First Street, Champaign, IL 61820<br />Phone: (217)
+                278-7700<br />Website:
+                <a
+                  href="https://www.uoficreditunion.org/resources/financial-wellness-assessment/"
+                  >U of I Community Credit Union</a
+                >
+              </p>
+              <p>
+                The website’s Financial Wellness Center provides information
+                about credit, financial wellness, and money management,
+                including access to its Banzai learning resources.
+              </p>
+            </section>
+            <section>
+              <h4>University of Illinois Extension — Personal Finances</h4>
               <p>
                 Website:
                 <a
-                  href="http://www.ccrpc.org/community-services/programs-services/senior-services/"
+                  href="https://extension.illinois.edu/finances/finances-homepage"
+                  >Illinois Extension Personal Finances</a
+                ><br />Local mentoring:
+                <a href="https://extension.illinois.edu/cfiv/money-mentors"
+                  >Money Mentors</a
                 >
-                  Champaign County Regional Planning Commission
-                </a>
-              </p>
-            </address>
-          </section>
-          <section aria-labelledby="fscc-heading">
-            <h3 id="fscc-heading">Family Service of Champaign County</h3>
-            <p><strong>Senior Resource Center</strong></p>
-            <address>
-              <p>
-                405 South State Street<br />
-                Champaign, IL 61832
-              </p>
-              <p>Phone: <a href="tel:+12173525100">(217) 352-5100</a></p>
-              <p>
-                <a href="http://www.famservcc.org/senior-transportation/">
-                  Senior Transportation
-                </a>
               </p>
               <p>
-                <a href="https://www.famservcc.org/senior-counseling">
-                  Senior Counseling
-                </a>
+                Provides educational resources about budgeting, saving, debt,
+                credit, and protecting finances. The Money Mentors program
+                offers free individual help with personal money management by
+                phone or online in participating counties, including Champaign
+                County.
               </p>
-            </address>
-            <p>
-              Resource center for seniors age 60 and older and their caregivers
-              providing counseling, advocacy, homecare services, transportation,
-              and meals. There are also resources for grandparents age 55 and
-              older who are raising a dependent who is 18 years of age or
-              younger.
-            </p>
-          </section>
-          <section aria-labelledby="ida-heading">
-            <h3 id="ida-heading">Illinois Department on Aging</h3>
-            <address>
-              <p>304 North Maple <br />Urbana, Illinois 61802</p>
+            </section>
+          </ilw-accordion-panel>
+          <ilw-accordion-panel>
+            <h3 slot="summary">Health Care Resources</h3>
+            <section>
+              <h4>All Kids Health Insurance</h4>
               <p>
-                Phone: <a href="tel:+18002528966">(800) 252-8966</a> <br />
-                TTY: <a href="tel:+18882061327">(800) 206-1327</a> <br />
-                Fax: <a href="tel:+12173843380">(217) 384-3380</a>
+                All Kids hotline: (866) 255-5437<br />TTY: (877) 204-1012<br />Website:
+                <a
+                  href="https://hfs.illinois.gov/medicalprograms/allkids/about.html"
+                  >About All Kids</a
+                ><br />Apply:
+                <a href="https://abe.illinois.gov/access/"
+                  >Application for Benefits Eligibility — ABE</a
+                >
               </p>
               <p>
-                <a href="http://www.famservcc.org/senior-transportation/">
-                  Illinois Department on Aging
-                </a>
+                Illinois’ health coverage program for eligible children age 18
+                and younger. Coverage includes medical visits, hospital care,
+                prescriptions, dental care, and vision care. Eligibility depends
+                on current program requirements. Pregnancy coverage is available
+                through the separate Moms &amp; Babies program; see the All Kids
+                website for related information.
               </p>
-            </address>
-            <p>
-              Serving Champaign, DeWitt, Douglas, and Piatt Counties
-              <br />Cumberland Associates, Inc. <br />Cumberland Associates
-              Senior Programs
-            </p>
-            <p>
-              Cumberland Associates Senior Programs will assess seniors to
-              determine if they qualify for free in-home, non-medical services;
-              an Emergency Home Response system; or Adult Day services. The
-              senior must qualify for services. Assets and needs will be
-              assessed.
-            </p>
-          </section>
-          <p style="font-size: 2em;"><a href="#resources-list">Back to Top</a></p>
-        </section>
-
-        <section aria-labelledby="support-group-heading">
-          <h2 id="support-group-heading">Support Group Information</h2>
-
-          <section aria-labelledby="fsccshc-heading">
-            <h3 id="fsccshc-heading">
-              Family Service of Champaign County Self-Help Center
-            </h3>
-
-            <p>
-              <a href="http://www.danville.va.gov/">
-                Family Service of Champaign County Self-Help Center
-              </a>
-            </p>
-            <p>
-              Provides a local listing of support groups and contact
-              information.
-            </p>
-          </section>
-          <p style="font-size: 2em;"><a href="#resources-list">Back to Top</a></p>
-        </section>
-        <section aria-labelledby="veteran-heading">
-          <h2 id="veteran-heading">Veteran Resources</h2>
-
-          <address>
-            <p>
-              VA Illiana Health Care<br />
-              1900 East Main Street<br />
-              Danville, IL 61832
-            </p>
-            <p>
-              Phone: <a href="tel:+12175543000">(217) 554-3000</a><br />
-              Mental health:
-              <a href="tel:+12175544664">(217) 554-4664</a>
-            </p>
-            <p>
-              <a href="http://www.danville.va.gov/">
-                VA Illiana Health Care website
-              </a>
-            </p>
-          </address>
-        </section>
+            </section>
+            <section>
+              <h4>American Cancer Society</h4>
+              <p>
+                24-hour cancer helpline: (800) 227-2345<br />Website:
+                <a href="https://www.cancer.org/">American Cancer Society</a>
+              </p>
+              <p>
+                Provides cancer information and support for patients,
+                caregivers, and families, including connections to patient
+                services and community resources.
+              </p>
+            </section>
+            <section>
+              <h4>Champaign County Christian Health Center</h4>
+              <p>
+                1401 S. State Street, Suite B, Champaign, IL 61821<br />Appointments:
+                (217) 402-5683<br />Office: (217) 398-2914<br />Email:
+                ccchc2003care@gmail.com<br />Website:
+                <a href="https://www.ccchc2003.org/"
+                  >Champaign County Christian Health Center</a
+                >
+              </p>
+              <p>
+                Provides free health care and related support for people in
+                need. Contact the appointment line to confirm clinic dates,
+                available services, and appointment requirements.
+              </p>
+            </section>
+            <section>
+              <h4>Champaign-Urbana Public Health District</h4>
+              <p>
+                201 W. Kenyon Road, Champaign, IL 61820<br />Phone: (217)
+                352-7961<br />Website:
+                <a href="https://www.c-uphd.org/"
+                  >Champaign-Urbana Public Health District</a
+                >
+              </p>
+              <p>
+                Provides public health services such as immunizations,
+                screenings and testing, dental services, maternal and child
+                health programs, health education, and referrals. Check the
+                website or call about specific services and eligibility.
+              </p>
+            </section>
+            <section>
+              <h4>Promise Healthcare — Frances Nelson</h4>
+              <p>
+                819 Bloomington Road, Champaign, IL 61820<br />Appointments:
+                (217) 600-7000<br />Website:
+                <a href="https://www.promisehealth.org/contact-us"
+                  >Promise Healthcare</a
+                >
+              </p>
+              <p>
+                Contact Promise Healthcare about medical, dental, and behavioral
+                health appointments and affordable care options. The Frances
+                Nelson location serves the Champaign community; additional
+                locations are listed on the website.
+              </p>
+            </section>
+            <section>
+              <h4>Mesothelioma Guide</h4>
+              <p>
+                Website:
+                <a href="https://www.mesotheliomaguide.com/"
+                  >Mesothelioma Guide</a
+                >
+              </p>
+              <p>
+                Provides online information about mesothelioma and treatment
+                resources for patients and families.
+              </p>
+            </section>
+            <section>
+              <h4>Illinois Department of Insurance — Consumer Assistance</h4>
+              <p>
+                Consumer Assistance Hotline: (866) 445-5364<br />Website:
+                <a href="https://idoi.illinois.gov/consumers.html"
+                  >Illinois Department of Insurance Consumer Resources</a
+                >
+              </p>
+              <p>
+                Provides help with insurance questions and complaints, including
+                health insurance concerns. Consumers can access complaint forms
+                and external review information online or request forms through
+                the hotline.
+              </p>
+            </section>
+            <section>
+              <h4>Illinois Health Coverage Resources</h4>
+              <p>
+                Website:
+                <a href="https://hfs.illinois.gov/medicalclients/health.html"
+                  >Illinois Healthcare Portal</a
+                ><br />Marketplace:
+                <a href="https://getcovered.illinois.gov/"
+                  >Get Covered Illinois</a
+                ><br />Marketplace assistance: (866) 311-1119; TTY: 711
+              </p>
+              <p>
+                Find information about state health programs and coverage
+                options. Get Covered Illinois is the state’s official
+                marketplace for comparing health and dental plans, checking
+                eligibility for financial help, and finding enrollment
+                assistance. Use
+                <a href="https://abe.illinois.gov/access/">ABE</a> to apply for
+                state medical benefits.
+              </p>
+            </section>
+            <section>
+              <h4>Walmart’s $4 Prescription Program</h4>
+              <p>
+                Website:
+                <a href="https://www.walmart.com/cp/4-prescriptions/1078664"
+                  >Walmart Low-Cost Prescriptions</a
+                >
+              </p>
+              <p>
+                Selected generic medications start at $4 for a 30-day supply and
+                $10 for a 90-day supply. Prices depend on the medication,
+                dosage, and program terms. Check the medication list or contact
+                a Walmart pharmacy.
+              </p>
+            </section>
+          </ilw-accordion-panel>
+          <ilw-accordion-panel>
+            <h3 slot="summary">Housing Resources</h3>
+            <section>
+              <h4>Champaign County Regional Planning Commission</h4>
+              <p>
+                Main phone: (217) 328-3313<br />Email: info@ccrpc.org<br />Website:
+                <a href="https://www.ccrpc.org/"
+                  >Champaign County Regional Planning Commission</a
+                >
+              </p>
+              <p>
+                Provides information and services related to homelessness,
+                housing stability, and utility assistance. Contact the agency
+                about current assistance, intake, and eligibility.
+              </p>
+              <p>
+                Utility assistance — LIHEAP: (217) 384-1226. See
+                <a
+                  href="https://www.ccrpc.org/divisions/community_services/low_income_home_energy_assistance.php"
+                  >LIHEAP information and appointments</a
+                >.
+              </p>
+              <p>
+                Homeless services: homeless-services@ccrpc.org. Contact the
+                agency about coordinated entry and appropriate housing
+                referrals.
+              </p>
+              <p>
+                RPC has announced an office move from Urbana to 2107 S. Neil
+                Street, Champaign, with its last service day at the Brookens
+                Administrative Center on October 23, 2026, and no in-person
+                services at the new RPC Center October 26–30. Check the website
+                or call before visiting.
+              </p>
+            </section>
+            <section>
+              <h4>City of Champaign Neighborhood Services Department</h4>
+              <p>
+                205 W. Park Avenue, Champaign, IL 61820<br />Phone: (217)
+                403-7070<br />Email: neighborhoodservices@champaignil.gov<br />Website:
+                <a href="https://champaignil.gov/nsd"
+                  >Neighborhood Services Department</a
+                >
+              </p>
+              <p>
+                Provides information about housing and community development,
+                home improvement and homebuyer programs, property maintenance,
+                and tenant resources. Eligibility and funding availability vary
+                by program.
+              </p>
+            </section>
+            <section>
+              <h4>Illinois Housing Development Authority — IHDA</h4>
+              <p>
+                Website:
+                <a href="https://www.ihda.org/my-home/"
+                  >IHDA Housing Resources</a
+                >
+              </p>
+              <p>
+                Provides information about affordable housing, homeownership,
+                home repair, and foreclosure prevention. Housing counselors can
+                help people understand options when they are having difficulty
+                paying their mortgage. Check current program availability rather
+                than relying on older mortgage-assistance descriptions.
+              </p>
+            </section>
+            <section>
+              <h4>Navicore Solutions — Housing Counseling</h4>
+              <p>
+                Phone: (800) 992-4557<br />Website:
+                <a href="https://navicoresolutions.org/">Navicore Solutions</a>
+              </p>
+              <p>
+                Offers housing and foreclosure counseling along with credit and
+                debt services. Contact the organization about the appropriate
+                counseling program, eligibility, and any fees.
+              </p>
+            </section>
+          </ilw-accordion-panel>
+          <ilw-accordion-panel>
+            <h3 slot="summary">Legal Services</h3>
+            <section>
+              <h4>Illinois Legal Aid Online</h4>
+              <p>
+                Website:
+                <a href="https://www.illinoislegalaid.org/"
+                  >Illinois Legal Aid Online</a
+                >
+              </p>
+              <p>
+                Provides legal information, self-help tools and forms, and
+                resources for finding legal assistance.
+              </p>
+            </section>
+            <section>
+              <h4>Land of Lincoln Legal Aid</h4>
+              <p>
+                302 N. First Street, Champaign, IL 61820<br />Eastern Regional
+                Office: (217) 356-1351 or (800) 747-5523<br />New requests for
+                legal help: (877) 342-7891<br />Website:
+                <a href="https://lincolnlegal.org/"
+                  >Land of Lincoln Legal Aid</a
+                >
+              </p>
+              <p>
+                Provides free civil legal assistance to eligible residents. The
+                Eastern Regional Office serves Champaign County and surrounding
+                counties. See
+                <a href="https://lincolnlegal.org/apply-for-legal-services/"
+                  >how to apply</a
+                >
+                for intake instructions.
+              </p>
+            </section>
+          </ilw-accordion-panel>
+          <ilw-accordion-panel>
+            <h3 slot="summary">LGBTQ+ Resources</h3>
+            <section>
+              <h4>Uniting Pride</h4>
+              <p>
+                300 S. Broadway Avenue, Suite 155B, Urbana, IL 61801<br />Phone:
+                (217) 898-5235<br />Website:
+                <a href="https://unitingpride.org/">Uniting Pride</a>
+              </p>
+              <p>
+                Provides LGBTQ+ social and support groups, events, education,
+                referrals, and community resources for Champaign County and the
+                surrounding region.
+              </p>
+            </section>
+            <section>
+              <h4>
+                University of Illinois Gender &amp; Sexuality Resource Center
+              </h4>
+              <p>
+                616 E. Green Street, Suite 202, Champaign, IL 61820<br />Phone:
+                (217) 244-8863<br />Email: gsrc@illinois.edu<br />Website:
+                <a href="https://www.gsrc.illinois.edu/"
+                  >Gender &amp; Sexuality Resource Center</a
+                >
+              </p>
+              <p>
+                Provides campus programs, community connections, and resources
+                supporting LGBTQIA+ members of the university community. Contact
+                the center about services and participation.
+              </p>
+            </section>
+          </ilw-accordion-panel>
+          <ilw-accordion-panel>
+            <h3 slot="summary">Senior Resources</h3>
+            <section>
+              <h4>
+                Champaign County Regional Planning Commission — Senior Services
+              </h4>
+              <p>
+                Phone: (217) 819-4080<br />Website:
+                <a
+                  href="https://www.ccrpc.org/divisions/community_services/senior_services.php"
+                  >RPC Senior Services</a
+                >
+              </p>
+              <p>
+                Provides resources and assistance for Champaign County residents
+                age 60 and older, their families, and people seeking information
+                about senior services.
+              </p>
+            </section>
+            <section>
+              <h4>
+                Family Service of Champaign County — Senior Resource Center
+              </h4>
+              <p>
+                405 S. State Street, Champaign, IL 61820<br />Phone: (217)
+                352-5100<br />Email: src@familyservicecc.org<br />Website:
+                <a href="https://www.famservcc.org/program-overview"
+                  >Family Service Program Overview</a
+                >
+              </p>
+              <p>
+                Helps seniors and families find local services and support for
+                independent living. Programs include home care, Meals on Wheels,
+                transportation, counseling and advocacy, and social connection.
+                Eligibility and costs vary by program.
+              </p>
+            </section>
+            <section>
+              <h4>CRIS Healthy Aging</h4>
+              <p>
+                4116 Fieldstone Rd., Champaign, IL 61822<br />Phone: (217)
+                355-1543<br />Email: cris-info@CRISHealthyAging.org<br />Website:
+                <a href="http://crishealthyaging.org/">CRIS Healthy Aging</a>
+              </p>
+              <p>
+                CRIS provides services and activities to persons aged 60+ that
+                promote healthy, active lifestyles with the intention of
+                avoiding early or unnecessary long-term placement.
+              </p>
+            </section>
+            <section>
+              <h4>Illinois Department on Aging — Senior HelpLine</h4>
+              <p>
+                Phone: (800) 252-8966<br />Illinois Relay: 711<br />Email:
+                aging.ilsenior@illinois.gov<br />Website:
+                <a
+                  href="https://ilaging.illinois.gov/resources/helpline-main.html"
+                  >Senior HelpLine</a
+                >
+              </p>
+              <p>
+                Provides information, referrals, and connections to local care
+                coordination for adults age 60 and older and their caregivers.
+                Available Monday through Friday, 8:30 a.m. to 5 p.m.
+              </p>
+            </section>
+          </ilw-accordion-panel>
+          <ilw-accordion-panel>
+            <h3 slot="summary">Support Group Information</h3>
+            <section>
+              <h4>Family Service of Champaign County — Self-Help Center</h4>
+              <p>
+                Phone: (217) 352-0099, extension 115<br />Email:
+                <a href="mailto:selfhelp@familyservicecc.org">selfhelp@familyservicecc.org</a><br />Website:
+                <a href="https://www.famservcc.org/selfhelp-center"
+                  >Family Service Self-Help Center</a
+                >
+              </p>
+              <p>
+                Provides a directory of local support groups and assistance
+                finding or starting a group. The directory includes groups
+                related to addiction, grief, caregiving, health, mental health,
+                parenting, and other concerns.
+              </p>
+            </section>
+          </ilw-accordion-panel>
+          <ilw-accordion-panel>
+            <h3 slot="summary">Veteran Resources</h3>
+            <section>
+              <h4>VA Illiana Health Care — Danville VA Medical Center</h4>
+              <p>
+                1900 E. Main Street, Danville, IL 61832<br />Main phone: (217)
+                554-3000<br />Mental health appointments: (217) 554-4530 or
+                (217) 554-5794<br />Website:
+                <a href="https://www.va.gov/illiana-health-care/"
+                  >VA Illiana Health Care</a
+                >
+              </p>
+              <p>
+                Provides primary care, specialty services, mental health care,
+                and other health services for eligible veterans. Contact VA
+                Illiana about enrollment, appointments, and the appropriate care
+                location.
+              </p>
+            </section>
+          </ilw-accordion-panel>
+        </ilw-accordion>
+        <p><strong>Updated October 14, 2026</strong></p>
       </main>
 
       <!-- FOOTER - DO NOT CHANGE ANYTHING BELOW THIS LINE -->
@@ -1906,6 +1287,7 @@
           </ilw-content>
         </ilw-columns>
       </ilw-footer>
+      <ilw-back-to-top></ilw-back-to-top>
     </ilw-page>
   </body>
 </html>
